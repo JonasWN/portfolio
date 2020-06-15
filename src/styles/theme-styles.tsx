@@ -2,7 +2,8 @@ export const Theme = {
   color: {
     background: {
       site: "#F9FAFC",
-      container: "#0F1320",
+      containerDark: "#0F1320",
+      containerLight: "#F9FAFC",
     },
     font: {
       title: "#20204B",

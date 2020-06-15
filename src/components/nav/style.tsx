@@ -10,7 +10,7 @@ export const StyledNav = styled.nav`
       &:first-child {
         font-size: ${props => props.theme.fontSize.md};
         font-family: Orbitron;
-        text-shadow: 0 5px 15px rgba(2, 11, 22, 0.5);
+        text-shadow: 0 5px 15px rgba(2, 11, 22, 0.3);
         margin-right: auto;
       }
       :not(:first-child) {

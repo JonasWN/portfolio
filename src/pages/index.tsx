@@ -9,7 +9,6 @@ const IndexPage = () => (
     <SEO title="Home" />
     <Nav />
     <Hero />
-    <h1>Jonas Nielsen</h1>
   </Layout>
 )
 
