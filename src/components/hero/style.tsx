@@ -56,4 +56,10 @@ export const StyledCard = styled.article`
       color: ${props => props.theme.color.accent.bodo};
     }
   }
+
+  .scroll {
+    position: absolute;
+    right: 5%;
+    bottom: 5%;
+  }
 `
