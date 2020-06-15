@@ -24,7 +24,9 @@ export const Theme = {
   },
 
   shadow: {
+    card: "0rem 0rem 1rem 0rem rgba(0,0,0,.13)",
     container: "1.5rem 2.5rem 5rem 0.7rem rgba(0,0,0,.13)",
+    text: "1px 1px 8px rgba(2,11,22,0.3)",
   },
 }
 
