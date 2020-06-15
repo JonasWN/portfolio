@@ -15,7 +15,5 @@ export const device = {
 }
 
 export const Container = styled.div`
-  max-width: 1080px;
-  margin: 0 auto;
-  padding: 30px 0;
+  padding: 2%;
 `

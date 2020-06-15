@@ -1,7 +1,8 @@
 import React from "react"
+import { StyledNav } from "./style"
 
 const Nav = () => (
-  <nav>
+  <StyledNav>
     <ul>
       <li>Jonas-Nielsen</li>
       <li>+</li>
@@ -9,7 +10,7 @@ const Nav = () => (
       <li>About</li>
       <li>Contact</li>
     </ul>
-  </nav>
+  </StyledNav>
 )
 
 export { Nav }
