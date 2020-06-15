@@ -1,0 +1,12 @@
+import React from "react"
+//@ts-ignore
+import Face from "../../static/images/Face.svg"
+import { StyledHero } from "./style"
+
+const Hero = () => (
+  <StyledHero>
+    <img src={Face} alt="hero-face-image" />
+  </StyledHero>
+)
+
+export { Hero }
