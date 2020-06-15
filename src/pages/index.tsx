@@ -1,16 +1,16 @@
 import React from "react"
-import { Link } from "gatsby"
+//@ts-ignore
+import Face from "../static/images/Face.svg"
 import { Layout } from "../components/layout"
 import { SEO } from "../components/seo"
+import { Nav } from "../components/nav"
 
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <Link to="/page-2/">Go to page 2</Link> <br />
-    <Link to="/using-typescript/">Go to "Using TypeScript"</Link>
+    <Nav />
+    <h1>Jonas Nielsen</h1>
+    <img src={Face} alt="" />
   </Layout>
 )
 
