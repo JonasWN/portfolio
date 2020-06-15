@@ -24,7 +24,9 @@ const Layout = ({ children }: any) => {
       <Container>
         <GlobalStyle />
         <>{children}</>
-        <footer>© {new Date().getFullYear()}, Jonas Nielsen Portfolio</footer>
+        <footer style={{ marginBottom: "100vh" }}>
+          © {new Date().getFullYear()}, Jonas Nielsen Portfolio
+        </footer>
       </Container>
     </ThemeProvider>
   )

@@ -1,10 +1,24 @@
-import React, { useState, useEffect } from "react"
+import React from "react"
+import { motion, useViewportScroll, useTransform } from "framer-motion"
 import Lottie from "react-lottie"
 //@ts-ignore
 import * as animationData from "../../static/animations/scroll.json"
+import { StyledScrollBar } from "./style"
+
+const getDocHeight = () => {
+  return Math.max(
+    document.body.scrollHeight,
+    document.documentElement.scrollHeight,
+    document.body.offsetHeight,
+    document.documentElement.offsetHeight,
+    document.body.clientHeight,
+    document.documentElement.clientHeight
+  )
+}
 
 const Scroll = () => {
-  const [scroll, setScroll] = useState(true)
+  const { scrollYProgress } = useViewportScroll()
+  const top = useTransform(scrollYProgress, [0, 0.1], [1, 0])
   const defaultOptions = {
     loop: true,
     autoplay: true,
@@ -13,42 +27,8 @@ const Scroll = () => {
       preserveAspectRatio: "xMidYMid slice",
     },
   }
-
-  const listenToScrollEvent = () => {
-    document.addEventListener("scroll", () => {
-      requestAnimationFrame(() => {
-        calculateScrollDistance()
-      })
-    })
-  }
-
-  const getDocHeight = () => {
-    return Math.max(
-      document.body.scrollHeight,
-      document.documentElement.scrollHeight,
-      document.body.offsetHeight,
-      document.documentElement.offsetHeight,
-      document.body.clientHeight,
-      document.documentElement.clientHeight
-    )
-  }
-
-  const calculateScrollDistance = () => {
-    const scrollTop = window.pageYOffset
-    const winHeight = window.innerHeight
-    const docHeight = getDocHeight()
-
-    const totalDocScrollLength = docHeight - winHeight
-    const scrollPosition = Math.floor((scrollTop / totalDocScrollLength) * 100)
-
-    setScroll(scrollPosition != 0 ? false : true)
-  }
-  useEffect(() => {
-    listenToScrollEvent()
-  })
-
-  if (scroll) {
-    return (
+  return (
+    <motion.div style={{ opacity: top }}>
       <Lottie
         options={defaultOptions}
         height={100}
@@ -60,10 +40,25 @@ const Scroll = () => {
           opacity: 0.5,
         }}
       />
-    )
-  }
-
-  return null
+    </motion.div>
+  )
 }
 
-export { Scroll }
+const ScrollBar = () => {
+  const docHeight = getDocHeight()
+  const ScrollBarHeight = (70 / 100) * docHeight
+  const { scrollYProgress } = useViewportScroll()
+  const Height = useTransform(scrollYProgress, [0, 1], [0, ScrollBarHeight])
+
+  return (
+    <StyledScrollBar height={`${ScrollBarHeight}px`}>
+      <motion.div
+        style={{
+          height: Height,
+        }}
+      />
+    </StyledScrollBar>
+  )
+}
+
+export { Scroll, ScrollBar }

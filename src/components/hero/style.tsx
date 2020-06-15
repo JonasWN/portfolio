@@ -1,4 +1,5 @@
 import styled from "styled-components"
+import { motion } from "framer-motion"
 
 export const StyledHero = styled.section`
   display: flex;
@@ -61,5 +62,19 @@ export const StyledCard = styled.article`
     position: absolute;
     right: 5%;
     bottom: 5%;
+  }
+`
+export const StyledScrollBar = styled(motion.div)`
+  height: ${props => props.height};
+  width: 1px;
+  background: #ccc;
+  position: fixed;
+  right: 5%;
+  top: 50%;
+  transform: translate(-0, -50%);
+
+  div {
+    background: ${props => props.theme.color.background.containerDark};
+    width: 1px;
   }
 `

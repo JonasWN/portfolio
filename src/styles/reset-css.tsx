@@ -6,6 +6,7 @@ const GlobalStyle = createGlobalStyle<{ theme: ThemeType }>`
 *::before,
 *::after {
   box-sizing: border-box;
+  scrollbar-width: none !important;
 }
 
 ul,
@@ -36,6 +37,9 @@ body {
   line-height: 1.5;
   font-family: 'Oswald', sans-serif;
   background: ${props => props.theme.color.background.site};
+
+  ::-webkit-scrollbar { width: 0 !important };
+  -ms-overflow-style: none;
 }
 
 ul,
