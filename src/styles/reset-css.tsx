@@ -1,17 +1,7 @@
 import { createGlobalStyle } from "styled-components"
+import { ThemeType } from "./theme-styles"
 
-const GlobalStyle = createGlobalStyle`
-
-@font-face {
-          font-family: "Oswald";
-          src: url("https://fonts.googleapis.com/css2?family=Oswald:wght@300;500;700&display=swap");
-        }
-
-@font-face {
-          font-family: "Orbitron";
-          src: url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap");
-        }
-
+const GlobalStyle = createGlobalStyle<{ theme: ThemeType }>`
 *,
 *::before,
 *::after {
@@ -44,8 +34,8 @@ body {
   min-height: 100vh;
   scroll-behavior: smooth;
   line-height: 1.5;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  background: #dce0ff5e;
+  font-family: 'Oswald', sans-serif;
+  background: ${props => props.theme.color.background.site};
 }
 
 ul,
