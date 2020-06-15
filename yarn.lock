@@ -10587,6 +10587,11 @@ optionator@^0.8.3:
     type-check "~0.3.2"
     word-wrap "~1.2.3"
 
+orbitron@^0.1.0:
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/orbitron/-/orbitron-0.1.0.tgz#672536eb802609bf83fd246a4c7623d7432c70f6"
+  integrity sha512-vn1BHzx07avS02V3YykiY8AO5PRjUxiQ4IfQ2oGLau/H8l+2UwrRgVclbKbd5GULmp7hTmjNqAn1+4Sv5TCjfw==
+
 original@>=0.0.5, original@^1.0.0:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/original/-/original-1.0.2.tgz#e442a61cffe1c5fd20a65f3261c26663b303f25f"
@@ -14257,6 +14262,16 @@ typedarray@^0.0.6:
   version "0.0.6"
   resolved "https://registry.yarnpkg.com/typedarray/-/typedarray-0.0.6.tgz#867ac74e3864187b1d3d47d996a78ec5c8830777"
   integrity sha1-hnrHTjhkGHsdPUfZlqeOxciDB3c=
+
+typeface-orbitron@^1.1.3:
+  version "1.1.3"
+  resolved "https://registry.yarnpkg.com/typeface-orbitron/-/typeface-orbitron-1.1.3.tgz#c2050da818568f204d82aee1c796972bb5b302bc"
+  integrity sha512-VamabvBNCt6y0Ep96zLzZzUNXCiaP0iUO+PEofyAwfhHCKj8z1tC+u0CeANY4LYAnWYRjj9LPzq9L/2gIjqSkw==
+
+typeface-oswald@^1.1.4:
+  version "1.1.4"
+  resolved "https://registry.yarnpkg.com/typeface-oswald/-/typeface-oswald-1.1.4.tgz#2025c5b11ba8b40475166edb80d921a707a1f627"
+  integrity sha512-3UxtnnFXc++Qf84KakDGpvQLis/n9KjZ29BRqkfN9HpVK/oMi+Nk0l5LMDSGtlzzAZ2sqbNJszkmIdr5r+zHmQ==
 
 typescript@^3.9.2:
   version "3.9.3"

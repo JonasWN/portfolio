@@ -5,6 +5,9 @@ import { Theme } from "../../styles/theme-styles"
 import { ThemeProvider } from "styled-components"
 import { useStaticQuery, graphql } from "gatsby"
 
+require("typeface-oswald")
+require("typeface-orbitron")
+
 const Layout = ({ children }: any) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {

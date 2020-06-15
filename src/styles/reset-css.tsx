@@ -1,6 +1,17 @@
 import { createGlobalStyle } from "styled-components"
 
 const GlobalStyle = createGlobalStyle`
+
+@font-face {
+          font-family: "Oswald";
+          src: url("https://fonts.googleapis.com/css2?family=Oswald:wght@300;500;700&display=swap");
+        }
+
+@font-face {
+          font-family: "Orbitron";
+          src: url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap");
+        }
+
 *,
 *::before,
 *::after {
