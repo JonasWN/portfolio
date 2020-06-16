@@ -5,17 +5,6 @@ import Lottie from "react-lottie"
 import * as animationData from "../../static/animations/scroll.json"
 import { StyledScrollBar } from "./style"
 
-const getDocHeight = () => {
-  return Math.max(
-    document.body.scrollHeight,
-    document.documentElement.scrollHeight,
-    document.body.offsetHeight,
-    document.documentElement.offsetHeight,
-    document.body.clientHeight,
-    document.documentElement.clientHeight
-  )
-}
-
 const Scroll = () => {
   const { scrollYProgress } = useViewportScroll()
   const top = useTransform(scrollYProgress, [0, 0.1], [1, 0])
@@ -45,6 +34,16 @@ const Scroll = () => {
 }
 
 const ScrollBar = () => {
+  const getDocHeight = () => {
+    return Math.max(
+      document.body.scrollHeight,
+      document.documentElement.scrollHeight,
+      document.body.offsetHeight,
+      document.documentElement.offsetHeight,
+      document.body.clientHeight,
+      document.documentElement.clientHeight
+    )
+  }
   const docHeight = getDocHeight()
   const ScrollBarHeight = (70 / 100) * docHeight
   const { scrollYProgress } = useViewportScroll()
