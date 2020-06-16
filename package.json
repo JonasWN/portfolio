@@ -6,6 +6,7 @@
   "author": "Jonas Nielsen",
   "dependencies": {
     "@styled-icons/boxicons-logos": "^10.0.0",
+    "@types/react-helmet": "^6.0.0",
     "@types/react-lottie": "^1.2.5",
     "all": "^0.0.0",
     "framer-motion": "^1.11.0",

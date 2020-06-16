@@ -12,7 +12,7 @@ const Socials = () => {
   return (
     <StyledSocials>
       <li>
-        <a href={socials[0]} target="_blank">
+        <a href={socials[0]} target="_blank" aria-label="Github" rel="noopener">
           <span></span>
           <span></span>
           <span></span>
@@ -21,7 +21,12 @@ const Socials = () => {
         </a>
       </li>
       <li>
-        <a href={socials[1]} target="_blank">
+        <a
+          href={socials[1]}
+          target="_blank"
+          aria-label="Facebook"
+          rel="noopener"
+        >
           <span></span>
           <span></span>
           <span></span>
@@ -30,7 +35,12 @@ const Socials = () => {
         </a>
       </li>
       <li>
-        <a href={socials[2]} target="_blank">
+        <a
+          href={socials[2]}
+          target="_blank"
+          aria-label="Linkedin"
+          rel="noopener"
+        >
           <span></span>
           <span></span>
           <span></span>
