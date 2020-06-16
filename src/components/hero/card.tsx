@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react"
 import { StyledCard } from "./style"
-import { Scroll, ScrollBar } from "./scroll"
+import { Scroll } from "./scroll"
 
 const Card = () => {
   return (
@@ -14,7 +14,6 @@ const Card = () => {
         </p>
         <Scroll />
       </StyledCard>
-      <ScrollBar />
     </>
   )
 }
