@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect, useState } from "react"
 import { motion, useViewportScroll, useTransform } from "framer-motion"
 import Lottie from "react-lottie"
 //@ts-ignore
@@ -34,18 +34,13 @@ const Scroll = () => {
 }
 
 const ScrollBar = () => {
-  const getDocHeight = () => {
-    return Math.max(
-      document.body.scrollHeight,
-      document.documentElement.scrollHeight,
-      document.body.offsetHeight,
-      document.documentElement.offsetHeight,
-      document.body.clientHeight,
-      document.documentElement.clientHeight
-    )
-  }
-  const docHeight = getDocHeight()
-  const ScrollBarHeight = (70 / 100) * docHeight
+  const [height, setHeight] = useState<number>(0)
+
+  useEffect(() => {
+    setHeight(window.innerHeight)
+  }, [])
+
+  const ScrollBarHeight = (70 / 100) * height
   const { scrollYProgress } = useViewportScroll()
   const Height = useTransform(scrollYProgress, [0, 1], [0, ScrollBarHeight])
 
