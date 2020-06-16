@@ -64,8 +64,9 @@ export const StyledCard = styled.article`
     bottom: 5%;
   }
 `
-export const StyledScrollBar = styled(motion.div)`
-  height: ${props => props.height};
+
+export const StyledScrollBar = styled<any>(motion.div)`
+  height: ${(props: any) => props.height};
   width: 1px;
   background: #ccc;
   position: fixed;
