@@ -1,6 +1,5 @@
 import React from "react"
 import { StyledCard } from "./style"
-import { Scroll } from "./scroll"
 
 const Card = () => {
   return (

@@ -3,7 +3,6 @@ import { motion, useViewportScroll, useTransform } from "framer-motion"
 import Lottie from "react-lottie"
 //@ts-ignore
 import * as animationData from "../../static/animations/scroll.json"
-import { StyledScrollBar } from "./style"
 
 const defaultOptions = {
   loop: true,
@@ -35,20 +34,4 @@ const Scroll = () => {
   )
 }
 
-const ScrollBar = () => {
-  const ScrollBarHeight = 600
-  const { scrollYProgress } = useViewportScroll()
-  const Height = useTransform(scrollYProgress, [0, 1], [0, ScrollBarHeight])
-
-  return (
-    <StyledScrollBar height={`${ScrollBarHeight}px`}>
-      <motion.div
-        style={{
-          height: Height,
-        }}
-      />
-    </StyledScrollBar>
-  )
-}
-
-export { Scroll, ScrollBar }
+export { Scroll }
