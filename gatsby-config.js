@@ -10,5 +10,13 @@ module.exports = {
     `gatsby-plugin-sharp`,
     `gatsby-plugin-typescript`,
     `gatsby-plugin-styled-components`,
+    {
+      resolve: "gatsby-plugin-react-svg",
+      options: {
+        rule: {
+          include: /images/,
+        },
+      },
+    },
   ],
 }

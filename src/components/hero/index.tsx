@@ -9,7 +9,8 @@ const Hero = () => {
   return (
     <StyledHero>
       <Card />
-      <img src={Face} alt="hero-face-image" />
+      <Face className="face" />
+      <Socials />
     </StyledHero>
   )
 }

@@ -5,7 +5,8 @@ export const StyledHero = styled.section`
   justify-content: space-evenly;
   align-items: center;
   height: 90vh;
-  img {
+
+  .face {
     min-height: 80vh;
     width: 35vw;
   }
