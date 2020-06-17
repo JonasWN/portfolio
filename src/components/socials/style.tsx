@@ -8,8 +8,10 @@ export const StyledSocials = styled.ul`
   left: 5%;
   bottom: 31vh;
   transform: translate(-50%, -0%);
+
   li:last-child a span:nth-child(3) {
     height: 1px;
+    opacity: 0.5;
   }
 
   li a {
