@@ -1,4 +1,18 @@
-import styled from "styled-components"
+import styled, { keyframes } from "styled-components"
+import { motion } from "framer-motion"
+
+const wheel = keyframes`
+ from {
+    transform: scaleY(0) translateY(0);
+  }
+  50% {
+    transform: scaleY(1) translateY(20px);
+  }
+  to {
+    opacity: 0;
+    transform: scaleY(0) translateY(60px);
+  }
+`
 
 export const StyledHero = styled.section`
   display: flex;
@@ -60,7 +74,29 @@ export const StyledCard = styled.article`
 
   .scroll {
     position: absolute;
-    right: 5%;
-    bottom: 5%;
+    right: 10%;
+    bottom: 10%;
+  }
+`
+
+export const StyledScroll = styled(motion.div)`
+  width: 25px;
+  height: 50px;
+  border: 1px solid #333;
+  opacity: 0.5;
+  border-radius: 60px;
+  position: relative;
+  &::before {
+    content: "";
+    width: 1px;
+    height: 20px;
+    position: absolute;
+    top: 0px;
+    left: 50%;
+    transform: scaleY(0);
+    background-color: #333;
+    border-radius: 50%;
+    opacity: 1;
+    animation: ${wheel} 2s infinite;
   }
 `

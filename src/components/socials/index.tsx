@@ -31,7 +31,7 @@ const Socials = () => {
           <span></span>
           <span></span>
           <span></span>
-          <Facebook style={{ width: "25px" }} />
+          <Linkedin style={{ width: "25px" }} />
         </a>
       </li>
       <li>
@@ -45,7 +45,7 @@ const Socials = () => {
           <span></span>
           <span></span>
           <span></span>
-          <Linkedin style={{ width: "25px" }} />
+          <Facebook style={{ width: "25px" }} />
         </a>
       </li>
     </StyledSocials>
