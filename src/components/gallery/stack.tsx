@@ -2,6 +2,7 @@ import React from "react"
 import { StyledStack } from "./style"
 //@ts-ignore
 import PortfolioCover from "../../static/portfolio.jpg"
+import Button from "../button"
 
 const Stack = () => {
   return (
@@ -22,6 +23,7 @@ const Stack = () => {
             <li>Gatsby.JS</li>
             <li>Contentful</li>
           </ul>
+          <Button />
         </section>
       </article>
     </StyledStack>

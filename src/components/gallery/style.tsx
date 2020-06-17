@@ -121,7 +121,7 @@ export const StyledStack = styled.section`
   top: 0;
   height: 85%;
   width: 60%;
-  padding: 4% 5%;
+  padding: 4% 4%;
   z-index: 2;
   color: ${props => props.theme.color.font.textDark};
 
@@ -136,6 +136,8 @@ export const StyledStack = styled.section`
       font-size: ${props => props.theme.fontSize.md};
       font-family: orbitron;
       font-weight: 100;
+      letter-spacing: 0.2rem;
+      text-shadow: ${props => props.theme.shadow.text};
     }
   }
 
@@ -146,6 +148,7 @@ export const StyledStack = styled.section`
     figure {
       object-fit: cover;
       margin: 0;
+      min-width: 50%;
     }
 
     section {
@@ -153,12 +156,12 @@ export const StyledStack = styled.section`
       position: relative;
       flex-direction: column;
       justify-content: center;
-      width: 45%;
+      width: 50%;
 
       h4 {
         position: absolute;
         top: -25%;
-        right: 25%;
+        left: 50%;
         transform: translate(-50%, -50%);
         font-weight: 100;
         font-size: 1.5rem;
