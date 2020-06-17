@@ -57,8 +57,7 @@ export const StyledProject = styled.section`
       div {
         height: 1px;
         width: 90px;
-        background: ${props => props.theme.color.background.containerLight};
-        opacity: 0.5;
+        background: #fe6935;
       }
 
       p {
@@ -96,6 +95,7 @@ export const StyledProject = styled.section`
   }
 
   article {
+    max-width: 75%;
     h3 {
       color: ${props => props.theme.color.accent.beige};
       font-weight: 100;

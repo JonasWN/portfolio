@@ -60,15 +60,16 @@ export const StyledCard = styled.article`
     left: 3.4vw;
     font-size: 2rem;
     font-size: 1.5rem;
+    font-family: orbitron;
     font-weight: 100;
-    color: ${props => props.theme.color.font.textDark};
+    color: #19254cd6;
     text-shadow: ${props => props.theme.shadow.text};
-    width: 350px;
+    width: 420px;
     max-width: 100%;
     letter-spacing: 0.4rem;
 
     span {
-      color: ${props => props.theme.color.accent.bodo};
+      color: ${props => props.theme.color.accent.burlywood};
     }
   }
 

@@ -13,5 +13,6 @@ export const StyledScrollBar = styled<any>(motion.div)`
   div {
     background: ${props => props.theme.color.background.containerDark};
     width: 1px;
+    opacity: 0.5;
   }
 `

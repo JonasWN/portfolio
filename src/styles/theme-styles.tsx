@@ -13,6 +13,7 @@ export const Theme = {
     accent: {
       bodo: "#FF027C",
       beige: "#FFECA7",
+      burlywood: "#FE6935",
     },
   },
 

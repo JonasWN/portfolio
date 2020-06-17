@@ -5,7 +5,6 @@ export const StyledNav = styled.nav`
     color: ${props => props.theme.color.font.textDark};
     display: flex;
     align-items: center;
-
     li,
     a {
       &:first-child {
