@@ -2,11 +2,12 @@ import styled from "styled-components"
 
 export const StyledNav = styled.nav`
   ul {
-    color: ${props => props.theme.color.textDark};
+    color: ${props => props.theme.color.font.textDark};
     display: flex;
     align-items: center;
 
-    li {
+    li,
+    a {
       &:first-child {
         font-size: ${props => props.theme.fontSize.md};
         font-family: Orbitron;

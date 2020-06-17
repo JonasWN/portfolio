@@ -10,7 +10,6 @@ const Hero = () => {
     <StyledHero>
       <Card />
       <img src={Face} alt="hero-face-image" />
-      <Socials />
     </StyledHero>
   )
 }
