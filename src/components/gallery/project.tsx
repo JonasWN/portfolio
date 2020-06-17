@@ -19,13 +19,13 @@ const Project = () => {
           <li></li>
         </ul>
       </nav>
-      <footer>
+      <article>
         <h3>Info</h3>
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus
           veniam dignissimos maiores quam, labore repudiandae!
         </p>
-      </footer>
+      </article>
     </StyledProject>
   )
 }
