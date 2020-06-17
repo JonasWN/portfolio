@@ -58,6 +58,7 @@ export const StyledProject = styled.section`
         height: 1px;
         width: 90px;
         background: ${props => props.theme.color.background.containerLight};
+        opacity: 0.5;
       }
 
       p {
@@ -149,13 +150,18 @@ export const StyledStack = styled.section`
 
     section {
       display: flex;
+      position: relative;
       flex-direction: column;
-      justify-content: space-between;
+      justify-content: center;
       width: 45%;
 
       h4 {
-        align-self: center;
+        position: absolute;
+        top: -25%;
+        right: 25%;
+        transform: translate(-50%, -50%);
         font-weight: 100;
+        font-size: 1.5rem;
         color: ${props => props.theme.color.accent.bodo};
         letter-spacing: 0.2rem;
         text-shadow: ${props => props.theme.shadow.text};
@@ -167,22 +173,26 @@ export const StyledStack = styled.section`
           position: relative;
           text-transform: uppercase;
           text-align: right;
-          font-size: ${props => props.theme.fontSize.xs};
+          font-size: 0.8rem;
+          letter-spacing: 0.2rem;
+          width: fit-content;
+          margin-left: auto;
 
           :not(:last-child) {
-            margin-bottom: 10%;
+            margin-bottom: 15%;
           }
 
           &:before {
             content: "";
             position: absolute;
-            left: -20%;
+            left: -30%;
             top: 50%;
             transform: translate(-50%, 0);
             width: 20px;
             height: 1px;
             z-index: 2;
-            color: ${props => props.theme.color.font.textDark};
+            background: ${props => props.theme.color.font.textDark};
+            opacity: 0.3;
           }
         }
       }
