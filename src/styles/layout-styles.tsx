@@ -1,7 +1,7 @@
 import styled from "styled-components"
 
 const sizes = {
-  sm: "375px",
+  sm: "420px",
   md: "768px",
   lg: "1280px",
   xl: "1920px",

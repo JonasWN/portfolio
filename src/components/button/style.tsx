@@ -3,9 +3,10 @@ import { device } from "../../styles/layout-styles"
 
 export const StyledButton = styled.button`
   position: absolute;
-  left: 50%;
-  bottom: -50%;
-  transform: translate(-50%, -50%);
+  right: 5%;
+  bottom: 5%;
+  z-index: 4;
+
   width: 170px;
   height: 50px;
   background: ${props => props.theme.color.background.containerDark};
@@ -16,13 +17,6 @@ export const StyledButton = styled.button`
   text-transform: uppercase;
   border: none;
   padding: 0;
-
-  @media ${device.desktop} {
-    left: inherit;
-    right: 0;
-    bottom: -60%;
-    transform: translate(0, 0);
-  }
 
   a {
     display: flex;

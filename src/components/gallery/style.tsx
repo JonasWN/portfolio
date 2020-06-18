@@ -8,20 +8,14 @@ export const StyledGallery = styled.main`
   background: rgba(0, 0, 0, 0);
   margin: 50vh auto;
 
-  &:after {
-    content: "";
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    height: 65%;
-    width: 70%;
-    background: ${props => props.theme.color.background.containerLight};
-    box-shadow: ${props => props.theme.shadow.card};
-  }
-
   @media ${device.desktop} {
     width: 80vw;
     margin: 50vh 5vw;
+  }
+
+  @media ${device.mobile} {
+    width: 90vw;
+    height: 85vh;
   }
 `
 
@@ -40,6 +34,11 @@ export const StyledProject = styled.section`
   box-shadow: ${props => props.theme.shadow.card};
   font-family: Orbitron;
   padding: 5%;
+
+  @media ${device.mobile} {
+    width: 70vw;
+    height: 70vh;
+  }
 
   header {
     display: flex;
@@ -131,11 +130,24 @@ export const StyledStack = styled.section`
   z-index: 2;
   color: ${props => props.theme.color.font.textDark};
 
+  @media ${device.mobile} {
+    width: 100%;
+    height: 100%;
+  }
+
   header {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     height: 25%;
+
+    @media ${device.mobile} {
+      position: absolute;
+      bottom: -10%;
+      left: 0;
+      flex-direction: row;
+      height: auto;
+    }
 
     h2,
     h3 {
@@ -145,11 +157,21 @@ export const StyledStack = styled.section`
       letter-spacing: 0.2rem;
       text-shadow: ${props => props.theme.shadow.text};
     }
+
+    h3 {
+      @media ${device.mobile} {
+        display: none;
+      }
+    }
   }
 
   article {
     display: flex;
     justify-content: space-space-between;
+
+    @media ${device.mobile} {
+      display: none;
+    }
 
     figure {
       object-fit: cover;
@@ -206,5 +228,20 @@ export const StyledStack = styled.section`
         }
       }
     }
+  }
+`
+export const StyledContainer = styled.div`
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  height: 65%;
+  width: 70%;
+  background: ${props => props.theme.color.background.containerLight};
+  box-shadow: ${props => props.theme.shadow.card};
+
+  @media ${device.mobile} {
+    width: 85%;
+    height: 40vh;
+    left: 5%;
   }
 `
