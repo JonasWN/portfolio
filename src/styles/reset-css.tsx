@@ -7,6 +7,9 @@ const GlobalStyle = createGlobalStyle<{ theme: ThemeType }>`
 *::after {
   box-sizing: border-box;
   scrollbar-width: none !important;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-overflow-scrolling: touch;
+  touch-action: manipulation;
 }
 
 ul,
@@ -40,6 +43,10 @@ body {
 
   ::-webkit-scrollbar { width: 0 !important };
   -ms-overflow-style: none;
+}
+ 
+::-webkit-scrollbar {
+display: none !important;
 }
 
 ul,

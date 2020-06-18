@@ -9,10 +9,12 @@ const Card = () => {
         <h1>
           Jonas <span>Nielsen</span>
         </h1>
-        <p>
-          <span>Front End</span> Developer From Copenhagen
-        </p>
-        <Scroll />
+        <div>
+          <p>
+            <span>Front End</span> Developer From Copenhagen
+          </p>
+          <Scroll />
+        </div>
       </StyledCard>
     </>
   )

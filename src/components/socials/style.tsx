@@ -1,4 +1,5 @@
 import styled from "styled-components"
+import { device } from "../../styles/layout-styles"
 
 export const StyledSocials = styled.ul`
   display: flex;
@@ -8,6 +9,10 @@ export const StyledSocials = styled.ul`
   left: 5%;
   bottom: 31vh;
   transform: translate(-50%, -0%);
+
+  @media ${device.tablet} {
+    left: 10%;
+  }
 
   li:last-child a span:nth-child(3) {
     height: 1px;

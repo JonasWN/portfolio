@@ -1,14 +1,20 @@
-import React from "react"
+import React, { useState, useEffect } from "react"
 import { StyledScrollBar } from "./style"
 import { motion, useViewportScroll, useTransform } from "framer-motion"
 
 const ScrollBar = () => {
-  const ScrollBarHeight = 600
+  const [wh, setWh] = useState<number>(0)
+
+  useEffect(() => {
+    const height = (60 / 100) * window.innerHeight
+    setWh(height)
+  }, [])
+
   const { scrollYProgress } = useViewportScroll()
-  const Height = useTransform(scrollYProgress, [0, 1], [0, ScrollBarHeight])
+  const Height = useTransform(scrollYProgress, [0, 1], [0, wh])
 
   return (
-    <StyledScrollBar height={`${ScrollBarHeight}px`}>
+    <StyledScrollBar height={`${wh}px`}>
       <motion.div
         style={{
           height: Height,

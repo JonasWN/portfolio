@@ -1,5 +1,6 @@
 import styled, { keyframes } from "styled-components"
 import { motion } from "framer-motion"
+import { device } from "../../styles/layout-styles"
 
 const wheel = keyframes`
  from {
@@ -23,15 +24,33 @@ export const StyledHero = styled.section`
   .face {
     min-height: 80vh;
     width: 35vw;
+
+    @media ${device.tablet} {
+      position: absolute;
+      top: 10%;
+      left: 50%;
+      transform: translate(-50%, -0%);
+      width: 55vw;
+      min-height: 50vh;
+      max-height: 50vh;
+    }
   }
 `
 
 export const StyledCard = styled.article`
   position: relative;
+  display: flex;
+  align-items: flex-end;
   width: 35vw;
   height: 70vh;
+  padding: 3%;
   background: ${props => props.theme.color.background.containerLight};
   box-shadow: ${props => props.theme.shadow.card};
+
+  @media ${device.tablet} {
+    width: 60vw;
+    padding: 5%;
+  }
 
   h1 {
     position: absolute;
@@ -42,31 +61,51 @@ export const StyledCard = styled.article`
     left: -7.4vw;
     top: 15%;
     font-size: 5rem;
-    width: 400px;
     -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: ${props =>
       props.theme.color.background.containerDark};
     color: ${props => props.theme.color.font.title};
     text-shadow: ${props => props.theme.shadow.text};
+    font-size: min(max(1rem, 5vw), 5rem);
+    line-height: min(max(4rem, 10vw), 6rem);
+
+    @media ${device.tablet} {
+      top: inherit;
+      bottom: -15%;
+      white-space: nowrap;
+    }
 
     span {
       margin-left: 7.4vw;
+
+      @media ${device.tablet} {
+        margin-left: 0;
+      }
     }
   }
 
+  div {
+    display: flex;
+    justify-content: space-between;
+  }
+
   p {
-    position: absolute;
     bottom: 10%;
     left: 3.4vw;
-    font-size: 2rem;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
+    font-size: min(max(0.8rem, 2vw), 1.3rem);
     font-family: orbitron;
     font-weight: 100;
+    background: #f5f5f580;
     color: #19254cd6;
     text-shadow: ${props => props.theme.shadow.text};
-    width: 420px;
-    max-width: 100%;
+    max-width: 80%;
     letter-spacing: 0.4rem;
+    line-height: 2.5rem;
+
+    @media ${device.tablet} {
+      line-height: 1.5rem;
+    }
 
     span {
       color: ${props => props.theme.color.accent.burlywood};
@@ -74,7 +113,7 @@ export const StyledCard = styled.article`
   }
 
   .scroll {
-    position: absolute;
+    align-self: center;
     right: 10%;
     bottom: 10%;
   }
