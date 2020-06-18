@@ -1,5 +1,6 @@
 import styled from "styled-components"
 import { motion } from "framer-motion"
+import { device } from "../../styles/layout-styles"
 
 export const StyledScrollBar = styled<any>(motion.div)`
   height: ${(props: any) => props.height};
@@ -9,6 +10,10 @@ export const StyledScrollBar = styled<any>(motion.div)`
   right: 5%;
   top: 50%;
   transform: translate(-0, -50%);
+
+  @media ${device.mobile} {
+    display: none;
+  }
 
   div {
     background: ${props => props.theme.color.background.containerDark};

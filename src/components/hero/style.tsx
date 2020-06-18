@@ -52,6 +52,10 @@ export const StyledCard = styled.article`
     padding: 5%;
   }
 
+  @media ${device.mobile} {
+    width: 85vw;
+  }
+
   h1 {
     position: absolute;
     font-family: Orbitron;

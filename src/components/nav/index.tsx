@@ -3,12 +3,13 @@ import { Link } from "gatsby"
 import { StyledNav } from "./style"
 //@ts-ignore
 import Logo from "../../static/images/Logo.svg"
+import Phone from "./phone"
 
 const Nav = () => (
   <StyledNav>
     <ul>
       <li>
-        <Link to="/">
+        <Link to="/" aria-label="home-page">
           <Logo />
         </Link>
       </li>
@@ -17,6 +18,7 @@ const Nav = () => (
       <li>About</li>
       <li>Contact</li>
     </ul>
+    <Phone />
   </StyledNav>
 )
 
