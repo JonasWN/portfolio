@@ -101,6 +101,14 @@ export const StyledProject = styled.section`
 
   article {
     max-width: 75%;
+
+    @media ${device.mobile} {
+      max-width: 100%;
+
+      h3 {
+        color: red;
+      }
+    }
     h3 {
       color: ${props => props.theme.color.accent.beige};
       font-weight: 100;
@@ -113,6 +121,11 @@ export const StyledProject = styled.section`
       font-weight: 100;
       line-height: 1.5rem;
       letter-spacing: 0.2rem;
+
+      @media ${device.mobile} {
+        letter-spacing: 0.1rem;
+        line-height: 1.2rem;
+      }
     }
   }
 `

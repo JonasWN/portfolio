@@ -14,6 +14,10 @@ export const StyledSocials = styled.ul`
     left: 10%;
   }
 
+  @media ${device.mobile} {
+    display: none;
+  }
+
   li:last-child a span:nth-child(3) {
     height: 1px;
     opacity: 0.5;

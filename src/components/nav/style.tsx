@@ -1,4 +1,5 @@
 import styled from "styled-components"
+import { device } from "../../styles/layout-styles"
 
 export const StyledNav = styled.nav`
   ul {
@@ -19,6 +20,10 @@ export const StyledNav = styled.nav`
         margin-left: 10px;
         font-weight: 300;
         text-transform: uppercase;
+
+        @media ${device.mobile} {
+          display: none;
+        }
       }
     }
   }
