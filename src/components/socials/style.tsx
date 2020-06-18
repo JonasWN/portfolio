@@ -30,7 +30,7 @@ export const StyledSocials = styled.ul`
     text-decoration: none;
     color: ${props => props.theme.color.font.title};
     margin: 0px 0px;
-    opacity: 0.5;
+    opacity: 0.8;
     transition: 0.5s;
 
     &:hover {
@@ -63,6 +63,7 @@ export const StyledSocials = styled.ul`
       position: absolute;
       transition: transform 0.5s;
       background: ${props => props.theme.color.background.containerDark};
+      opacity: 0.5;
 
       :nth-child(1) {
         top: 0;

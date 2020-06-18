@@ -1,4 +1,5 @@
 import styled from "styled-components"
+import { device } from "../../styles/layout-styles"
 
 export const StyledGallery = styled.main`
   position: relative;
@@ -16,6 +17,11 @@ export const StyledGallery = styled.main`
     width: 70%;
     background: ${props => props.theme.color.background.containerLight};
     box-shadow: ${props => props.theme.shadow.card};
+  }
+
+  @media ${device.desktop} {
+    width: 80vw;
+    margin: 50vh 5vw;
   }
 `
 
@@ -176,7 +182,7 @@ export const StyledStack = styled.section`
           position: relative;
           text-transform: uppercase;
           text-align: right;
-          font-size: 0.8rem;
+          font-size: min(max(0.6rem, 1vw), 0.8rem);
           letter-spacing: 0.2rem;
           width: fit-content;
           margin-left: auto;
@@ -191,7 +197,7 @@ export const StyledStack = styled.section`
             left: -30%;
             top: 50%;
             transform: translate(-50%, 0);
-            width: 20px;
+            width: 15px;
             height: 1px;
             z-index: 2;
             background: ${props => props.theme.color.font.textDark};

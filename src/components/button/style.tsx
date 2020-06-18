@@ -1,4 +1,5 @@
 import styled from "styled-components"
+import { device } from "../../styles/layout-styles"
 
 export const StyledButton = styled.button`
   position: absolute;
@@ -15,6 +16,13 @@ export const StyledButton = styled.button`
   text-transform: uppercase;
   border: none;
   padding: 0;
+
+  @media ${device.desktop} {
+    left: inherit;
+    right: 0;
+    bottom: -60%;
+    transform: translate(0, 0);
+  }
 
   a {
     display: flex;
