@@ -70,8 +70,8 @@ export const StyledPhone = styled.div`
   }
   .line {
     fill: none;
-    stroke: #181e2d;
-    stroke-width: 4.5px;
+    stroke: #20204b;
+    stroke-width: 4.2px;
     stroke-linecap: round;
     stroke-linejoin: round;
     transform-origin: 50%;
