@@ -1,10 +1,26 @@
 import styled from "styled-components"
 import { device } from "../../styles/layout-styles"
+import { motion } from "framer-motion"
 
-export const StyledNav = styled.nav`
+export const StyledNav = styled<any>(motion.nav)`
+  @media ${device.tablet} {
+    margin: 4%;
+  }
+
   @media ${device.mobile} {
     display: flex;
     justify-content: space-between;
+    position: sticky;
+    top: 0;
+    left: 0;
+    transform: translateY(${props => (props.show ? 0 : "-100%")});
+    transition: transform 500ms ease-in-out;
+    width: 100%;
+    justify-content: space-between;
+    padding: 2% 5%;
+    background: #f9fafc;
+    z-index: 200;
+    margin: 0;
   }
 
   ul {
@@ -32,16 +48,9 @@ export const StyledNav = styled.nav`
       }
     }
   }
-
-  @media ${device.tablet} {
-    margin: 4%;
-  }
 `
 
 export const StyledPhone = styled.div`
-  position: absolute;
-  right: 0;
-  top: 0;
   display: none;
 
   @media ${device.mobile} {
@@ -70,16 +79,19 @@ export const StyledPhone = styled.div`
   }
   .line {
     fill: none;
-    stroke: #20204b;
-    stroke-width: 4.2px;
+    stroke: #494970;
+    stroke-width: 4.5px;
     stroke-linecap: round;
     stroke-linejoin: round;
     transform-origin: 50%;
     transition: stroke-dasharray 500ms 200ms, stroke-dashoffset 500ms 200ms,
-      transform 500ms 200ms;
+      transform 500ms 200ms, stroke 400ms;
   }
   .x .line {
     stroke-width: 3px;
+  }
+  .active .line {
+    stroke: burlywood;
   }
 
   .plate2 .line1 {

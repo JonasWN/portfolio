@@ -27,12 +27,12 @@ export const StyledHero = styled.section`
 
     @media ${device.tablet} {
       position: absolute;
-      top: 10%;
-      left: 50%;
+      top: 20%;
+      left: 53%;
       transform: translate(-50%, -0%);
-      width: 55vw;
-      min-height: 50vh;
-      max-height: 50vh;
+      width: 80vw;
+      min-height: 55vw;
+      max-height: 55vh;
     }
   }
 `
@@ -70,15 +70,18 @@ export const StyledCard = styled.article`
       props.theme.color.background.containerDark};
     color: ${props => props.theme.color.font.title};
     text-shadow: ${props => props.theme.shadow.text};
-    font-size: min(max(1rem, 5vw), 5rem);
+    font-size: min(max(1.5rem, 5vw), 5rem);
     line-height: min(max(4rem, 10vw), 6rem);
 
     @media ${device.tablet} {
       top: inherit;
       bottom: -15%;
+      left: 0;
       white-space: nowrap;
     }
 
+    @media ${device.mobile} {
+    }
     span {
       margin-left: 7.4vw;
 
