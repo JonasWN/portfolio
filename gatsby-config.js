@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `Jonas-Nielsen-portfolio`,
+    title: `Jonas Nielsen | Portfolio`,
     description: `Jonas Nielsen - Front-End-Developer portfolio 2020`,
     author: `@JonasWn`,
   },
