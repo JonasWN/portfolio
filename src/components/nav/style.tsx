@@ -56,6 +56,7 @@ export const StyledPhone = styled.div`
   @media ${device.mobile} {
     display: block;
   }
+
   .active .x {
     transform: scale(1);
     transition: transform 400ms 350ms;
@@ -145,4 +146,14 @@ export const StyledPhone = styled.div`
   .active.plate2 .x {
     transition: transform 400ms 250ms;
   }
+`
+
+export const StyledPhoneNav = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: ${props => props.theme.color.background.containerDark};
+  z-index: 5;
 `

@@ -3,6 +3,16 @@ import { StyledPhone } from "./style"
 
 const Phone = () => {
   const [active, setActive] = useState<boolean>(false)
+  const [overflow, setOverflow] = useState<boolean>(false)
+
+  const handleClick = () => {
+    setActive(!active)
+    setOverflow(!overflow)
+
+    overflow
+      ? (document.body.style.overflow = "initial")
+      : (document.body.style.overflow = "hidden")
+  }
 
   return (
     <StyledPhone className="menu">
@@ -27,7 +37,7 @@ const Phone = () => {
       <div className="plates">
         <div
           className={active ? "plate plate2 active" : "plate plate2"}
-          onClick={() => setActive(!active)}
+          onClick={() => handleClick()}
         >
           <svg
             className="burger"

@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import { Link } from "gatsby"
-import { StyledNav } from "./style"
+import { StyledNav, StyledPhoneNav } from "./style"
 import { useScrollPosition } from "../../hooks/useScrollPosition"
 //@ts-ignore
 import Logo from "../../static/images/Logo.svg"
@@ -18,20 +18,22 @@ const Nav = () => {
   )
 
   return (
-    <StyledNav show={sticky}>
-      <ul>
-        <li>
-          <Link to="/" aria-label="home-page">
-            <Logo />
-          </Link>
-        </li>
-        <li>+</li>
-        <li>Projects</li>
-        <li>About</li>
-        <li>Contact</li>
-      </ul>
-      <Phone />
-    </StyledNav>
+    <>
+      <StyledNav show={sticky}>
+        <ul>
+          <li>
+            <Link to="/" aria-label="home-page">
+              <Logo />
+            </Link>
+          </li>
+          <li>+</li>
+          <li>Projects</li>
+          <li>About</li>
+          <li>Contact</li>
+        </ul>
+        <Phone />
+      </StyledNav>
+    </>
   )
 }
 
