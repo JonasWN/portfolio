@@ -14,11 +14,10 @@ export const StyledNav = styled<any>(motion.nav)`
     top: 0;
     left: 0;
     transform: translateY(${props => (props.show ? 0 : "-100%")});
-    transition: transform 500ms ease-in-out;
+    transition: transform 400ms linear;
     width: 100%;
     justify-content: space-between;
     padding: 2% 5%;
-    background: #f9fafc;
     z-index: 200;
     margin: 0;
   }
@@ -92,7 +91,7 @@ export const StyledPhone = styled.div`
     stroke-width: 3px;
   }
   .active .line {
-    stroke: burlywood;
+    stroke: ${props => props.theme.color.font.textLight};
   }
 
   .plate2 .line1 {
@@ -147,13 +146,35 @@ export const StyledPhone = styled.div`
     transition: transform 400ms 250ms;
   }
 `
-
-export const StyledPhoneNav = styled.div`
+let easing = [0.77, 0, 0.175, 1]
+const variants = {
+  enter: {
+    translateX: 0,
+    transition: { ease: easing, duration: 0.6 },
+  },
+  initial: {
+    translateX: "100%",
+  },
+  exit: {
+    translateX: "-100%",
+    transition: { ease: easing, duration: 0.6 },
+  },
+}
+export const StyledPhoneNav = styled(motion.div).attrs(() => ({
+  variants,
+  initial: "initial",
+  animate: "enter",
+  exit: "exit",
+}))`
   position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: ${props => props.theme.color.background.containerDark};
+  background: #070710;
   z-index: 5;
+
+  .phone-menu {
+    display: block;
+  }
 `

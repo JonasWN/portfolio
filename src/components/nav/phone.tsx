@@ -1,13 +1,19 @@
 import React, { useState, useEffect } from "react"
 import { StyledPhone } from "./style"
 
-const Phone = () => {
+type Iprops = {
+  handleOverlay: (event: boolean) => void
+  overlay: boolean
+}
+
+const Phone: React.FC<Iprops> = props => {
   const [active, setActive] = useState<boolean>(false)
   const [overflow, setOverflow] = useState<boolean>(false)
 
   const handleClick = () => {
     setActive(!active)
     setOverflow(!overflow)
+    props.handleOverlay(!props.overlay)
 
     overflow
       ? (document.body.style.overflow = "initial")
@@ -17,6 +23,7 @@ const Phone = () => {
   return (
     <StyledPhone className="menu">
       <svg>
+        ()
         <defs>
           <filter id="gooeyness">
             <feGaussianBlur

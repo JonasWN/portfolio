@@ -5,9 +5,15 @@ import { useScrollPosition } from "../../hooks/useScrollPosition"
 //@ts-ignore
 import Logo from "../../static/images/Logo.svg"
 import Phone from "./phone"
+import { AnimatePresence } from "framer-motion"
 
 const Nav = () => {
   const [sticky, setSticky] = useState<boolean>(true)
+  const [overlay, setOverlay] = useState<boolean>(false)
+
+  const handleOverlay = (event: boolean) => {
+    setOverlay(event)
+  }
 
   useScrollPosition(
     ({ prevPos, currPos }: any) => {
@@ -16,10 +22,9 @@ const Nav = () => {
     },
     [sticky]
   )
-
   return (
     <>
-      <StyledNav show={sticky}>
+      <StyledNav show={sticky} overlay={overlay}>
         <ul>
           <li>
             <Link to="/" aria-label="home-page">
@@ -31,8 +36,11 @@ const Nav = () => {
           <li>About</li>
           <li>Contact</li>
         </ul>
-        <Phone />
+        <Phone handleOverlay={handleOverlay} overlay={overlay} />
       </StyledNav>
+      <AnimatePresence exitBeforeEnter>
+        {overlay && <StyledPhoneNav />}
+      </AnimatePresence>
     </>
   )
 }

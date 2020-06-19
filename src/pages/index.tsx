@@ -9,10 +9,10 @@ import Gallery from "../components/gallery"
 const IndexPage = () => (
   <Layout>
     <SEO title=" " />
-    <ScrollBar />
     <Nav />
     <Hero />
     <Gallery />
+    <ScrollBar />
   </Layout>
 )
 

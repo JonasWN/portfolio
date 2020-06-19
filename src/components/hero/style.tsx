@@ -75,8 +75,8 @@ export const StyledCard = styled.article`
 
     @media ${device.tablet} {
       top: inherit;
-      bottom: -15%;
-      left: 0;
+      bottom: -20%;
+      left: 10px;
       white-space: nowrap;
     }
 
