@@ -9,13 +9,14 @@ export const StyledGallery = styled.main`
   margin: 50vh auto;
 
   @media ${device.desktop} {
-    width: 80vw;
-    margin: 50vh 5vw;
+    width: 90vw;
+    margin: 50vh 0vw;
   }
 
   @media ${device.mobile} {
     width: 90vw;
     height: 85vh;
+    margin: 30vh 2%;
   }
 `
 
@@ -37,7 +38,8 @@ export const StyledProject = styled.section`
 
   @media ${device.mobile} {
     width: 70vw;
-    height: 70vh;
+    height: 65vh;
+    padding: 10%;
   }
 
   header {
@@ -77,6 +79,13 @@ export const StyledProject = styled.section`
   nav {
     align-self: flex-end;
 
+    @media ${device.mobile} {
+      position: absolute;
+      top: 40%;
+      right: -20%;
+      transform: translate(-50%, -50%);
+    }
+
     ul {
       display: flex;
       flex-direction: column;
@@ -94,6 +103,10 @@ export const StyledProject = styled.section`
 
         :not(:last-child) {
           margin-bottom: 0.75rem;
+        }
+
+        @media ${device.mobile} {
+          background: ${props => props.theme.color.background.containerDark};
         }
       }
     }
@@ -117,7 +130,7 @@ export const StyledProject = styled.section`
     }
 
     p {
-      font-size: 0.6rem;
+      font-size: 0.75rem;
       font-weight: 100;
       line-height: 1.5rem;
       letter-spacing: 0.2rem;
@@ -156,7 +169,7 @@ export const StyledStack = styled.section`
 
     @media ${device.mobile} {
       position: absolute;
-      bottom: -10%;
+      bottom: -7.5%;
       left: 0;
       flex-direction: row;
       height: auto;
@@ -253,8 +266,9 @@ export const StyledContainer = styled.div`
   box-shadow: ${props => props.theme.shadow.card};
 
   @media ${device.mobile} {
-    width: 85%;
+    width: 95%;
+    bottom: 5%;
     height: 40vh;
-    left: 5%;
+    left: 2%;
   }
 `

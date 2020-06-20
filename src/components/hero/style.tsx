@@ -100,14 +100,14 @@ export const StyledCard = styled.article`
     bottom: 10%;
     left: 3.4vw;
     font-size: 1.3rem;
-    font-size: min(max(0.8rem, 2vw), 1.3rem);
+    font-size: min(max(1rem, 2vw), 1.3rem);
     font-family: orbitron;
     font-weight: 100;
     background: #f5f5f580;
     color: #19254cd6;
     text-shadow: ${props => props.theme.shadow.text};
-    max-width: 80%;
-    letter-spacing: 0.4rem;
+    max-width: 90%;
+    letter-spacing: 0.2rem;
     line-height: 2.5rem;
 
     @media ${device.tablet} {
