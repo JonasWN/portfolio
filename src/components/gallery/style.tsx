@@ -82,7 +82,7 @@ export const StyledProject = styled.section`
     @media ${device.mobile} {
       position: absolute;
       top: 40%;
-      right: -20%;
+      right: -30%;
       transform: translate(-50%, -50%);
     }
 
@@ -266,9 +266,9 @@ export const StyledContainer = styled.div`
   box-shadow: ${props => props.theme.shadow.card};
 
   @media ${device.mobile} {
-    width: 95%;
+    width: 90%;
     bottom: 5%;
     height: 40vh;
-    left: 2%;
+    left: 7%;
   }
 `
