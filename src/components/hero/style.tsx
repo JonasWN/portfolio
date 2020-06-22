@@ -111,7 +111,7 @@ export const StyledCard = styled.article`
     bottom: 10%;
     left: 3.4vw;
     font-size: 1.3rem;
-    font-size: min(max(1rem, 2vw), 1.3rem);
+    font-size: min(max(0.9rem, 2vw), 1.3rem);
     font-family: orbitron;
     font-weight: 100;
     background: #f5f5f580;
