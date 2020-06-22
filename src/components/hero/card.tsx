@@ -11,7 +11,7 @@ const Card = () => {
         </h1>
         <div>
           <p>
-            <span>Front End</span> Developer From Copenhagen <br /> Who likes
+            <span>Front End</span> Developer From Copenhagen <br /> Who Likes
             <span> UX</span>
           </p>
           <Scroll />
