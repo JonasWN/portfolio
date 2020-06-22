@@ -3,6 +3,8 @@ import { device } from "../../styles/layout-styles"
 import { motion } from "framer-motion"
 
 export const StyledNav = styled<any>(motion.nav)`
+  width: 95%;
+  margin: 0 auto;
   @media ${device.tablet} {
     margin: 4%;
   }
@@ -35,7 +37,7 @@ export const StyledNav = styled<any>(motion.nav)`
         margin-right: auto;
       }
       :not(:first-child) {
-        font-size: ${props => props.theme.fontSize.sm};
+        font-size: ${props => props.theme.fontSize.md};
         text-shadow: ${props => props.theme.shadow.text};
         margin-left: 10px;
         font-weight: 300;

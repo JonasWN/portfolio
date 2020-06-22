@@ -21,18 +21,27 @@ export const StyledHero = styled.section`
   align-items: center;
   height: 90vh;
 
+  @media ${device.mobile} {
+    align-items: inherit;
+    margin-top: 5%;
+  }
+
   .face {
     min-height: 80vh;
     width: 35vw;
 
     @media ${device.tablet} {
       position: absolute;
-      top: 20%;
+      top: 15%;
       left: 53%;
       transform: translate(-50%, -0%);
       width: 80vw;
       min-height: 55vw;
       max-height: 55vh;
+    }
+    @media ${device.mobile} {
+      max-height: 50vh;
+      top: 12%;
     }
   }
 `
@@ -54,12 +63,13 @@ export const StyledCard = styled.article`
 
   @media ${device.mobile} {
     width: 85vw;
+    height: 65vh;
   }
 
   h1 {
     position: absolute;
     font-family: Orbitron;
-    font-weight: 100;
+    font-weight: 600;
     text-transform: uppercase;
     line-height: 6rem;
     left: -7.4vw;
@@ -70,7 +80,7 @@ export const StyledCard = styled.article`
       props.theme.color.background.containerDark};
     color: ${props => props.theme.color.font.title};
     text-shadow: ${props => props.theme.shadow.text};
-    font-size: min(max(1.5rem, 5vw), 5rem);
+    font-size: min(max(1.5rem, 8vw), 5rem);
     line-height: min(max(4rem, 10vw), 6rem);
 
     @media ${device.tablet} {
@@ -81,6 +91,7 @@ export const StyledCard = styled.article`
     }
 
     @media ${device.mobile} {
+      font-weight: 100;
     }
     span {
       margin-left: 7.4vw;
@@ -114,8 +125,11 @@ export const StyledCard = styled.article`
       line-height: 1.5rem;
     }
 
-    span {
+    span :first-child {
       color: ${props => props.theme.color.accent.burlywood};
+    }
+    span :last-child {
+      color: #ee0a78;
     }
   }
 
