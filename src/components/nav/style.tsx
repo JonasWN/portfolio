@@ -1,6 +1,28 @@
-import styled from "styled-components"
+import styled, { keyframes } from "styled-components"
 import { device } from "../../styles/layout-styles"
 import { motion } from "framer-motion"
+
+const aHover = keyframes`
+  from {
+    transform: scaleX(0);
+    transform-origin: 0%;
+  }
+
+  50% {
+    transform-origin: 0%;
+    transform: scale(1);
+  }
+
+  51% {
+    transform-origin: 100%;
+    transform: scaleX(1);
+  }
+
+  to {
+    transform-origin: 100%;
+    transform: scaleX(0);
+  }
+`
 
 export const StyledNav = styled<any>(motion.nav)`
   width: 95%;
@@ -37,11 +59,42 @@ export const StyledNav = styled<any>(motion.nav)`
         margin-right: auto;
       }
       :not(:first-child) {
-        font-size: ${props => props.theme.fontSize.md};
+        font-size: ${props => props.theme.fontSize.sm};
         text-shadow: ${props => props.theme.shadow.text};
-        margin-left: 10px;
+        margin-left: 15px;
         font-weight: 300;
         text-transform: uppercase;
+        position: relative;
+
+        &:nth-child(3) {
+          margin-left: 7px;
+        }
+
+        &:hover :after {
+          cursor: pointer;
+          animation: ${aHover} 0.8s alternate cubic-bezier(0.77, 0, 0.175, 1);
+        }
+
+        &:nth-child(2) &:hover :after {
+          animation: none;
+        }
+
+        :hover {
+          cursor: pointer;
+        }
+
+        &:after {
+          content: "";
+          position: absolute;
+          top: 50%;
+          left: -0.2rem;
+          width: calc(100% + 0.4rem);
+          transform: scale(0);
+          height: 0.2px;
+          background: #000;
+          transition: all 2s;
+          background: linear-gradient(0deg, #ee0979 0, #ff6a00);
+        }
 
         @media ${device.mobile} {
           display: none;
