@@ -56,6 +56,37 @@ export const StyledGallery = styled.main`
     height: 85vh;
     margin: 30vh 2%;
   }
+
+  &:before {
+    content: "";
+    opacity: 1 !important;
+    background: #111833;
+    transform: scaleX(0);
+    z-index: 2;
+    height: 85%;
+    width: 40%;
+    animation: ${ScaleRight} 1.4s cubic-bezier(0.77, 0, 0.175, 1);
+    animation-delay: 0.6s;
+    position: absolute;
+    z-index: 100;
+    left: 0;
+    top: 0;
+  }
+
+  &:after {
+    content: "";
+    opacity: 1 !important;
+    background: #111833;
+    height: 65%;
+    width: 70%;
+    transform: scaleX(0);
+    z-index: 100;
+    animation: ${ScaleRight} 1.4s cubic-bezier(0.77, 0, 0.175, 1);
+    position: absolute;
+    z-index: 5;
+    right: 0;
+    bottom: 0;
+  }
 `
 
 export const StyledProject = styled.section`
@@ -64,31 +95,20 @@ export const StyledProject = styled.section`
   flex-direction: column;
   justify-content: space-between;
   animation: ${fadeIn} 1.4s;
+  animation-delay: 0.6s;
+  opacity: 0;
+  animation-fill-mode: forwards;
   left: 0;
   top: 0;
   z-index: 2;
   height: 85%;
   width: 40%;
+
   background: ${props => props.theme.color.background.containerDark};
   color: ${props => props.theme.color.font.textLight};
   box-shadow: ${props => props.theme.shadow.card};
   font-family: Orbitron;
   padding: 5%;
-
-  &:after {
-    content: "";
-    opacity: 1 !important;
-    background: #021040;
-    width: 100%;
-    transform: scaleX(0);
-    z-index: 2;
-    height: 100%;
-    animation: ${ScaleRight} 1.4s cubic-bezier(0.77, 0, 0.175, 1);
-    position: absolute;
-    z-index: 2;
-    left: 0;
-    top: 0;
-  }
 
   @media ${device.mobile} {
     width: 70vw;
@@ -318,26 +338,9 @@ export const StyledContainer = styled.div`
   bottom: 0;
   height: 65%;
   width: 70%;
-
-  div {
-    background: ${props => props.theme.color.background.containerLight};
-    box-shadow: ${props => props.theme.shadow.card};
-    animation: ${fadeIn} 1.4s;
-  }
-  &:after {
-    content: "";
-    opacity: 1 !important;
-    background: #021040;
-    width: 100%;
-    transform: scaleX(0);
-    z-index: 1000;
-    height: 100%;
-    animation: ${ScaleRight} 1.4s cubic-bezier(0.77, 0, 0.175, 1);
-    position: absolute;
-    z-index: 5;
-    left: 0;
-    top: 0;
-  }
+  background: ${props => props.theme.color.background.containerLight};
+  box-shadow: ${props => props.theme.shadow.card};
+  animation: ${fadeIn} 1.4s;
 
   @media ${device.mobile} {
     width: 90%;
