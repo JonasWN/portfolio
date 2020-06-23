@@ -1,4 +1,5 @@
 import styled from "styled-components"
+import { motion } from "framer-motion"
 
 const sizes = {
   sm: "420px",
@@ -14,6 +15,6 @@ export const device = {
   desktopL: `(max-width: ${sizes.xl})`,
 }
 
-export const Container = styled.div`
+export const Container = styled<any>(motion.div)`
   padding: 2%;
 `

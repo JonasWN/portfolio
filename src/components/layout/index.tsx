@@ -18,7 +18,7 @@ const Layout = ({ children }: any) => {
 
   return (
     <ThemeProvider theme={Theme}>
-      <Container>
+      <Container animate={{ opacity: 1 }} initial={{ opacity: 0 }}>
         <GlobalStyle />
         <>{children}</>
       </Container>
