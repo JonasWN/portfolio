@@ -126,7 +126,8 @@ export const StyledPhone = styled.div`
   svg {
     height: 80px;
     position: absolute;
-    width: 80px;
+    width: 110px;
+    transform: rotate(180deg);
   }
   .burger {
     filter: url(#gooeyness);
@@ -153,11 +154,11 @@ export const StyledPhone = styled.div`
   }
 
   .plate2 .line1 {
-    stroke-dasharray: 21 185.62753295898438;
+    stroke-dasharray: 10 185.62753295898438;
     transition-delay: 0;
   }
   .plate2 .line2 {
-    stroke-dasharray: 21 178.6514129638672;
+    stroke-dasharray: 2 178.6514129638672;
     transition-delay: 30ms;
   }
   .plate2 .line3 {

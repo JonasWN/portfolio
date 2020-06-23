@@ -61,6 +61,7 @@ export const StyledCard = styled.article`
   padding: 3%;
   background: ${props => props.theme.color.background.containerLight};
   box-shadow: ${props => props.theme.shadow.card};
+  border-radius: 4px;
 
   @media ${device.tablet} {
     width: 60vw;
@@ -140,9 +141,13 @@ export const StyledCard = styled.article`
   }
 
   .scroll {
-    align-self: center;
+    align-self: flex-end;
     right: 10%;
     bottom: 10%;
+
+    @media ${device.mobile} {
+      align-self: center;
+    }
   }
 `
 
