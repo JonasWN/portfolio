@@ -10,7 +10,9 @@ const Gallery = () => {
       <Project />
       <Stack />
       <StyledContainer>
-        <Button />
+        <div>
+          <Button />
+        </div>
       </StyledContainer>
     </StyledGallery>
   )

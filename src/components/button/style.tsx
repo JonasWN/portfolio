@@ -7,6 +7,7 @@ export const StyledButton = styled.button`
   bottom: 5%;
   z-index: 4;
   overflow: hidden;
+  z-index: 1;
 
   transition: all 0.3s ease-out;
 

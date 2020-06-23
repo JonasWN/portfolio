@@ -1,5 +1,43 @@
-import styled from "styled-components"
+import styled, { keyframes } from "styled-components"
 import { device } from "../../styles/layout-styles"
+
+const ScaleRight = keyframes`
+  from {
+    transform: scaleX(0);
+    transform-origin: 0%;
+  }
+
+  50% {
+    transform-origin: 0%;
+    transform: scale(1);
+  }
+
+  51% {
+    transform-origin: 100%;
+    transform: scaleX(1);
+  }
+
+  to {
+    transform-origin: 100%;
+    transform: scaleX(0);
+  }
+`
+const fadeIn = keyframes`
+  from {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 0;
+  }
+  51% {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 1;
+  }
+`
 
 export const StyledGallery = styled.main`
   position: relative;
@@ -25,6 +63,7 @@ export const StyledProject = styled.section`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  animation: ${fadeIn} 1.4s;
   left: 0;
   top: 0;
   z-index: 2;
@@ -35,6 +74,21 @@ export const StyledProject = styled.section`
   box-shadow: ${props => props.theme.shadow.card};
   font-family: Orbitron;
   padding: 5%;
+
+  &:after {
+    content: "";
+    opacity: 1 !important;
+    background: #021040;
+    width: 100%;
+    transform: scaleX(0);
+    z-index: 2;
+    height: 100%;
+    animation: ${ScaleRight} 1.4s cubic-bezier(0.77, 0, 0.175, 1);
+    position: absolute;
+    z-index: 2;
+    left: 0;
+    top: 0;
+  }
 
   @media ${device.mobile} {
     width: 70vw;
@@ -155,6 +209,7 @@ export const StyledStack = styled.section`
   padding: 4% 4%;
   z-index: 2;
   color: ${props => props.theme.color.font.textDark};
+  animation: ${fadeIn} 1.4s;
 
   @media ${device.mobile} {
     width: 100%;
@@ -256,14 +311,33 @@ export const StyledStack = styled.section`
     }
   }
 `
+
 export const StyledContainer = styled.div`
   position: absolute;
   right: 0;
   bottom: 0;
   height: 65%;
   width: 70%;
-  background: ${props => props.theme.color.background.containerLight};
-  box-shadow: ${props => props.theme.shadow.card};
+
+  div {
+    background: ${props => props.theme.color.background.containerLight};
+    box-shadow: ${props => props.theme.shadow.card};
+    animation: ${fadeIn} 1.4s;
+  }
+  &:after {
+    content: "";
+    opacity: 1 !important;
+    background: #021040;
+    width: 100%;
+    transform: scaleX(0);
+    z-index: 1000;
+    height: 100%;
+    animation: ${ScaleRight} 1.4s cubic-bezier(0.77, 0, 0.175, 1);
+    position: absolute;
+    z-index: 5;
+    left: 0;
+    top: 0;
+  }
 
   @media ${device.mobile} {
     width: 90%;
