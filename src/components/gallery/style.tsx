@@ -90,7 +90,7 @@ export const StyledProject = styled<any>(motion.section)`
   padding: 5%;
 
   @media ${device.mobile} {
-    width: 70vw;
+    width: 73vw;
     height: 65vh;
     padding: 10%;
   }
@@ -135,7 +135,7 @@ export const StyledProject = styled<any>(motion.section)`
     @media ${device.mobile} {
       position: absolute;
       top: 40%;
-      right: -30%;
+      right: -25%;
       transform: translate(-50%, -50%);
     }
 
