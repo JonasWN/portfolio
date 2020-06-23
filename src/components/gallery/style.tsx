@@ -8,7 +8,7 @@ export const StyledGallery = styled<any>(motion.main)`
   width: 70vw;
   height: 80vh;
   background: rgba(0, 0, 0, 0);
-  margin: 30vh auto;
+  margin: 15vh auto;
 
   @media ${device.desktop} {
     width: 90vw;

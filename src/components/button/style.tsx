@@ -17,13 +17,13 @@ export const StyledButton = styled.button`
 
   &:hover :after {
     transform: translateX(0);
-    transition: transform 0.3s ease-out;
+    transition: transform 0.35s ease-out;
   }
 
   &:after {
     content: "";
     content: "";
-    transition: transform 0.3s ease-out;
+    transition: transform 0.35s ease-out;
     background: #c9d9e8;
     background: ${props => props.theme.color.background.containerLight};
     position: left;
