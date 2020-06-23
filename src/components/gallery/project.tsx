@@ -1,9 +1,13 @@
 import React from "react"
 import { StyledProject } from "./style"
 
-const Project = () => {
+type Iprops = {
+  enter: boolean
+}
+
+const Project: React.FC<Iprops> = ({ enter }) => {
   return (
-    <StyledProject>
+    <StyledProject enter={enter}>
       <header>
         <h2>Project</h2>
         <section>

@@ -1,50 +1,14 @@
-import styled, { keyframes } from "styled-components"
+import styled from "styled-components"
 import { device } from "../../styles/layout-styles"
+import { motion } from "framer-motion"
+import { ScaleRight, FadeIn } from "./animations"
 
-const ScaleRight = keyframes`
-  from {
-    transform: scaleX(0);
-    transform-origin: 0%;
-  }
-
-  50% {
-    transform-origin: 0%;
-    transform: scale(1);
-  }
-
-  51% {
-    transform-origin: 100%;
-    transform: scaleX(1);
-  }
-
-  to {
-    transform-origin: 100%;
-    transform: scaleX(0);
-  }
-`
-const fadeIn = keyframes`
-  from {
-    opacity: 0;
-  }
-
-  50% {
-    opacity: 0;
-  }
-  51% {
-    opacity: 1;
-  }
-
-  to {
-    opacity: 1;
-  }
-`
-
-export const StyledGallery = styled.main`
+export const StyledGallery = styled<any>(motion.main)`
   position: relative;
   width: 70vw;
   height: 80vh;
   background: rgba(0, 0, 0, 0);
-  margin: 50vh auto;
+  margin: 30vh auto;
 
   @media ${device.desktop} {
     width: 90vw;
@@ -66,6 +30,7 @@ export const StyledGallery = styled.main`
     height: 85%;
     width: 40%;
     animation: ${ScaleRight} 1.4s cubic-bezier(0.77, 0, 0.175, 1);
+    animation-play-state: ${props => (props.enter ? "running" : "paused")};
     animation-delay: 0.6s;
     position: absolute;
     z-index: 100;
@@ -87,6 +52,7 @@ export const StyledGallery = styled.main`
     transform: scaleX(0);
     z-index: 100;
     animation: ${ScaleRight} 1.4s cubic-bezier(0.77, 0, 0.175, 1);
+    animation-play-state: ${props => (props.enter ? "running" : "paused")};
     position: absolute;
     z-index: 5;
     right: 0;
@@ -101,12 +67,13 @@ export const StyledGallery = styled.main`
   }
 `
 
-export const StyledProject = styled.section`
+export const StyledProject = styled<any>(motion.section)`
   position: absolute;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  animation: ${fadeIn} 1.4s;
+  animation: ${FadeIn} 1.4s;
+  animation-play-state: ${props => (props.enter ? "running" : "paused")};
   animation-delay: 0.6s;
   opacity: 0;
   animation-fill-mode: forwards;
@@ -229,7 +196,9 @@ export const StyledProject = styled.section`
   }
 `
 
-export const StyledStack = styled.section`
+export const StyledStack = styled<any>(motion.section).attrs({
+  initial: "initial",
+})`
   position: absolute;
   display: flex;
   flex-direction: column;
@@ -241,7 +210,8 @@ export const StyledStack = styled.section`
   padding: 4% 4%;
   z-index: 2;
   color: ${props => props.theme.color.font.textDark};
-  animation: ${fadeIn} 1.4s;
+  animation: ${FadeIn} 1.4s;
+  animation-play-state: ${props => (props.enter ? "running" : "paused")};
 
   @media ${device.mobile} {
     width: 100%;
@@ -344,7 +314,7 @@ export const StyledStack = styled.section`
   }
 `
 
-export const StyledContainer = styled.div`
+export const StyledContainer = styled<any>(motion.div)`
   position: absolute;
   right: 0;
   bottom: 0;
@@ -352,7 +322,8 @@ export const StyledContainer = styled.div`
   width: 70%;
   background: ${props => props.theme.color.background.containerLight};
   box-shadow: ${props => props.theme.shadow.card};
-  animation: ${fadeIn} 1.4s;
+  animation: ${FadeIn} 1.4s;
+  animation-play-state: ${props => (props.enter ? "running" : "paused")};
 
   @media ${device.mobile} {
     width: 90%;
@@ -361,3 +332,27 @@ export const StyledContainer = styled.div`
     left: 7%;
   }
 `
+
+export const stackVariants = {
+  container: {
+    enter: {
+      opacity: 1,
+      translateY: 0,
+      transition: {
+        staggerChildren: 0.2,
+        delayChildren: 1.8,
+      },
+    },
+    initial: { opacity: 0 },
+  },
+  item: {
+    initial: {
+      opacity: 0,
+      translateY: -40,
+    },
+    enter: {
+      opacity: 1,
+      translateY: 0,
+    },
+  },
+}

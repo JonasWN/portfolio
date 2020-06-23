@@ -41,8 +41,7 @@ export const StyledHero = styled.section`
     }
     @media ${device.mobile} {
       max-height: 50vh;
-      top: 14%;
-      z-index: 300;
+      top: 15%;
     }
   }
 

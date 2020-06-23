@@ -1,31 +1,32 @@
-import React from "react"
+import React, { useEffect } from "react"
 import { StyledStack } from "./style"
+import { motion, useAnimation } from "framer-motion"
+import { stackVariants } from "./style"
 //@ts-ignore
 import PortfolioCover from "../../static/portfolio.jpg"
-import { motion } from "framer-motion"
 
-const Stack = () => {
+type Iprops = {
+  enter: boolean
+}
+
+const Stack: React.FC<Iprops> = ({ enter }) => {
+  const animation = useAnimation()
+  const alt = "project-cover"
+  const { container, item } = stackVariants
+
+  useEffect(() => {
+    if (enter) animation.start("enter")
+  }, [animation, enter])
+
   return (
-    <StyledStack>
-      <header>
-        <motion.h3
-          animate={{ opacity: 1, translateY: 0 }}
-          initial={{ opacity: 0, translateY: -40 }}
-          transition={{ delay: 1.8 }}
-        >
-          17 - 6 - 2020
-        </motion.h3>
-        <motion.h2
-          animate={{ opacity: 1, translateY: 0 }}
-          initial={{ opacity: 0, translateY: -40 }}
-          transition={{ delay: 1.9 }}
-        >
-          Portfolio
-        </motion.h2>
-      </header>
+    <StyledStack enter={enter} animate={animation}>
+      <motion.header variants={container}>
+        <motion.h3 variants={item}>17 - 6 - 2020</motion.h3>
+        <motion.h2 variants={item}>Portfolio</motion.h2>
+      </motion.header>
       <article>
         <figure>
-          <img src={PortfolioCover} alt="project-cover" />
+          <img src={PortfolioCover} alt={alt} />
         </figure>
         <section>
           <h4>Stack</h4>
