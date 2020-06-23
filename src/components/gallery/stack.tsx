@@ -11,14 +11,14 @@ const Stack = () => {
         <motion.h3
           animate={{ opacity: 1, translateY: 0 }}
           initial={{ opacity: 0, translateY: -40 }}
-          transition={{ delay: 1.9 }}
+          transition={{ delay: 1.8 }}
         >
           17 - 6 - 2020
         </motion.h3>
         <motion.h2
           animate={{ opacity: 1, translateY: 0 }}
           initial={{ opacity: 0, translateY: -40 }}
-          transition={{ delay: 2 }}
+          transition={{ delay: 1.9 }}
         >
           Portfolio
         </motion.h2>

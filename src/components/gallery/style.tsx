@@ -71,6 +71,11 @@ export const StyledGallery = styled.main`
     z-index: 100;
     left: 0;
     top: 0;
+
+    @media ${device.mobile} {
+      width: 70vw;
+      height: 65vh;
+    }
   }
 
   &:after {
@@ -86,6 +91,13 @@ export const StyledGallery = styled.main`
     z-index: 5;
     right: 0;
     bottom: 0;
+
+    @media ${device.mobile} {
+      width: 90%;
+      height: 40vh;
+      left: 7%;
+      bottom: 5%;
+    }
   }
 `
 
