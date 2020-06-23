@@ -34,11 +34,14 @@ export const StyledNav = styled<any>(motion.nav)`
   @media ${device.mobile} {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     position: sticky;
+    height: 80px;
     top: 0;
     left: 0;
     transform: translateY(${props => (props.show ? 0 : "-100%")});
     transition: transform 400ms linear;
+    background: ${props => props.theme.color.background.site};
     width: 100%;
     justify-content: space-between;
     padding: 2% 5%;
@@ -146,7 +149,7 @@ export const StyledPhone = styled.div`
     stroke-width: 3px;
   }
   .active .line {
-    stroke: ${props => props.theme.color.font.textLight};
+    /* stroke: ${props => props.theme.color.font.textLight}; */
   }
 
   .plate2 .line1 {
@@ -226,7 +229,7 @@ export const StyledPhoneNav = styled(motion.div).attrs(() => ({
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: #070710;
+  background: ${props => props.theme.color.background.site};
   z-index: 5;
 
   .phone-menu {

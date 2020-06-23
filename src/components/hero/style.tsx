@@ -23,7 +23,7 @@ export const StyledHero = styled.section`
 
   @media ${device.mobile} {
     align-items: inherit;
-    margin-top: 5%;
+    margin-top: 10%;
   }
 
   .face {
@@ -41,7 +41,7 @@ export const StyledHero = styled.section`
     }
     @media ${device.mobile} {
       max-height: 50vh;
-      top: 12%;
+      top: 14%;
     }
   }
 `
@@ -63,7 +63,7 @@ export const StyledCard = styled.article`
 
   @media ${device.mobile} {
     width: 85vw;
-    height: 65vh;
+    height: 70vh;
   }
 
   h1 {
@@ -85,8 +85,8 @@ export const StyledCard = styled.article`
 
     @media ${device.tablet} {
       top: inherit;
-      bottom: -20%;
-      left: 10px;
+      bottom: -18%;
+      left: 20px;
       white-space: nowrap;
     }
 

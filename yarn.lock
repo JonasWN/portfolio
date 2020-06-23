@@ -11523,13 +11523,13 @@ react-side-effect@^2.1.0:
   resolved "https://registry.yarnpkg.com/react-side-effect/-/react-side-effect-2.1.0.tgz#1ce4a8b4445168c487ed24dab886421f74d380d3"
   integrity sha512-IgmcegOSi5SNX+2Snh1vqmF0Vg/CbkycU9XZbOHJlZ6kMzTmi3yc254oB1WCkgA7OQtIAoLmcSFuHTc/tlcqXg==
 
-react-tsparticles@^1.16.0:
-  version "1.16.0"
-  resolved "https://registry.yarnpkg.com/react-tsparticles/-/react-tsparticles-1.16.0.tgz#62bc4e4169814fb54c9ccd497f191ea6994233ff"
-  integrity sha512-QksF4a4jRpZoJaeo4oDz+OW0zFj7ovnSSxfQc0LQpbtPM3iapRZIdX/1zV/bhUP3m0u6UA/BmJ6uHZRXJxAplw==
+react-tsparticles@^1.16.1:
+  version "1.16.1"
+  resolved "https://registry.yarnpkg.com/react-tsparticles/-/react-tsparticles-1.16.1.tgz#2f39a56cdc9da375ef28970f095007b0560738df"
+  integrity sha512-Dz0PnEJ6uP2saL2GlYUy7KTs6MN1eZ+nLvyLueuj0Paa6pp53b6yR06rOJJKqqAKlMpOM99zXFkeLcz30WrqeA==
   dependencies:
     lodash "^4.17.15"
-    tsparticles "^1.16.0"
+    tsparticles "^1.16.1"
 
 react@^16.12.0, react@^16.8.0:
   version "16.13.1"
@@ -13593,10 +13593,10 @@ tslib@^2.0.0, tslib@~2.0.0:
   resolved "https://registry.yarnpkg.com/tslib/-/tslib-2.0.0.tgz#18d13fc2dce04051e20f074cc8387fd8089ce4f3"
   integrity sha512-lTqkx847PI7xEDYJntxZH89L2/aXInsyF2luSafe/+0fHOMjlBNXdH6th7f70qxLDhul7KZK0zC8V5ZIyHl0/g==
 
-tsparticles@^1.16.0:
-  version "1.16.0"
-  resolved "https://registry.yarnpkg.com/tsparticles/-/tsparticles-1.16.0.tgz#0e09fce68010def7c6cb874c7f52288b93d74259"
-  integrity sha512-CQ2ajIS7uWut5HoJhTFrvSgK00abg4PNTrw9H67LCIgq4GnN86roSa1rUb86PfweuN2sM2ikqVXcTYfFha9djQ==
+tsparticles@^1.16.1:
+  version "1.16.1"
+  resolved "https://registry.yarnpkg.com/tsparticles/-/tsparticles-1.16.1.tgz#37fb5dd125ff0b068c9c513ce59f39bffb754099"
+  integrity sha512-6NceVcEbUXlsqdrWMPUZ0ZVgu1+gp6FvUNG4uECeCVa0o0HR/7zWMQvBwxjzO3zQQObp+RE8Z9IjHKTDxofeXw==
   dependencies:
     pathseg "^1.2.0"
     tslib "^2.0.0"

@@ -8,12 +8,8 @@ export const StyledButton = styled.button`
   z-index: 4;
   overflow: hidden;
   z-index: 1;
-
+  box-shadow: 0rem 0rem 1rem 0rem rgba(0, 0, 0, 0.2);
   transition: all 0.3s ease-out;
-
-  &:hover {
-    box-shadow: 0rem 0rem 1rem 0rem rgba(0, 0, 0, 0.2);
-  }
 
   &:hover a {
     color: ${props => props.theme.color.font.textDark};
@@ -32,7 +28,7 @@ export const StyledButton = styled.button`
     background: ${props => props.theme.color.background.containerLight};
     position: left;
     position: absolute;
-    left: -5%;
+    left: -7%;
     top: 0;
     width: 120%;
     height: 100%;
