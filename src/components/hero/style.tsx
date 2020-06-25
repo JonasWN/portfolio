@@ -71,7 +71,7 @@ export const StyledCard = styled.article`
 
   @media ${device.mobile} {
     width: 85vw;
-    height: 70vh;
+    height: 75vh;
   }
 
   h1 {
