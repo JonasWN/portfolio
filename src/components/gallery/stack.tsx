@@ -16,7 +16,7 @@ const Stack: React.FC<Iprops> = ({ enter }) => {
       image: file(relativePath: { eq: "portfolio.jpg" }) {
         sharp: childImageSharp {
           fluid {
-            ...GatsbyImageSharpFluid_withWebp
+            ...GatsbyImageSharpFluid_withWebp_noBase64
           }
         }
       }
@@ -40,9 +40,10 @@ const Stack: React.FC<Iprops> = ({ enter }) => {
       <article>
         <Img
           fluid={image.sharp.fluid}
-          loading={"lazy"}
+          loading={"eager"}
           alt={alt}
           Tag={"figure"}
+          fadeIn={false}
         />
         <section>
           <h4>Stack</h4>

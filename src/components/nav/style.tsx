@@ -35,7 +35,7 @@ export const StyledNav = styled<any>(motion.nav)`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: sticky;
+    position: fixed;
     height: 80px;
     top: 0;
     left: 0;

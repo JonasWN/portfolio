@@ -24,6 +24,7 @@ export const StyledHero = styled.section`
   @media ${device.mobile} {
     align-items: inherit;
     margin-top: 10%;
+    margin-top: 80px;
   }
 
   .face {

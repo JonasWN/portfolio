@@ -5,7 +5,9 @@ module.exports = {
     author: `@JonasWn`,
   },
   plugins: [
+    "gatsby-plugin-preact",
     `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-offline`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-typescript`,
@@ -28,13 +30,13 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `GatsbyJS`,
+        short_name: `GatsbyJS`,
         start_url: `/`,
-        background_color: `#fff`,
-        theme_color: `#663399`,
-        display: `minimal-ui`,
-        icon: `src/static/images/TitleLogo.svg`, // This path is relative to the root of the site.
+        background_color: `#f7f0eb`,
+        theme_color: `#a2466c`,
+        display: `standalone`,
+        icon: "src/static/images/TitleLogo.svg",
       },
     },
   ],
