@@ -1,6 +1,8 @@
 import React from "react"
 import { Github, Facebook, Linkedin } from "@styled-icons/boxicons-logos"
 import { StyledSocials } from "./style"
+import { stackVariantsX } from "../../styles/animations"
+import { motion } from "framer-motion"
 
 const socials = [
   "https://github.com/JonasWN",
@@ -9,18 +11,23 @@ const socials = [
 ]
 
 const Socials = () => {
+  const { container, item } = stackVariantsX
+  const width = {
+    width: "25px",
+  }
+
   return (
-    <StyledSocials>
-      <li>
+    <StyledSocials variants={container} animate="enter" initial="initial">
+      <motion.li variants={item}>
         <a href={socials[0]} target="_blank" aria-label="Github" rel="noopener">
           <span></span>
           <span></span>
           <span></span>
           <span></span>
-          <Github style={{ width: "25px" }} />
+          <Github style={width} />
         </a>
-      </li>
-      <li>
+      </motion.li>
+      <motion.li variants={item}>
         <a
           href={socials[1]}
           target="_blank"
@@ -31,10 +38,10 @@ const Socials = () => {
           <span></span>
           <span></span>
           <span></span>
-          <Linkedin style={{ width: "25px" }} />
+          <Linkedin style={width} />
         </a>
-      </li>
-      <li>
+      </motion.li>
+      <motion.li variants={item}>
         <a
           href={socials[2]}
           target="_blank"
@@ -45,9 +52,9 @@ const Socials = () => {
           <span></span>
           <span></span>
           <span></span>
-          <Facebook style={{ width: "25px" }} />
+          <Facebook style={width} />
         </a>
-      </li>
+      </motion.li>
     </StyledSocials>
   )
 }

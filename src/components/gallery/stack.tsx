@@ -1,7 +1,7 @@
 import React, { useEffect } from "react"
 import { StyledStack } from "./style"
 import { motion, useAnimation } from "framer-motion"
-import { stackVariants } from "./style"
+import { stackVariants } from "../../styles/animations"
 //@ts-ignore
 import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"

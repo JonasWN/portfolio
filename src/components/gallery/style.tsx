@@ -1,7 +1,7 @@
 import styled from "styled-components"
 import { device } from "../../styles/layout-styles"
 import { motion } from "framer-motion"
-import { ScaleRight, FadeIn } from "./animations"
+import { ScaleRight, FadeIn } from "../../styles/animations"
 
 export const StyledGallery = styled<any>(motion.main)`
   position: relative;
@@ -24,21 +24,21 @@ export const StyledGallery = styled<any>(motion.main)`
   &:before {
     content: "";
     opacity: 1 !important;
-    background: #111833;
+    background: #b68c70;
     transform: scaleX(0);
     z-index: 2;
     height: 85%;
     width: 40%;
-    animation: ${ScaleRight} 1.4s cubic-bezier(0.77, 0, 0.175, 1);
+    animation: ${ScaleRight} 1.6s cubic-bezier(0.77, 0, 0.175, 1);
     animation-play-state: ${props => (props.enter ? "running" : "paused")};
-    animation-delay: 0.6s;
+    animation-delay: 0.4s;
     position: absolute;
     z-index: 100;
     left: 0;
     top: 0;
 
     @media ${device.mobile} {
-      width: 70vw;
+      width: 73vw;
       height: 65vh;
     }
   }
@@ -46,12 +46,12 @@ export const StyledGallery = styled<any>(motion.main)`
   &:after {
     content: "";
     opacity: 1 !important;
-    background: #111833;
+    background: ${props => props.theme.color.background.containerDark};
     height: 65%;
     width: 70%;
     transform: scaleX(0);
     z-index: 100;
-    animation: ${ScaleRight} 1.4s cubic-bezier(0.77, 0, 0.175, 1);
+    animation: ${ScaleRight} 1.6s cubic-bezier(0.77, 0, 0.175, 1);
     animation-play-state: ${props => (props.enter ? "running" : "paused")};
     position: absolute;
     z-index: 5;
@@ -72,9 +72,9 @@ export const StyledProject = styled<any>(motion.section)`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  animation: ${FadeIn} 1.4s;
+  animation: ${FadeIn} 1.6s;
   animation-play-state: ${props => (props.enter ? "running" : "paused")};
-  animation-delay: 0.6s;
+  animation-delay: 0.4s;
   opacity: 0;
   animation-fill-mode: forwards;
   left: 0;
@@ -117,7 +117,7 @@ export const StyledProject = styled<any>(motion.section)`
       div {
         height: 1px;
         width: 90px;
-        background: #fe6935;
+        background: #ffb68c;
       }
 
       p {
@@ -158,6 +158,10 @@ export const StyledProject = styled<any>(motion.section)`
           margin-bottom: 0.75rem;
         }
 
+        :first-child {
+          background: #ffb68c;
+        }
+
         @media ${device.mobile} {
           background: ${props => props.theme.color.background.containerDark};
         }
@@ -167,6 +171,33 @@ export const StyledProject = styled<any>(motion.section)`
 
   article {
     max-width: 75%;
+    position: relative;
+
+    :before {
+      content: "";
+      position: absolute;
+      top: -15%;
+      left: 0;
+      width: 30%;
+      height: 1px;
+      background: #ffb68c;
+      z-index: 20;
+    }
+
+    :after {
+      content: "";
+      position: absolute;
+      top: -20%;
+      left: 0;
+      width: 15%;
+      height: 1px;
+      background: #ffb68c;
+      z-index: 20;
+
+      @media ${device.mobile} {
+        top: -25%;
+      }
+    }
 
     @media ${device.mobile} {
       max-width: 100%;
@@ -322,7 +353,7 @@ export const StyledContainer = styled<any>(motion.div)`
   width: 70%;
   background: ${props => props.theme.color.background.containerLight};
   box-shadow: ${props => props.theme.shadow.card};
-  animation: ${FadeIn} 1.4s;
+  animation: ${FadeIn} 1.6s;
   animation-play-state: ${props => (props.enter ? "running" : "paused")};
 
   @media ${device.mobile} {
@@ -332,27 +363,3 @@ export const StyledContainer = styled<any>(motion.div)`
     left: 7%;
   }
 `
-
-export const stackVariants = {
-  container: {
-    enter: {
-      opacity: 1,
-      translateY: 0,
-      transition: {
-        staggerChildren: 0.2,
-        delayChildren: 1.8,
-      },
-    },
-    initial: { opacity: 0 },
-  },
-  item: {
-    initial: {
-      opacity: 0,
-      translateY: -40,
-    },
-    enter: {
-      opacity: 1,
-      translateY: 0,
-    },
-  },
-}

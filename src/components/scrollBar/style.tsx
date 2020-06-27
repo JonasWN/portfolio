@@ -12,7 +12,7 @@ export const StyledScrollBar = styled<any>(motion.div)`
   transform: translate(-0, -50%);
 
   @media ${device.mobile} {
-    display: none;
+    display: none !important;
   }
 
   div {

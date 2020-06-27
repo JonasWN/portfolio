@@ -14,7 +14,12 @@ const ScrollBar = () => {
   const Height = useTransform(scrollYProgress, [0, 1], [0, wh])
 
   return (
-    <StyledScrollBar height={`${wh}px`}>
+    <StyledScrollBar
+      height={`${wh}px`}
+      animate={{ height: wh, opacity: 1 }}
+      initial={{ height: "0%", opacity: 0 }}
+      transition={{ duration: 0.6, delay: 1 }}
+    >
       <motion.div
         style={{
           height: Height,

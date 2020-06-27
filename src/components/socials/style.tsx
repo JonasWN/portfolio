@@ -1,12 +1,13 @@
 import styled from "styled-components"
 import { device } from "../../styles/layout-styles"
+import { motion } from "framer-motion"
 
-export const StyledSocials = styled.ul`
+export const StyledSocials = styled(motion.ul)`
   display: flex;
   flex-direction: column;
   justify-content: center;
   position: absolute;
-  left: 5%;
+  left: 2.5%;
   bottom: 31vh;
   transform: translate(-50%, -0%);
 

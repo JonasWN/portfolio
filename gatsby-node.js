@@ -1,10 +1,10 @@
-// For React hot-Reloader warning
-// exports.onCreateWebpackConfig = ({ getConfig, stage }) => {
-//   const config = getConfig()
-//   if (stage.startsWith("develop") && config.resolve) {
-//     config.resolve.alias = {
-//       ...config.resolve.alias,
-//       "react-dom": "@hot-loader/react-dom",
-//     }
-//   }
-// }
+//For React hot-Reloader warning
+exports.onCreateWebpackConfig = ({ getConfig, stage }) => {
+  const config = getConfig()
+  if (stage.startsWith("develop") && config.resolve) {
+    config.resolve.alias = {
+      ...config.resolve.alias,
+      "react-dom": "@hot-loader/react-dom",
+    }
+  }
+}
