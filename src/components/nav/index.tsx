@@ -36,7 +36,7 @@ const Nav = () => {
           <motion.li
             animate="enterY"
             initial="initialY"
-            transition={{ duration: 0.6, delay: 1.7 }}
+            transition={{ duration: 0.6, delay: 1.9 }}
             variants={TextVariants}
           >
             <Link to="/" aria-label="home-page">

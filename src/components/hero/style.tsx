@@ -12,7 +12,7 @@ export const StyledHero = styled.section`
   .particle {
     opacity: 0;
     animation: ${FadeInSlow} 1s ease-in-out;
-    animation-delay: 1.5s;
+    animation-delay: 1.7s;
     animation-fill-mode: forwards;
   }
 
@@ -28,7 +28,7 @@ export const StyledHero = styled.section`
     opacity: 0;
     animation: ${FadeInSlow} 1s ease-in-out;
     animation-fill-mode: forwards;
-    animation-delay: 1s;
+    animation-delay: 1.2s;
 
     @media ${device.tablet} {
       position: absolute;
@@ -65,6 +65,7 @@ export const StyledCard = styled.article`
     width: 100%;
     height: 100%;
     animation: ${ScaleRight} 1.6s cubic-bezier(0.77, 0, 0.175, 1);
+    animation-delay: 0.2s;
     position: absolute;
     z-index: 5;
     right: 0;

@@ -18,7 +18,7 @@ const ScrollBar = () => {
       height={`${wh}px`}
       animate={{ height: wh, opacity: 1 }}
       initial={{ height: "0%", opacity: 0 }}
-      transition={{ duration: 0.6, delay: 1 }}
+      transition={{ duration: 0.6, delay: 1.2 }}
     >
       <motion.div
         style={{

@@ -50,7 +50,7 @@ export const stackVariantsX = {
       translateX: 0,
       transition: {
         staggerChildren: 0.2,
-        delayChildren: 1.1,
+        delayChildren: 1.3,
       },
     },
     initial: { opacity: 0 },

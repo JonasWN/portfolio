@@ -13,7 +13,7 @@ const Card = () => {
             variants={TextVariants}
             animate="enterX"
             initial="initialX"
-            transition={{ delay: 1.2, ease: "easeOut" }}
+            transition={{ delay: 1.4, ease: "easeOut" }}
           >
             jonas <span>Nielsen</span>
           </motion.h1>
@@ -22,7 +22,7 @@ const Card = () => {
               variants={TextVariants}
               animate="enterY"
               initial="initialY"
-              transition={{ delay: 1.3, ease: "easeOut" }}
+              transition={{ delay: 1.5, ease: "easeOut" }}
             >
               <span>Front End</span> Developer From Copenhagen <br /> Who Likes
               <span> UX</span>
