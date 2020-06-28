@@ -38,10 +38,6 @@ export const StyledSocials = styled(motion.ul)`
     opacity: 0.8;
     transition: 0.5s;
 
-    &:hover {
-      opacity: 1;
-    }
-
     &:hover span:nth-child(1) {
       transform-origin: left;
       transform: scaleX(0);
@@ -68,7 +64,7 @@ export const StyledSocials = styled(motion.ul)`
       position: absolute;
       transition: transform 0.5s;
       background: ${props => props.theme.color.background.containerDark};
-      opacity: 0.5;
+      opacity: 1;
 
       :nth-child(1) {
         top: 0;

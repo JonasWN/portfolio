@@ -126,3 +126,48 @@ export const FadeInSlow = keyframes`
     opacity: 1;
   }
 `
+export const FillLeft = keyframes`
+  from {
+    transform: scale(0);
+    transform-origin: right;
+  }
+
+  to {
+    transform: scale(1);
+    transform-origin: right;
+  }
+`
+
+export const FillRight = keyframes`
+  from {
+    transform: scale(0);
+    transform-origin: left;
+  }
+
+  to {
+    transform: scale(1);
+    transform-origin: left;
+  }
+`
+export const FillDown = keyframes`
+  from {
+    transform: scale(0);
+    transform-origin: top;
+  }
+
+  to {
+    transform: scale(1);
+    transform-origin: top;
+  }
+`
+export const FillUp = keyframes`
+  from {
+    transform: scale(0);
+    transform-origin: bottom;
+  }
+
+  to {
+    transform: scale(1);
+    transform-origin: bottom;
+  }
+`

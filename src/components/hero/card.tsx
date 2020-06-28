@@ -8,6 +8,8 @@ const Card = () => {
   return (
     <>
       <StyledCard>
+        <span></span>
+        <span></span>
         <section>
           <motion.h1
             variants={TextVariants}
@@ -30,6 +32,8 @@ const Card = () => {
             <Scroll />
           </motion.div>
         </section>
+        <span></span>
+        <span></span>
       </StyledCard>
     </>
   )

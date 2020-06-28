@@ -1,7 +1,16 @@
 import styled from "styled-components"
 import { motion } from "framer-motion"
 import { device } from "../../styles/layout-styles"
-import { ScaleRight, FadeIn, FadeInSlow, wheel } from "../../styles/animations"
+import {
+  ScaleRight,
+  FadeIn,
+  FadeInSlow,
+  wheel,
+  FillRight,
+  FillDown,
+  FillUp,
+  FillLeft,
+} from "../../styles/animations"
 
 export const StyledHero = styled.section`
   display: flex;
@@ -57,11 +66,52 @@ export const StyledCard = styled.article`
   width: 35vw;
   height: 70vh;
 
+  > span:nth-child(1) {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 15%;
+    border-top: 1px solid #333;
+    transform: scaleX(0);
+    animation: ${FillLeft} 0.3s ease-in-out forwards;
+    animation-delay: 2.2s;
+  }
+  > span:nth-child(2) {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 15%;
+    border-right: 1px solid #333;
+    transform: scale(0);
+    animation: ${FillUp} 0.3s ease-in-out forwards;
+    animation-delay: 2s;
+  }
+  > span:nth-child(4) {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 15%;
+    border-left: 1px solid #333;
+    transform: scale(0);
+    animation: ${FillDown} 0.3s ease-in-out forwards;
+    animation-delay: 1.6s;
+  }
+  > span:nth-child(5) {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 15%;
+    border-bottom: 1px solid #333;
+    transform: scale(0);
+    animation: ${FillRight} 0.3s ease-in-out forwards;
+    animation-delay: 1.8s;
+  }
+
   &:after {
     content: "";
     opacity: 1 !important;
     background: #111833;
-    transform: scaleX(0);
+    transform: scale(0);
     width: 100%;
     height: 100%;
     animation: ${ScaleRight} 1.6s cubic-bezier(0.77, 0, 0.175, 1);
@@ -85,8 +135,6 @@ export const StyledCard = styled.article`
     padding: 8%;
     display: flex;
     align-items: flex-end;
-    background: ${props => props.theme.color.background.containerLight};
-    box-shadow: ${props => props.theme.shadow.card};
     border-radius: 4px;
     opacity: 0;
     animation: ${FadeIn} 1.4s;
@@ -101,8 +149,8 @@ export const StyledCard = styled.article`
     font-weight: 600;
     text-transform: uppercase;
     line-height: 6rem;
-    left: -7.4vw;
-    top: 15%;
+    left: -5vw;
+    top: 10%;
     font-size: 5rem;
     -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: ${props =>
@@ -144,7 +192,6 @@ export const StyledCard = styled.article`
     font-size: min(max(0.9rem, 2vw), 1.3rem);
     font-family: orbitron;
     font-weight: 100;
-    background: #f5f5f580;
     color: #19254cd6;
     text-shadow: ${props => props.theme.shadow.text};
     max-width: 90%;
