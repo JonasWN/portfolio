@@ -46,7 +46,6 @@ const Stack: React.FC<Iprops> = ({ enter }) => {
           fadeIn={false}
         />
         <section>
-          <h4>Stack</h4>
           <ul>
             <li>React.JS</li>
             <li>Typescript</li>

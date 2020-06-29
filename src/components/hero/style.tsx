@@ -53,12 +53,6 @@ export const StyledHero = styled.section`
       top: 15%;
     }
   }
-
-  #tsparticles {
-    @media ${device.mobile} {
-      display: none;
-    }
-  }
 `
 
 export const StyledCard = styled.article`

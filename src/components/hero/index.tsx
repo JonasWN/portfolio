@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState, useEffect } from "react"
 import { Card } from "./card"
 import Socials from "../socials"
 import { StyledHero } from "./style"
@@ -7,16 +7,25 @@ import Particles from "react-tsparticles"
 import Face from "../../static/images/Face.svg"
 
 const Hero = () => {
+  const [pageWidth, setPageWidth] = useState<number>(0)
+  const phoneWidth = 420
+
+  useEffect(() => {
+    setPageWidth(window.innerWidth)
+  }, [])
+
   return (
     <StyledHero>
       <Card />
       <Face className="face" />
       <Socials />
+      {pageWidth > phoneWidth &&
       <Particles
-        params={particleParam}
-        style={particleStyle}
-        canvasClassName="particle"
-      />
+      params={particleParam}
+      style={particleStyle}
+      canvasClassName="particle"
+    />
+    }
     </StyledHero>
   )
 }
