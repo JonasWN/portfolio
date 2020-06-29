@@ -1,7 +1,7 @@
 import React, { useEffect } from "react"
 import { StyledProject } from "./style"
 import { useAnimation, motion } from "framer-motion"
-import { stackVariants } from "../../styles/animations"
+import { stackVariants, slide, slideY } from "../../styles/animations"
 
 type Iprops = {
   enter: boolean
@@ -25,13 +25,23 @@ const Project: React.FC<Iprops> = ({
     if (enter) animation.start("enter")
   }, [animation, enter])
 
+  const controls = useAnimation()
+
+  useEffect(() => {
+    controls.set("initial")
+    controls.start("enter")
+  }, [index])
+
   return (
     <StyledProject enter={enter} animate={animation} current={index}>
       <header>
         <h2>Project</h2>
         <section>
           <div />
-          <p>0{index}</p>
+          <p>0</p>
+          <motion.span animate={controls} variants={slideY}>
+            {index}
+          </motion.span>
         </section>
       </header>
       <nav>
@@ -46,7 +56,9 @@ const Project: React.FC<Iprops> = ({
         </motion.ul>
       </nav>
       <article>
-        <p>{description}</p>
+        <motion.p animate={controls} variants={slide}>
+          {description}
+        </motion.p>
       </article>
     </StyledProject>
   )

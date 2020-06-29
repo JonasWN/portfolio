@@ -125,7 +125,15 @@ export const StyledProject = styled<any>(motion.section)`
         margin-right: 2%;
         font-size: ${props => props.theme.fontSize.md};
         letter-spacing: 0.4rem;
-        width: 30%;
+        width: 5px;
+      }
+
+      span {
+        align-self: flex-end;
+        margin-right: 2%;
+        font-size: ${props => props.theme.fontSize.md};
+        letter-spacing: 0.4rem;
+        width: 20px;
       }
     }
   }
@@ -325,13 +333,13 @@ export const StyledStack = styled<any>(motion.section).attrs({
           margin-left: auto;
 
           :not(:last-child) {
-            margin-bottom: 15%;
+            margin-bottom: 0.95rem;
           }
 
           &:before {
             content: "";
             position: absolute;
-            left: -30%;
+            left: -1.75rem;
             top: 50%;
             transform: translate(-50%, 0);
             width: 15px;

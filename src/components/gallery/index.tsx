@@ -36,6 +36,8 @@ const Gallery = () => {
       />
       <Stack
         enter={enter}
+        handleSlide={handleSlide}
+        index={slideIndex + 1}
         title={data.title}
         date={data.date}
         cover={data.cover}
@@ -79,7 +81,7 @@ const projects = [
       "4Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit, aperiam.",
     date: "25-2-2020",
     cover: "f",
-    stack: ["React.JS", "React-Spring"],
+    stack: ["React.JS", "React-Spring", "SCSS"],
   },
 ]
 

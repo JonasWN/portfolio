@@ -1,5 +1,33 @@
 import { keyframes } from "styled-components"
 
+export const slide = {
+  initial: {
+    translateX: 50,
+    opacity: 0,
+  },
+  enter: {
+    translateX: 0,
+    opacity: 1,
+    transition: {
+      duration: 0.4,
+    },
+  },
+}
+
+export const slideY = {
+  initial: {
+    translateY: -30,
+    opacity: 0,
+  },
+  enter: {
+    translateY: 0,
+    opacity: 1,
+    transition: {
+      duration: 0.3,
+    },
+  },
+}
+
 export const TextVariants = {
   initialX: {
     opacity: 0,
@@ -30,6 +58,14 @@ export const stackVariants = {
       },
     },
     initial: { opacity: 0 },
+    enterSlide: {
+      opacity: 1,
+      translateX: 0,
+      transition: {
+        staggerChildren: 0.2,
+        delayChildren: 0,
+      },
+    },
   },
   item: {
     initial: {
@@ -39,6 +75,14 @@ export const stackVariants = {
     enter: {
       opacity: 1,
       translateY: 0,
+    },
+    initialSlide: {
+      opacity: 0,
+      translateX: 20,
+    },
+    enterSlide: {
+      opacity: 1,
+      translateX: 0,
     },
   },
 }

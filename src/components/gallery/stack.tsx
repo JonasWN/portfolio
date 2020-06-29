@@ -1,20 +1,30 @@
-import React, { useEffect } from "react"
+import React, { useEffect, useState } from "react"
 import { StyledStack } from "./style"
-import { motion, useAnimation, AnimatePresence } from "framer-motion"
-import { stackVariants } from "../../styles/animations"
+import { motion, useAnimation, useSpring } from "framer-motion"
+import { stackVariants, slide } from "../../styles/animations"
 //@ts-ignore
 import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
 
 type Iprops = {
   enter: boolean
+  handleSlide: (index: number) => void
+  index: number
   title: string
   date: string
   cover: string
   stack: string[]
 }
 
-const Stack: React.FC<Iprops> = ({ enter, title, date, cover, stack }) => {
+const Stack: React.FC<Iprops> = ({
+  enter,
+  handleSlide,
+  index,
+  title,
+  date,
+  cover,
+  stack,
+}) => {
   const { image } = useStaticQuery(graphql`
     query {
       image: file(relativePath: { eq: "portfolio.jpg" }) {
@@ -35,6 +45,17 @@ const Stack: React.FC<Iprops> = ({ enter, title, date, cover, stack }) => {
     if (enter) animation.start("enter")
   }, [animation, enter])
 
+  const controls = useAnimation()
+
+  useEffect(() => {
+    if (enter) {
+      controls.set("initial")
+      controls.start("enter")
+      animation.set("initialSlide")
+      animation.start("enterSlide")
+    }
+  }, [title])
+
   return (
     <StyledStack enter={enter} animate={animation}>
       <motion.header variants={container}>
@@ -49,13 +70,15 @@ const Stack: React.FC<Iprops> = ({ enter, title, date, cover, stack }) => {
           Tag={"figure"}
           fadeIn={false}
         />
-        <section>
-          <ul>
+        <motion.section animate={animation}>
+          <motion.ul variants={container}>
             {stack.map((name: string, index: number) => (
-              <li key={index}>{name}</li>
+              <motion.li key={index} variants={item}>
+                {name}
+              </motion.li>
             ))}
-          </ul>
-        </section>
+          </motion.ul>
+        </motion.section>
       </article>
     </StyledStack>
   )
