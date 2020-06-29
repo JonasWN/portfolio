@@ -5,38 +5,48 @@ import { stackVariants } from "../../styles/animations"
 
 type Iprops = {
   enter: boolean
+  handleSlide: (index: number) => void
+  description: string
+  projects: object[]
+  index: number
 }
 
-const Project: React.FC<Iprops> = ({ enter }) => {
+const Project: React.FC<Iprops> = ({
+  enter,
+  handleSlide,
+  description,
+  projects,
+  index,
+}) => {
   const animation = useAnimation()
   const { container, item } = stackVariants
 
   useEffect(() => {
     if (enter) animation.start("enter")
   }, [animation, enter])
+
   return (
-    <StyledProject enter={enter} animate={animation}>
+    <StyledProject enter={enter} animate={animation} current={index}>
       <header>
         <h2>Project</h2>
         <section>
           <div />
-          <p>01</p>
+          <p>0{index}</p>
         </section>
       </header>
       <nav>
         <motion.ul variants={container} initial="initial">
-          <motion.li variants={item}></motion.li>
-          <motion.li variants={item}></motion.li>
-          <motion.li variants={item}></motion.li>
-          <motion.li variants={item}></motion.li>
+          {projects.map((project: object, index: number) => (
+            <motion.li
+              variants={item}
+              key={index}
+              onHoverStart={() => handleSlide(index)}
+            />
+          ))}
         </motion.ul>
       </nav>
       <article>
-        {/* <h3>Info</h3> */}
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus
-          veniam dignissimos maiores quam, labore repudiandae!
-        </p>
+        <p>{description}</p>
       </article>
     </StyledProject>
   )

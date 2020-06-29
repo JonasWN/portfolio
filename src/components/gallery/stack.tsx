@@ -1,6 +1,6 @@
 import React, { useEffect } from "react"
 import { StyledStack } from "./style"
-import { motion, useAnimation } from "framer-motion"
+import { motion, useAnimation, AnimatePresence } from "framer-motion"
 import { stackVariants } from "../../styles/animations"
 //@ts-ignore
 import { useStaticQuery, graphql } from "gatsby"
@@ -8,9 +8,13 @@ import Img from "gatsby-image"
 
 type Iprops = {
   enter: boolean
+  title: string
+  date: string
+  cover: string
+  stack: string[]
 }
 
-const Stack: React.FC<Iprops> = ({ enter }) => {
+const Stack: React.FC<Iprops> = ({ enter, title, date, cover, stack }) => {
   const { image } = useStaticQuery(graphql`
     query {
       image: file(relativePath: { eq: "portfolio.jpg" }) {
@@ -34,8 +38,8 @@ const Stack: React.FC<Iprops> = ({ enter }) => {
   return (
     <StyledStack enter={enter} animate={animation}>
       <motion.header variants={container}>
-        <motion.h3 variants={item}>17 - 6 - 2020</motion.h3>
-        <motion.h2 variants={item}>Portfolio</motion.h2>
+        <motion.h3 variants={item}>{date}</motion.h3>
+        <motion.h2 variants={item}>{title}</motion.h2>
       </motion.header>
       <article>
         <Img
@@ -47,10 +51,9 @@ const Stack: React.FC<Iprops> = ({ enter }) => {
         />
         <section>
           <ul>
-            <li>React.JS</li>
-            <li>Typescript</li>
-            <li>Gatsby.JS</li>
-            <li>Contentful</li>
+            {stack.map((name: string, index: number) => (
+              <li key={index}>{name}</li>
+            ))}
           </ul>
         </section>
       </article>

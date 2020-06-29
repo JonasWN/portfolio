@@ -125,6 +125,7 @@ export const StyledProject = styled<any>(motion.section)`
         margin-right: 2%;
         font-size: ${props => props.theme.fontSize.md};
         letter-spacing: 0.4rem;
+        width: 30%;
       }
     }
   }
@@ -158,7 +159,7 @@ export const StyledProject = styled<any>(motion.section)`
           margin-bottom: 0.75rem;
         }
 
-        :first-child {
+        :nth-child(${props => props.current}) {
           background: #ffb68c;
         }
 
