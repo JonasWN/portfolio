@@ -211,6 +211,7 @@ export const StyledProject = styled<any>(motion.section)`
 
     @media ${device.mobile} {
       max-width: 100%;
+      height: 55%;
 
       h3 {
         color: red;
@@ -224,14 +225,16 @@ export const StyledProject = styled<any>(motion.section)`
     }
 
     p {
-      font-size: 0.75rem;
+      font-family: oswald;
+      font-size: 1.1rem;
       font-weight: 100;
       line-height: 1.5rem;
-      letter-spacing: 0.2rem;
+      letter-spacing: 0.1em;
 
       @media ${device.mobile} {
         letter-spacing: 0.1rem;
         line-height: 1.2rem;
+        font-size: 1rem;
       }
     }
   }
@@ -298,7 +301,7 @@ export const StyledStack = styled<any>(motion.section).attrs({
     }
 
     figure {
-      width: 80%;
+      width: 90%;
       max-width: 400px;
       box-shadow: ${props => props.theme.shadow.card};
       border: 1px solid #d0d0d0;

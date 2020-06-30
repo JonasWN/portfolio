@@ -1,5 +1,57 @@
 import { keyframes } from "styled-components"
 
+export const easing = [0.16, 0.2, 0.3, 1]
+
+export const stackVariantsGallery = {
+  container: {
+    enter: {
+      opacity: 1,
+      translateY: 0,
+      transition: {
+        staggerChildren: 0.2,
+        delayChildren: 1.4,
+      },
+    },
+    exit: {
+      transition: {
+        staggerChildren: 0.2,
+        delayChildren: 1.4,
+      },
+    },
+    initial: { opacity: 0 },
+    enterSlide: {
+      opacity: 1,
+      translateX: 0,
+      transition: {
+        staggerChildren: 0.2,
+        delayChildren: 0,
+      },
+    },
+  },
+  item: {
+    initial: {
+      opacity: 0,
+      translateY: -40,
+    },
+    enter: {
+      opacity: 1,
+      translateY: 0,
+    },
+    exit: {
+      opacity: 0,
+      translateX: -20,
+    },
+    initialSlide: {
+      opacity: 0,
+      translateX: 20,
+    },
+    enterSlide: {
+      opacity: 1,
+      translateX: 0,
+    },
+  },
+}
+
 export const slide = {
   initial: {
     translateX: 50,
@@ -16,15 +68,16 @@ export const slide = {
 
 export const slideY = {
   initial: {
-    translateY: -50,
+    translateY: -10,
     opacity: 0,
   },
   enter: {
     translateY: 0,
     opacity: 1,
-    transition: {
-      duration: 0.4,
-    },
+  },
+  exit: {
+    translateY: 10,
+    opacity: 0,
   },
 }
 

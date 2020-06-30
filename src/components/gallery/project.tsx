@@ -1,7 +1,7 @@
 import React, { useEffect } from "react"
 import { StyledProject } from "./style"
-import { useAnimation, motion } from "framer-motion"
-import { stackVariants, slide, slideY } from "../../styles/animations"
+import { useAnimation, motion, AnimatePresence } from "framer-motion"
+import { stackVariants, slideY, easing } from "../../styles/animations"
 
 type Iprops = {
   enter: boolean
@@ -25,13 +25,6 @@ const Project: React.FC<Iprops> = ({
     if (enter) animation.start("enter")
   }, [animation, enter])
 
-  const controls = useAnimation()
-
-  useEffect(() => {
-    controls.set("initial")
-    controls.start("enter")
-  }, [index])
-
   return (
     <StyledProject enter={enter} animate={animation} current={index}>
       <header>
@@ -39,9 +32,21 @@ const Project: React.FC<Iprops> = ({
         <section>
           <div />
           <p>0</p>
-          <motion.span animate={controls} variants={slideY}>
-            {index}
-          </motion.span>
+          <AnimatePresence exitBeforeEnter>
+            <motion.span
+              variants={slideY}
+              key={index}
+              animate="enter"
+              initial="initial"
+              exit="exit"
+              transition={{
+                duration: 0.2,
+                ease: easing,
+              }}
+            >
+              {index}
+            </motion.span>
+          </AnimatePresence>
         </section>
       </header>
       <nav>
@@ -56,9 +61,22 @@ const Project: React.FC<Iprops> = ({
         </motion.ul>
       </nav>
       <article>
-        <motion.p animate={controls} variants={slideY}>
-          {description}
-        </motion.p>
+        <AnimatePresence exitBeforeEnter>
+          <motion.p
+            animate="enter"
+            exit="exit"
+            initial="initial"
+            variants={slideY}
+            key={index}
+            transition={{
+              delay: 0.1,
+              duration: 0.2,
+              ease: easing,
+            }}
+          >
+            {description}
+          </motion.p>
+        </AnimatePresence>
       </article>
     </StyledProject>
   )
