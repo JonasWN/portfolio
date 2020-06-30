@@ -54,7 +54,7 @@ const projects = [
   {
     title: "Newsfeed",
     description:
-      "1Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit, aperiam.",
+      "En NewYorkTimes newsfeed webapplication, som var mit første projekt hvor jeg brugte Typescript. Udfordring var at hente xml data fra NewYorkTimes, for så at konventere det til json",
     date: "30-4-2020",
     cover: "f",
     stack: ["React.JS", "Typescript", "Tailwind CSS"],
@@ -62,7 +62,7 @@ const projects = [
   {
     title: "IplayMusic",
     description:
-      "2Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit, aperiam.",
+      "IplayMusic er en music player webapplication som henter data fra Spotify´s API. Det blev til en rigtig fin song preview player da jeg ikke har premium. Desuden jeg lærte en masse om at optimere REST-API kalds ",
     date: "13-1-2020",
     cover: "f",
     stack: ["EJS", "Gulp", "SCSS"],
@@ -70,7 +70,7 @@ const projects = [
   {
     title: "Blog-Components",
     description:
-      "3Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit, aperiam.",
+      "En skole opgave der gik ud på at tæmkte modulært i form af komponenter. jeg brugte Gatsby.jS, Typescript og derovre Contentful some et Headless-CMS.",
     date: "25-5-2020",
     cover: "f",
     stack: ["Gatsby.JS", "Typescript", "Contentful"],
@@ -78,7 +78,7 @@ const projects = [
   {
     title: "Tasks",
     description:
-      "4Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit, aperiam.",
+      "Mit første React.jS projekt, som gav mig en bredt indblik i hvordan React.js rent faktisk fungere som et javascript-framework. React-Spring blev også brugt meget i forbindelse med projektet.",
     date: "25-2-2020",
     cover: "f",
     stack: ["React.JS", "React-Spring", "SCSS"],

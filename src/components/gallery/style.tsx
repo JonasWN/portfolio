@@ -180,6 +180,7 @@ export const StyledProject = styled<any>(motion.section)`
 
   article {
     max-width: 75%;
+    height: 40%;
     position: relative;
 
     :before {
@@ -297,9 +298,13 @@ export const StyledStack = styled<any>(motion.section).attrs({
     }
 
     figure {
-      object-fit: cover;
-      margin: 0;
-      min-width: 50%;
+      width: 80%;
+      max-width: 400px;
+      box-shadow: ${props => props.theme.shadow.card};
+      border: 1px solid #d0d0d0;
+      position: relative;
+      -webkit-filter: contrast(120%) saturate(125%);
+      filter: contrast(120%) saturate(125%);
     }
 
     section {

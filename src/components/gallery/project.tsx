@@ -56,7 +56,7 @@ const Project: React.FC<Iprops> = ({
         </motion.ul>
       </nav>
       <article>
-        <motion.p animate={controls} variants={slide}>
+        <motion.p animate={controls} variants={slideY}>
           {description}
         </motion.p>
       </article>

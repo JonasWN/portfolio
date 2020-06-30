@@ -16,14 +16,14 @@ export const slide = {
 
 export const slideY = {
   initial: {
-    translateY: -30,
+    translateY: -50,
     opacity: 0,
   },
   enter: {
     translateY: 0,
     opacity: 1,
     transition: {
-      duration: 0.3,
+      duration: 0.4,
     },
   },
 }

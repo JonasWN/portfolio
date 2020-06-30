@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from "react"
+import React, { useEffect } from "react"
 import { StyledStack } from "./style"
-import { motion, useAnimation, useSpring } from "framer-motion"
+import { motion, useAnimation } from "framer-motion"
 import { stackVariants, slide } from "../../styles/animations"
 //@ts-ignore
 import { useStaticQuery, graphql } from "gatsby"
@@ -25,12 +25,21 @@ const Stack: React.FC<Iprops> = ({
   cover,
   stack,
 }) => {
-  const { image } = useStaticQuery(graphql`
+  const { images } = useStaticQuery(graphql`
     query {
-      image: file(relativePath: { eq: "portfolio.jpg" }) {
-        sharp: childImageSharp {
-          fluid {
-            ...GatsbyImageSharpFluid_withWebp_noBase64
+      images: allFile(
+        sort: { fields: name, order: ASC }
+        filter: { relativeDirectory: { eq: "slides" } }
+      ) {
+        edges {
+          node {
+            id
+            name
+            sharp: childImageSharp {
+              fluid(maxWidth: 400, maxHeight: 200, quality: 80) {
+                ...GatsbyImageSharpFluid_withWebp_noBase64
+              }
+            }
           }
         }
       }
@@ -63,13 +72,14 @@ const Stack: React.FC<Iprops> = ({
         <motion.h2 variants={item}>{title}</motion.h2>
       </motion.header>
       <article>
-        <Img
-          fluid={image.sharp.fluid}
-          loading={"eager"}
-          alt={alt}
-          Tag={"figure"}
-          fadeIn={false}
-        />
+        <motion.figure variants={slide} animate={controls}>
+          <Img
+            fluid={images.edges[index - 1].node.sharp.fluid}
+            loading={"eager"}
+            alt={alt}
+            fadeIn={false}
+          />
+        </motion.figure>
         <motion.section animate={animation}>
           <motion.ul variants={container}>
             {stack.map((name: string, index: number) => (
