@@ -1,7 +1,12 @@
 import styled from "styled-components"
 import { device } from "../../styles/layout-styles"
 import { motion } from "framer-motion"
-import { ScaleRight, FadeIn } from "../../styles/animations"
+import {
+  ScaleRight,
+  FadeIn,
+  TextAppearY,
+  easing,
+} from "../../styles/animations"
 
 export const StyledGallery = styled<any>(motion.main)`
   position: relative;
@@ -283,6 +288,11 @@ export const StyledStack = styled<any>(motion.section).attrs({
       font-weight: 100;
       letter-spacing: 0.2rem;
       text-shadow: ${props => props.theme.shadow.text};
+      opacity: 0;
+      animation: ${TextAppearY} 0.4s easing;
+      animation-play-state: ${props => (props.enter ? "running" : "paused")};
+      animation-delay: 1.4s;
+      animation-fill-mode: forwards;
     }
 
     h3 {

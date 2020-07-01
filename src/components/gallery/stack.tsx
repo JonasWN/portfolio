@@ -1,7 +1,11 @@
 import React, { useEffect } from "react"
 import { StyledStack } from "./style"
 import { motion, useAnimation, AnimatePresence } from "framer-motion"
-import { stackVariants, slide } from "../../styles/animations"
+import {
+  stackVariantStack,
+  stackVariants,
+  slide,
+} from "../../styles/animations"
 //@ts-ignore
 import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
@@ -16,15 +20,11 @@ type Iprops = {
   stack: string[]
 }
 
-const Stack: React.FC<Iprops> = ({
-  enter,
-  handleSlide,
-  index,
-  title,
-  date,
-  cover,
-  stack,
-}) => {
+const alt = "project-cover"
+const easing = [0.16, 0.2, 0.3, 1]
+
+const Stack: React.FC<Iprops> = props => {
+  const { enter, handleSlide, index, title, date, cover, stack } = props
   const { images } = useStaticQuery(graphql`
     query {
       images: allFile(
@@ -47,24 +47,19 @@ const Stack: React.FC<Iprops> = ({
   `)
 
   const animation = useAnimation()
-  const alt = "project-cover"
-  const { container, item } = stackVariants
+  const { containerStack, itemStack } = stackVariantStack
+  const { item, container } = stackVariants
 
   useEffect(() => {
     if (enter) animation.start("enter")
   }, [animation, enter])
 
-  const controls = useAnimation()
-
   useEffect(() => {
     if (enter) {
-      controls.set("initial")
-      controls.start("enter")
       animation.set("initialSlide")
       animation.start("enterSlide")
     }
   }, [title])
-  let easing = [0.16, 0.2, 0.3, 1]
 
   return (
     <StyledStack enter={enter} animate={animation}>
@@ -89,15 +84,23 @@ const Stack: React.FC<Iprops> = ({
             />
           </motion.figure>
         </AnimatePresence>
-        <motion.section animate={animation}>
-          <motion.ul variants={container}>
-            {stack.map((name: string, index: number) => (
-              <motion.li key={index} variants={item}>
-                {name}
-              </motion.li>
-            ))}
-          </motion.ul>
-        </motion.section>
+        <section>
+          <AnimatePresence exitBeforeEnter>
+            <motion.ul
+              key={index}
+              variants={containerStack}
+              animate="enter"
+              initial="initial"
+              exit="exit"
+            >
+              {stack.map((name: string, index: number) => (
+                <motion.li key={index} variants={itemStack}>
+                  {name}
+                </motion.li>
+              ))}
+            </motion.ul>
+          </AnimatePresence>
+        </section>
       </article>
     </StyledStack>
   )

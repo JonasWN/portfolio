@@ -2,52 +2,51 @@ import { keyframes } from "styled-components"
 
 export const easing = [0.16, 0.2, 0.3, 1]
 
-export const stackVariantsGallery = {
-  container: {
+export const stackVariantStack = {
+  containerStack: {
     enter: {
       opacity: 1,
       translateY: 0,
       transition: {
-        staggerChildren: 0.2,
+        staggerChildren: 0.1,
+        delayChildren: 0.2,
+      },
+    },
+    enterDelayed: {
+      opacity: 1,
+      translateY: 0,
+      transition: {
+        staggerChildren: 0.1,
         delayChildren: 1.4,
       },
     },
     exit: {
       transition: {
-        staggerChildren: 0.2,
-        delayChildren: 1.4,
+        staggerChildren: 0.1,
       },
     },
     initial: { opacity: 0 },
-    enterSlide: {
-      opacity: 1,
-      translateX: 0,
-      transition: {
-        staggerChildren: 0.2,
-        delayChildren: 0,
-      },
-    },
   },
-  item: {
+  itemStack: {
     initial: {
       opacity: 0,
-      translateY: -40,
+      translateX: 40,
     },
     enter: {
       opacity: 1,
-      translateY: 0,
+      translateX: 0,
+      transition: {
+        ease: easing,
+        duration: 0.2,
+      },
     },
     exit: {
       opacity: 0,
       translateX: -20,
-    },
-    initialSlide: {
-      opacity: 0,
-      translateX: 20,
-    },
-    enterSlide: {
-      opacity: 1,
-      translateX: 0,
+      transition: {
+        ease: easing,
+        duration: 0.2,
+      },
     },
   },
 }
@@ -266,5 +265,17 @@ export const FillUp = keyframes`
   to {
     transform: scale(1);
     transform-origin: bottom;
+  }
+`
+
+export const TextAppearY = keyframes`
+  from {
+    opacity: 0,
+    transform: translateY(-20px)
+  }
+
+  to {
+    opacity: 1,
+    transform: translateY(0px)
   }
 `
