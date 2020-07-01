@@ -157,12 +157,16 @@ export const StyledProject = styled<any>(motion.section)`
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+      align-items: flex-end;
 
       li {
+        position: relative;
+        z-index: 50;
         height: 1px;
         width: 20px;
         background: ${props => props.theme.color.background.containerLight};
         opacity: 0.5;
+        transition: width 0.4s ease-in-out, background 0.4s ease-in-out;
 
         :hover {
           cursor: pointer;
@@ -174,6 +178,7 @@ export const StyledProject = styled<any>(motion.section)`
 
         :nth-child(${props => props.current}) {
           background: #ffb68c;
+          width: 30px;
         }
 
         @media ${device.mobile} {
@@ -184,6 +189,8 @@ export const StyledProject = styled<any>(motion.section)`
   }
 
   article {
+    display: flex;
+    align-items: flex-end;
     max-width: 75%;
     height: 40%;
     position: relative;
@@ -191,7 +198,7 @@ export const StyledProject = styled<any>(motion.section)`
     :before {
       content: "";
       position: absolute;
-      top: -15%;
+      top: 0%;
       left: 0;
       width: 30%;
       height: 1px;
@@ -202,7 +209,7 @@ export const StyledProject = styled<any>(motion.section)`
     :after {
       content: "";
       position: absolute;
-      top: -20%;
+      top: 5%;
       left: 0;
       width: 15%;
       height: 1px;
@@ -210,7 +217,7 @@ export const StyledProject = styled<any>(motion.section)`
       z-index: 20;
 
       @media ${device.mobile} {
-        top: -25%;
+        top: -5%;
       }
     }
 
@@ -239,7 +246,7 @@ export const StyledProject = styled<any>(motion.section)`
       @media ${device.mobile} {
         letter-spacing: 0.1rem;
         line-height: 1.2rem;
-        font-size: 1rem;
+        font-size: 0.8rem;
       }
     }
   }
@@ -265,6 +272,7 @@ export const StyledStack = styled<any>(motion.section).attrs({
   @media ${device.mobile} {
     width: 100%;
     height: 100%;
+    z-index: inherit;
   }
 
   header {

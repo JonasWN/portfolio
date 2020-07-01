@@ -56,6 +56,8 @@ const Project: React.FC<Iprops> = ({
               variants={item}
               key={index}
               onHoverStart={() => handleSlide(index)}
+              onClick={() => handleSlide(index)}
+              onTap={() => handleSlide(index)}
             />
           ))}
         </motion.ul>
