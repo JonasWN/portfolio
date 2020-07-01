@@ -2,10 +2,16 @@ import React from "react"
 import { StyledButton } from "./style"
 import { Link } from "gatsby"
 
-const Button = () => {
+type Iprops = {
+  link: string
+}
+
+const Button: React.FC<Iprops> = ({ link }) => {
   return (
     <StyledButton>
-      <Link to="/"> Explore</Link>
+      <a href={link} target="_blank" aria-label="Personal Site" rel="noopener">
+        Explore
+      </a>
     </StyledButton>
   )
 }

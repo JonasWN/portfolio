@@ -80,6 +80,21 @@ export const slideY = {
   },
 }
 
+export const slideX = {
+  initial: {
+    translateX: -30,
+    opacity: 0,
+  },
+  enter: {
+    translateX: 0,
+    opacity: 1,
+  },
+  exit: {
+    translateX: 10,
+    opacity: 0,
+  },
+}
+
 export const TextVariants = {
   initialX: {
     opacity: 0,

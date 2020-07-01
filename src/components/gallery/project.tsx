@@ -1,7 +1,7 @@
 import React, { useEffect } from "react"
 import { StyledProject } from "./style"
 import { useAnimation, motion, AnimatePresence, useSpring } from "framer-motion"
-import { stackVariants, slideY, easing } from "../../styles/animations"
+import { stackVariants, slideY, easing, slideX } from "../../styles/animations"
 
 type Iprops = {
   enter: boolean
@@ -72,7 +72,7 @@ const Project: React.FC<Iprops> = ({
             animate="enter"
             exit="exit"
             initial="initial"
-            variants={slideY}
+            variants={slideX}
             key={index}
             transition={{
               delay: 0.1,

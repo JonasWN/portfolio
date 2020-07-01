@@ -16,7 +16,6 @@ type Iprops = {
   index: number
   title: string
   date: string
-  cover: string
   stack: string[]
 }
 
@@ -24,7 +23,7 @@ const alt = "project-cover"
 const easing = [0.16, 0.2, 0.3, 1]
 
 const Stack: React.FC<Iprops> = props => {
-  const { enter, handleSlide, index, title, date, cover, stack } = props
+  const { enter, handleSlide, index, title, date, stack } = props
   const { images } = useStaticQuery(graphql`
     query {
       images: allFile(
