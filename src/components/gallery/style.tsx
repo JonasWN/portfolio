@@ -100,6 +100,14 @@ export const StyledProject = styled<any>(motion.section)`
     padding: 10%;
   }
 
+  .gallery-swiper {
+    position: absolute;
+    top: 25%;
+    left: 0;
+    width: 100%;
+    height: 50%;
+  }
+
   header {
     display: flex;
     flex-direction: column;

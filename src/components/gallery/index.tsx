@@ -4,6 +4,7 @@ import { useInView } from "react-intersection-observer"
 import Project from "./project"
 import Stack from "./stack"
 import Button from "../button"
+import { slide } from "../../styles/animations"
 
 let slideIndex: number = 0
 
@@ -18,6 +19,14 @@ const Gallery = () => {
 
   const handleSlide = (index: number) => {
     slideIndex = index
+    if (slideIndex > projects.length - 1) {
+      slideIndex = 0
+      setData(projects[slideIndex])
+    }
+    if (slideIndex < 0) {
+      slideIndex = projects.length - 1
+      setData(projects[slideIndex])
+    }
     setData(projects[slideIndex])
   }
 
@@ -32,7 +41,7 @@ const Gallery = () => {
         handleSlide={handleSlide}
         description={data.description}
         projects={projects}
-        index={slideIndex + 1}
+        index={slideIndex}
       />
       <Stack
         enter={enter}

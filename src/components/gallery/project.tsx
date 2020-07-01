@@ -1,6 +1,6 @@
 import React, { useEffect } from "react"
 import { StyledProject } from "./style"
-import { useAnimation, motion, AnimatePresence } from "framer-motion"
+import { useAnimation, motion, AnimatePresence, useSpring } from "framer-motion"
 import { stackVariants, slideY, easing } from "../../styles/animations"
 
 type Iprops = {
@@ -20,13 +20,18 @@ const Project: React.FC<Iprops> = ({
 }) => {
   const animation = useAnimation()
   const { container, item } = stackVariants
+  const x = useSpring(0)
 
   useEffect(() => {
     if (enter) animation.start("enter")
   }, [animation, enter])
 
+  const handleSwipe = (event: any, info: any) => {
+    info.offset.x > 0 ? handleSlide(index - 1) : handleSlide(index + 1)
+  }
+
   return (
-    <StyledProject enter={enter} animate={animation} current={index}>
+    <StyledProject enter={enter} animate={animation} current={index + 1}>
       <header>
         <h2>Project</h2>
         <section>
@@ -44,7 +49,7 @@ const Project: React.FC<Iprops> = ({
                 ease: easing,
               }}
             >
-              {index}
+              {index + 1}
             </motion.span>
           </AnimatePresence>
         </section>
@@ -57,7 +62,6 @@ const Project: React.FC<Iprops> = ({
               key={index}
               onHoverStart={() => handleSlide(index)}
               onClick={() => handleSlide(index)}
-              onTap={() => handleSlide(index)}
             />
           ))}
         </motion.ul>
@@ -80,6 +84,12 @@ const Project: React.FC<Iprops> = ({
           </motion.p>
         </AnimatePresence>
       </article>
+      <motion.div
+        className="gallery-swiper"
+        drag={"x"}
+        dragConstraints={{ left: 0, right: 0 }}
+        onDragEnd={handleSwipe}
+      />
     </StyledProject>
   )
 }
