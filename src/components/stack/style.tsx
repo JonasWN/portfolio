@@ -20,6 +20,20 @@ export const StyledStack = styled<any>(motion.section).attrs({
   animation: ${FadeIn} 1.4s;
   animation-play-state: ${props => (props.enter ? "running" : "paused")};
 
+  .test {
+    content: "";
+    opacity: 1 !important;
+    background: #336;
+    transform: scaleX(0);
+    z-index: 2;
+    height: 102%;
+    width: 100%;
+    position: absolute;
+    z-index: 100;
+    left: 0;
+    top: 0;
+  }
+
   @media ${device.mobile} {
     width: 100%;
     height: 100%;

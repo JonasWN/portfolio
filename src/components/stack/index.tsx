@@ -9,15 +9,15 @@ import { stackVariantStack, stackVariants } from "../../styles/animations"
 
 type Tprops = {
   enter: boolean
+  curtain: number
 }
 
 const alt = "project-cover"
-const easing = [0.16, 0.2, 0.3, 1]
+const easing = [0.77, 0.6, 0.4, 0.7]
 
-const Stack: React.FC<Tprops> = ({ enter }) => {
+const Stack: React.FC<Tprops> = ({ enter, curtain }) => {
   const data = useRecoilValue(projectState)
   const slideIndex = useRecoilValue(projectIndexState)
-  console.log(slideIndex)
 
   const { images } = useStaticQuery(graphql`
     query {
@@ -63,19 +63,22 @@ const Stack: React.FC<Tprops> = ({ enter }) => {
       </motion.header>
       <article>
         <AnimatePresence exitBeforeEnter>
-          <motion.figure
-            exit={{ scaleX: 0, transformOrigin: "left", opacity: 0 }}
-            animate={{ scaleX: 1, transformOrigin: "right", opacity: 1 }}
-            initial={{ scaleX: 0, transformOrigin: "right", opacity: 0 }}
-            key={slideIndex - 1}
-            transition={{ ease: easing, duration: 0.3 }}
-          >
+          <motion.figure>
             <Img
-              fluid={images.edges[slideIndex].node.sharp.fluid}
+              fluid={images.edges[curtain].node.sharp.fluid}
               loading={"eager"}
               alt={alt}
               fadeIn={false}
             />
+            <motion.div
+              className="test"
+              animate={{
+                transformOrigin: ["100%", "100%", "0%", "0%"],
+                scaleX: [0, 1, 1, 0],
+              }}
+              key={slideIndex}
+              transition={{ duration: 1, ease: easing }}
+            ></motion.div>
           </motion.figure>
         </AnimatePresence>
         <section>

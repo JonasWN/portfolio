@@ -11,6 +11,8 @@ import {
 
 type Tprops = {
   enter: boolean
+  curtain: number
+  setCurtain: React.Dispatch<React.SetStateAction<number>>
 }
 
 type Tproject = {
@@ -21,7 +23,7 @@ type Tproject = {
   stack: string[]
 }
 
-const Project: React.FC<Tprops> = ({ enter }) => {
+const Project: React.FC<Tprops> = ({ enter, curtain, setCurtain }) => {
   const projectList = useRecoilValue(projectListState)
   const [slideIndex, setSlideIndex] = useRecoilState(projectIndexState)
   const [data, setData] = useRecoilState(projectState)
@@ -43,6 +45,15 @@ const Project: React.FC<Tprops> = ({ enter }) => {
       setSlideIndex(index)
       setData(projectList[index])
     }
+    setTimeout(() => {
+      if (index > projectList.length - 1) {
+        setCurtain(0)
+      } else if (index < 0) {
+        setCurtain(projectList.length - 1)
+      } else {
+        setCurtain(index)
+      }
+    }, 350)
   }
 
   const handleSwipe = (event: any, info: any) => {
@@ -68,6 +79,7 @@ const Project: React.FC<Tprops> = ({ enter }) => {
               transition={{
                 duration: 0.2,
                 ease: easing,
+                delay: 0.1,
               }}
             >
               {slideIndex + 1}
@@ -96,7 +108,7 @@ const Project: React.FC<Tprops> = ({ enter }) => {
             variants={slideX}
             key={slideIndex}
             transition={{
-              delay: 0.1,
+              delay: 0.2,
               duration: 0.2,
               ease: easing,
             }}

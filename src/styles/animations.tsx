@@ -9,7 +9,7 @@ export const stackVariantStack = {
       translateY: 0,
       transition: {
         staggerChildren: 0.1,
-        delayChildren: 0.2,
+        delayChildren: 0.3,
       },
     },
     enterDelayed: {
@@ -22,6 +22,7 @@ export const stackVariantStack = {
     },
     exit: {
       transition: {
+        opacty: 0,
         staggerChildren: 0.1,
       },
     },
@@ -130,7 +131,7 @@ export const stackVariants = {
       translateX: 0,
       transition: {
         staggerChildren: 0.2,
-        delayChildren: 0,
+        delayChildren: 0.4,
       },
     },
   },

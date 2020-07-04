@@ -18,9 +18,8 @@ const IO = {
 }
 
 const Gallery = () => {
-  const projectList = useRecoilValue(projectListState)
-  const [data, setData] = useRecoilState(projectState)
-  const [slideIndex, setSlideIndex] = useRecoilState(projectIndexState)
+  const data = useRecoilValue(projectState)
+  const [curtain, setCurtain] = useState<number>(0)
   const [enter, setEnter] = useState<boolean>(false)
   const [GalleryRef, inView] = useInView(IO)
 
@@ -30,8 +29,8 @@ const Gallery = () => {
 
   return (
     <StyledGallery ref={GalleryRef} enter={enter}>
-      <Project enter={enter} />
-      <Stack enter={enter} />
+      <Project enter={enter} setCurtain={setCurtain} curtain={curtain} />
+      <Stack enter={enter} curtain={curtain} />
       <StyledContainer enter={enter}>
         <Button link={data.link} />
       </StyledContainer>
