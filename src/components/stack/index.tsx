@@ -17,6 +17,8 @@ const easing = [0.16, 0.2, 0.3, 1]
 const Stack: React.FC<Tprops> = ({ enter }) => {
   const data = useRecoilValue(projectState)
   const slideIndex = useRecoilValue(projectIndexState)
+  console.log(slideIndex)
+
   const { images } = useStaticQuery(graphql`
     query {
       images: allFile(

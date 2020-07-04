@@ -43,8 +43,7 @@ const Nav = () => {
               <Logo />
             </Link>
           </motion.li>
-          <motion.li variants={item}>+</motion.li>
-          <motion.li variants={item}>Projects</motion.li>
+          <motion.li variants={item}>+ Projects </motion.li>
           <motion.li variants={item}>About</motion.li>
           <motion.li variants={item}>Contact</motion.li>
         </motion.ul>

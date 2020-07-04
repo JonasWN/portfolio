@@ -69,10 +69,6 @@ export const StyledNav = styled<any>(motion.nav)`
         text-transform: uppercase;
         position: relative;
 
-        &:nth-child(3) {
-          margin-left: 7px;
-        }
-
         &:hover :after {
           cursor: pointer;
           animation: ${aHover} 0.8s alternate cubic-bezier(0.77, 0, 0.175, 1);

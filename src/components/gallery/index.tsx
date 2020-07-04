@@ -3,13 +3,13 @@ import Stack from "../stack"
 import Button from "../button"
 import Project from "../project"
 import { useRecoilValue, useRecoilState } from "recoil"
+import { StyledGallery, StyledContainer } from "./style"
+import { useInView } from "react-intersection-observer"
 import {
   projectState,
   projectListState,
   projectIndexState,
 } from "../../recoil/atoms"
-import { StyledGallery, StyledContainer } from "./style"
-import { useInView } from "react-intersection-observer"
 
 const IO = {
   triggerOnce: true,
@@ -24,26 +24,13 @@ const Gallery = () => {
   const [enter, setEnter] = useState<boolean>(false)
   const [GalleryRef, inView] = useInView(IO)
 
-  const handleSlide = (index: number) => {
-    setSlideIndex(index)
-    if (index > projectList.length - 1) {
-      setSlideIndex(0)
-      setData(projectList[slideIndex])
-    }
-    if (index < 0) {
-      setSlideIndex(projectList.length - 1)
-      setData(projectList[slideIndex])
-    }
-    setData(projectList[slideIndex])
-  }
-
   useEffect(() => {
     if (inView) setEnter(true)
   }, [enter, inView])
 
   return (
     <StyledGallery ref={GalleryRef} enter={enter}>
-      <Project enter={enter} handleSlide={handleSlide} />
+      <Project enter={enter} />
       <Stack enter={enter} />
       <StyledContainer enter={enter}>
         <Button link={data.link} />

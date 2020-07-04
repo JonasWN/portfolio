@@ -2,7 +2,7 @@ import React, { useEffect } from "react"
 import { StyledProject } from "./style"
 import { useAnimation, motion, AnimatePresence } from "framer-motion"
 import { stackVariants, slideY, easing, slideX } from "../../styles/animations"
-import { useRecoilValue } from "recoil"
+import { useRecoilValue, useRecoilState } from "recoil"
 import {
   projectListState,
   projectState,
@@ -11,7 +11,6 @@ import {
 
 type Tprops = {
   enter: boolean
-  handleSlide: (index: number) => void
 }
 
 type Tproject = {
@@ -22,17 +21,29 @@ type Tproject = {
   stack: string[]
 }
 
-const Project: React.FC<Tprops> = ({ enter, handleSlide }) => {
+const Project: React.FC<Tprops> = ({ enter }) => {
   const projectList = useRecoilValue(projectListState)
-  const data = useRecoilValue(projectState)
-  const slideIndex = useRecoilValue(projectIndexState)
-
+  const [slideIndex, setSlideIndex] = useRecoilState(projectIndexState)
+  const [data, setData] = useRecoilState(projectState)
   const { container, item } = stackVariants
   const animation = useAnimation()
 
   useEffect(() => {
     if (enter) animation.start("enter")
   }, [animation, enter])
+
+  const handleSlide = (index: number) => {
+    if (index > projectList.length - 1) {
+      setSlideIndex(0)
+      setData(projectList[0])
+    } else if (index < 0) {
+      setSlideIndex(projectList.length - 1)
+      setData(projectList[projectList.length - 1])
+    } else {
+      setSlideIndex(index)
+      setData(projectList[index])
+    }
+  }
 
   const handleSwipe = (event: any, info: any) => {
     info.offset.x > 0
