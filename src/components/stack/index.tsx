@@ -1,28 +1,22 @@
 import React, { useEffect } from "react"
-import { StyledStack } from "./style"
-import { motion, useAnimation, AnimatePresence } from "framer-motion"
-import {
-  stackVariantStack,
-  stackVariants,
-  slide,
-} from "../../styles/animations"
-//@ts-ignore
-import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
+import { StyledStack } from "./style"
+import { useRecoilValue } from "recoil"
+import { useStaticQuery, graphql } from "gatsby"
+import { projectState, projectIndexState } from "../../recoil/atoms"
+import { motion, useAnimation, AnimatePresence } from "framer-motion"
+import { stackVariantStack, stackVariants } from "../../styles/animations"
 
-type Iprops = {
+type Tprops = {
   enter: boolean
-  index: number
-  title: string
-  date: string
-  stack: string[]
 }
 
 const alt = "project-cover"
 const easing = [0.16, 0.2, 0.3, 1]
 
-const Stack: React.FC<Iprops> = props => {
-  const { enter, index, title, date, stack } = props
+const Stack: React.FC<Tprops> = ({ enter }) => {
+  const data = useRecoilValue(projectState)
+  const slideIndex = useRecoilValue(projectIndexState)
   const { images } = useStaticQuery(graphql`
     query {
       images: allFile(
@@ -57,13 +51,13 @@ const Stack: React.FC<Iprops> = props => {
       animation.set("initialSlide")
       animation.start("enterSlide")
     }
-  }, [title])
+  }, [data.title])
 
   return (
     <StyledStack enter={enter} animate={animation}>
       <motion.header variants={container}>
-        <motion.h3 variants={item}>{date}</motion.h3>
-        <motion.h2 variants={item}>{title}</motion.h2>
+        <motion.h3 variants={item}>{data.date}</motion.h3>
+        <motion.h2 variants={item}>{data.title}</motion.h2>
       </motion.header>
       <article>
         <AnimatePresence exitBeforeEnter>
@@ -71,11 +65,11 @@ const Stack: React.FC<Iprops> = props => {
             exit={{ scaleX: 0, transformOrigin: "left", opacity: 0 }}
             animate={{ scaleX: 1, transformOrigin: "right", opacity: 1 }}
             initial={{ scaleX: 0, transformOrigin: "right", opacity: 0 }}
-            key={index - 1}
+            key={slideIndex - 1}
             transition={{ ease: easing, duration: 0.3 }}
           >
             <Img
-              fluid={images.edges[index].node.sharp.fluid}
+              fluid={images.edges[slideIndex].node.sharp.fluid}
               loading={"eager"}
               alt={alt}
               fadeIn={false}
@@ -85,13 +79,13 @@ const Stack: React.FC<Iprops> = props => {
         <section>
           <AnimatePresence exitBeforeEnter>
             <motion.ul
-              key={index}
+              key={slideIndex}
               variants={containerStack}
               animate="enter"
               initial="initial"
               exit="exit"
             >
-              {stack.map((name: string, index: number) => (
+              {data.stack.map((name: string, index: number) => (
                 <motion.li key={index} variants={itemStack}>
                   {name}
                 </motion.li>

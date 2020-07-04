@@ -1,11 +1,16 @@
 import React, { useEffect, useState } from "react"
+import Stack from "../stack"
+import Button from "../button"
+import Project from "../project"
+import { useRecoilValue, useRecoilState } from "recoil"
+import {
+  projectState,
+  projectListState,
+  projectIndexState,
+} from "../../recoil/atoms"
 import { StyledGallery, StyledContainer } from "./style"
 import { useInView } from "react-intersection-observer"
-import Project from "./project"
-import Stack from "./stack"
-import Button from "../button"
 
-let slideIndex: number = 0
 const IO = {
   triggerOnce: true,
   rootMargin: "150px",
@@ -13,87 +18,38 @@ const IO = {
 }
 
 const Gallery = () => {
-  const [data, setData] = useState(projects[slideIndex])
+  const projectList = useRecoilValue(projectListState)
+  const [data, setData] = useRecoilState(projectState)
+  const [slideIndex, setSlideIndex] = useRecoilState(projectIndexState)
   const [enter, setEnter] = useState<boolean>(false)
   const [GalleryRef, inView] = useInView(IO)
 
   const handleSlide = (index: number) => {
-    slideIndex = index
-    if (slideIndex > projects.length - 1) {
-      slideIndex = 0
-      setData(projects[slideIndex])
+    setSlideIndex(index)
+    if (index > projectList.length - 1) {
+      setSlideIndex(0)
+      setData(projectList[slideIndex])
     }
-    if (slideIndex < 0) {
-      slideIndex = projects.length - 1
-      setData(projects[slideIndex])
+    if (index < 0) {
+      setSlideIndex(projectList.length - 1)
+      setData(projectList[slideIndex])
     }
-    setData(projects[slideIndex])
+    setData(projectList[slideIndex])
   }
 
   useEffect(() => {
     if (inView) setEnter(true)
   }, [enter, inView])
 
-  const projectProps = {
-    enter: enter,
-    handleSlide: handleSlide,
-    index: slideIndex,
-    description: data.description,
-    projects: projects,
-  }
-
-  const stackProps = {
-    enter: enter,
-    index: slideIndex,
-    title: data.title,
-    date: data.date,
-    stack: data.stack,
-  }
-
   return (
     <StyledGallery ref={GalleryRef} enter={enter}>
-      <Project {...projectProps} />
-      <Stack {...stackProps} />
+      <Project enter={enter} handleSlide={handleSlide} />
+      <Stack enter={enter} />
       <StyledContainer enter={enter}>
         <Button link={data.link} />
       </StyledContainer>
     </StyledGallery>
   )
 }
-
-const projects = [
-  {
-    title: "Newsfeed",
-    description:
-      "En NewYorkTimes newsfeed webapplication, som var mit første projekt hvor jeg brugte Typescript. Udfordring var at hente xml data fra NewYorkTimes, for så at konventere det til json",
-    date: "30-4-2020",
-    link: "https://news-feed-app.netlify.app/",
-    stack: ["React.JS", "Typescript", "Tailwind CSS"],
-  },
-  {
-    title: "IplayMusic",
-    description:
-      "IplayMusic er en music player webapplication som henter data fra Spotify´s API. Det blev til en rigtig fin song preview player da jeg ikke har premium. Desuden jeg lærte en masse om at optimere REST-API kalds ",
-    date: "13-1-2020",
-    link: "https://iplaymusic-jwn.netlify.app/",
-    stack: ["EJS", "Gulp", "SCSS"],
-  },
-  {
-    title: "Blog-Components",
-    description:
-      "En skole opgave der gik ud på at tænke modulært i form af komponenter. jeg brugte Gatsby.jS, Typescript og derovre Contentful some et Headless-CMS.",
-    date: "25-5-2020",
-    link: "https://ui-components-jwn.netlify.app/",
-    stack: ["Gatsby.JS", "Typescript", "Contentful"],
-  },
-  {
-    title: "Tasks",
-    description:
-      "Mit første React.JS projekt, som gav mig en bredt indblik i hvordan React.js rent faktisk fungere som et javascript-framework. React-Spring blev også brugt meget i forbindelse med projektet.",
-    date: "25-2-2020",
-    link: "https://task-jwn.netlify.app/",
-    stack: ["React.JS", "React-Spring", "SCSS"],
-  },
-]
 
 export default Gallery

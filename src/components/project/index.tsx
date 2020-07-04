@@ -2,17 +2,31 @@ import React, { useEffect } from "react"
 import { StyledProject } from "./style"
 import { useAnimation, motion, AnimatePresence } from "framer-motion"
 import { stackVariants, slideY, easing, slideX } from "../../styles/animations"
+import { useRecoilValue } from "recoil"
+import {
+  projectListState,
+  projectState,
+  projectIndexState,
+} from "../../recoil/atoms"
 
-type Iprops = {
+type Tprops = {
   enter: boolean
   handleSlide: (index: number) => void
-  description: string
-  projects: object[]
-  index: number
 }
 
-const Project: React.FC<Iprops> = props => {
-  const { enter, handleSlide, description, projects, index } = props
+type Tproject = {
+  title: string
+  description: string
+  date: string
+  link: string
+  stack: string[]
+}
+
+const Project: React.FC<Tprops> = ({ enter, handleSlide }) => {
+  const projectList = useRecoilValue(projectListState)
+  const data = useRecoilValue(projectState)
+  const slideIndex = useRecoilValue(projectIndexState)
+
   const { container, item } = stackVariants
   const animation = useAnimation()
 
@@ -21,11 +35,13 @@ const Project: React.FC<Iprops> = props => {
   }, [animation, enter])
 
   const handleSwipe = (event: any, info: any) => {
-    info.offset.x > 0 ? handleSlide(index - 1) : handleSlide(index + 1)
+    info.offset.x > 0
+      ? handleSlide(slideIndex - 1)
+      : handleSlide(slideIndex + 1)
   }
 
   return (
-    <StyledProject enter={enter} animate={animation} current={index + 1}>
+    <StyledProject enter={enter} animate={animation} current={slideIndex + 1}>
       <header>
         <h2>Project</h2>
         <section>
@@ -34,7 +50,7 @@ const Project: React.FC<Iprops> = props => {
           <AnimatePresence exitBeforeEnter>
             <motion.span
               variants={slideY}
-              key={index}
+              key={slideIndex}
               animate="enter"
               initial="initial"
               exit="exit"
@@ -43,14 +59,14 @@ const Project: React.FC<Iprops> = props => {
                 ease: easing,
               }}
             >
-              {index + 1}
+              {slideIndex + 1}
             </motion.span>
           </AnimatePresence>
         </section>
       </header>
       <nav>
         <motion.ul variants={container} initial="initial">
-          {projects.map((project: object, index: number) => (
+          {projectList.map((project: Tproject, index: number) => (
             <motion.li
               variants={item}
               key={index}
@@ -67,14 +83,14 @@ const Project: React.FC<Iprops> = props => {
             exit="exit"
             initial="initial"
             variants={slideX}
-            key={index}
+            key={slideIndex}
             transition={{
               delay: 0.1,
               duration: 0.2,
               ease: easing,
             }}
           >
-            {description}
+            {data.description}
           </motion.p>
         </AnimatePresence>
       </article>

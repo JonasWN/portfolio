@@ -4,6 +4,7 @@ import { Container } from "../../styles/layout-styles"
 import { Theme } from "../../styles/theme-styles"
 import { ThemeProvider } from "styled-components"
 import { useStaticQuery, graphql } from "gatsby"
+import { RecoilRoot, selector, useRecoilState, useRecoilValue } from "recoil"
 
 const Layout = ({ children }: any) => {
   const data = useStaticQuery(graphql`
@@ -17,12 +18,14 @@ const Layout = ({ children }: any) => {
   `)
 
   return (
-    <ThemeProvider theme={Theme}>
-      <Container>
-        <GlobalStyle />
-        <>{children}</>
-      </Container>
-    </ThemeProvider>
+    <RecoilRoot>
+      <ThemeProvider theme={Theme}>
+        <Container>
+          <GlobalStyle />
+          <>{children}</>
+        </Container>
+      </ThemeProvider>
+    </RecoilRoot>
   )
 }
 
