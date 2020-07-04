@@ -1,6 +1,6 @@
 import React, { useEffect } from "react"
 import { StyledProject } from "./style"
-import { useAnimation, motion, AnimatePresence, useSpring } from "framer-motion"
+import { useAnimation, motion, AnimatePresence } from "framer-motion"
 import { stackVariants, slideY, easing, slideX } from "../../styles/animations"
 
 type Iprops = {
@@ -11,16 +11,10 @@ type Iprops = {
   index: number
 }
 
-const Project: React.FC<Iprops> = ({
-  enter,
-  handleSlide,
-  description,
-  projects,
-  index,
-}) => {
-  const animation = useAnimation()
+const Project: React.FC<Iprops> = props => {
+  const { enter, handleSlide, description, projects, index } = props
   const { container, item } = stackVariants
-  const x = useSpring(0)
+  const animation = useAnimation()
 
   useEffect(() => {
     if (enter) animation.start("enter")

@@ -4,18 +4,18 @@ import { useInView } from "react-intersection-observer"
 import Project from "./project"
 import Stack from "./stack"
 import Button from "../button"
-import { slide } from "../../styles/animations"
 
 let slideIndex: number = 0
+const IO = {
+  triggerOnce: true,
+  rootMargin: "150px",
+  threshold: 1,
+}
 
 const Gallery = () => {
   const [data, setData] = useState(projects[slideIndex])
   const [enter, setEnter] = useState<boolean>(false)
-  const [GalleryRef, inView] = useInView({
-    triggerOnce: true,
-    rootMargin: "150px",
-    threshold: 1,
-  })
+  const [GalleryRef, inView] = useInView(IO)
 
   const handleSlide = (index: number) => {
     slideIndex = index
@@ -34,23 +34,26 @@ const Gallery = () => {
     if (inView) setEnter(true)
   }, [enter, inView])
 
+  const projectProps = {
+    enter: enter,
+    handleSlide: handleSlide,
+    index: slideIndex,
+    description: data.description,
+    projects: projects,
+  }
+
+  const stackProps = {
+    enter: enter,
+    index: slideIndex,
+    title: data.title,
+    date: data.date,
+    stack: data.stack,
+  }
+
   return (
     <StyledGallery ref={GalleryRef} enter={enter}>
-      <Project
-        enter={enter}
-        handleSlide={handleSlide}
-        description={data.description}
-        projects={projects}
-        index={slideIndex}
-      />
-      <Stack
-        enter={enter}
-        handleSlide={handleSlide}
-        index={slideIndex + 1}
-        title={data.title}
-        date={data.date}
-        stack={data.stack}
-      />
+      <Project {...projectProps} />
+      <Stack {...stackProps} />
       <StyledContainer enter={enter}>
         <Button link={data.link} />
       </StyledContainer>

@@ -15,6 +15,8 @@ export const device = {
   desktopL: `(max-width: ${sizes.xl})`,
 }
 
+export const flex = {}
+
 export const Container = styled<any>(motion.div)`
   padding: 2%;
 `

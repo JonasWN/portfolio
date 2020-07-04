@@ -12,7 +12,6 @@ import Img from "gatsby-image"
 
 type Iprops = {
   enter: boolean
-  handleSlide: (index: number) => void
   index: number
   title: string
   date: string
@@ -23,7 +22,7 @@ const alt = "project-cover"
 const easing = [0.16, 0.2, 0.3, 1]
 
 const Stack: React.FC<Iprops> = props => {
-  const { enter, handleSlide, index, title, date, stack } = props
+  const { enter, index, title, date, stack } = props
   const { images } = useStaticQuery(graphql`
     query {
       images: allFile(
@@ -76,7 +75,7 @@ const Stack: React.FC<Iprops> = props => {
             transition={{ ease: easing, duration: 0.3 }}
           >
             <Img
-              fluid={images.edges[index - 1].node.sharp.fluid}
+              fluid={images.edges[index].node.sharp.fluid}
               loading={"eager"}
               alt={alt}
               fadeIn={false}

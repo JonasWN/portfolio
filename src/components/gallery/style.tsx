@@ -1,12 +1,7 @@
 import styled from "styled-components"
-import { device } from "../../styles/layout-styles"
 import { motion } from "framer-motion"
-import {
-  ScaleRight,
-  FadeIn,
-  TextAppearY,
-  easing,
-} from "../../styles/animations"
+import { device } from "../../styles/layout-styles"
+import { ScaleRight, FadeIn, TextAppearY } from "../../styles/animations"
 
 export const StyledGallery = styled<any>(motion.main)`
   position: relative;
