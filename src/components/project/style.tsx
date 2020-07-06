@@ -134,60 +134,59 @@ export const StyledProject = styled<any>(motion.section)`
     height: 40%;
     position: relative;
 
+    :before {
+      content: "";
+      position: absolute;
+      top: 0%;
+      left: 0;
+      width: 30%;
+      height: 1px;
+      background: #ffb68c;
+      z-index: 20;
+    }
+
+    :after {
+      content: "";
+      position: absolute;
+      top: 5%;
+      left: 0;
+      width: 15%;
+      height: 1px;
+      background: #ffb68c;
+      z-index: 20;
+
+      @media ${device.mobile} {
+        top: -5%;
+      }
+    }
+
     @media ${device.mobile} {
-      top: -5%;
+      max-width: 100%;
+      height: 55%;
+
+      h3 {
+        color: red;
+      }
+    }
+    h3 {
+      color: ${props => props.theme.color.accent.beige};
+      font-weight: 100;
+      text-transform: uppercase;
+      margin-bottom: 5%;
     }
 
     p {
-      position: relative;
       font-family: oswald;
       font-size: 1.1rem;
       font-weight: 100;
       line-height: 1.5rem;
       letter-spacing: 0.1em;
 
-      :before {
-        content: "";
-        position: absolute;
-        top: -10%;
-        left: 0;
-        width: 30%;
-        height: 1px;
-        background: #ffb68c;
-        z-index: 20;
-      }
-
-      :after {
-        content: "";
-        position: absolute;
-        top: -15%;
-        left: 0;
-        width: 15%;
-        height: 1px;
-        background: #ffb68c;
-        z-index: 20;
-
-        @media ${device.mobile} {
-          letter-spacing: 0.1rem;
-          line-height: 1.2rem;
-          font-size: 0.8rem;
-        }
+      @media ${device.mobile} {
+        letter-spacing: 0.1rem;
+        line-height: 1.2rem;
+        font-size: 0.8rem;
       }
     }
-  }
-
-  @media ${device.mobile} {
-    max-width: 100%;
-    height: 55%;
-
-    h3 {
-      color: red;
-    }
-  }
-  h3 {
-    color: ${props => props.theme.color.accent.beige};
-    font-weight: 100;
-    text-transform: uppercase;
-    margin-bottom: 5%;
   }
 `

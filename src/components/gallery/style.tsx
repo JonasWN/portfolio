@@ -46,7 +46,7 @@ export const StyledGallery = styled<any>(motion.main)`
   &:after {
     content: "";
     opacity: 1 !important;
-    background: ${props => props.theme.color.background.containerDark};
+    background: #336;
     height: 65%;
     width: 70%;
     transform: scaleX(0);
