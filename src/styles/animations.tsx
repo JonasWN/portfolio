@@ -1,6 +1,7 @@
 import { keyframes } from "styled-components"
 
 export const easing = [0.16, 0.2, 0.3, 1]
+export const curtainEasing = [0.77, 0.6, 0.4, 0.7]
 
 export const phoneNav = {
   container: {
@@ -172,7 +173,15 @@ export const stackVariants = {
       translateY: 0,
       transition: {
         staggerChildren: 0.2,
-        delayChildren: 1.4,
+        delayChildren: 0.2,
+      },
+    },
+    enterDelayed: {
+      opacity: 1,
+      translateY: 0,
+      transition: {
+        staggerChildren: 0.2,
+        delayChildren: 1.6,
       },
     },
     exit: {
@@ -182,36 +191,31 @@ export const stackVariants = {
         duration: 0.4,
       },
     },
-    initial: { opacity: 0 },
-    enterSlide: {
-      opacity: 1,
-      translateX: 0,
-      transition: {
-        staggerChildren: 0.2,
-        delayChildren: 0.4,
-      },
-    },
   },
   item: {
     initial: {
       opacity: 0,
-      translateY: -40,
+      translateX: -40,
     },
     enter: {
       opacity: 1,
-      translateY: 0,
+      translateX: 0,
+      transition: {
+        ease: easing,
+      },
+    },
+    enterDelayed: {
+      opacity: 1,
+      translateX: 0,
+      transition: {
+        ease: easing,
+      },
     },
     exit: {
       opacity: 0,
-      translateY: 40,
-    },
-    initialSlide: {
-      opacity: 0,
-      translateX: 20,
-    },
-    enterSlide: {
-      opacity: 1,
-      translateX: 0,
+      transition: {
+        ease: easing,
+      },
     },
   },
 }
