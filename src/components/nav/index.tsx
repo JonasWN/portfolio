@@ -5,8 +5,10 @@ import { useScrollPosition } from "../../hooks/useScrollPosition"
 //@ts-ignore
 import Logo from "../../static/images/Logo.svg"
 import Phone from "./phone"
+import { socials } from "../socials"
 import { AnimatePresence, motion } from "framer-motion"
-import { stackVariantsX, TextVariants } from "../../styles/animations"
+import { stackVariantsX, phoneNav, TextVariants } from "../../styles/animations"
+import { Github, Facebook, Linkedin } from "@styled-icons/boxicons-logos"
 
 const Nav = () => {
   const [sticky, setSticky] = useState<boolean>(true)
@@ -50,7 +52,49 @@ const Nav = () => {
         <Phone handleOverlay={handleOverlay} overlay={overlay} />
       </StyledNav>
       <AnimatePresence exitBeforeEnter>
-        {overlay && <StyledPhoneNav />}
+        {overlay && (
+          <StyledPhoneNav>
+            <nav>
+              <motion.ul variants={phoneNav.container}>
+                <motion.li variants={phoneNav.item}>Projects</motion.li>
+                <motion.li variants={phoneNav.item}>About</motion.li>
+                <motion.li variants={phoneNav.item}>Contact</motion.li>
+              </motion.ul>
+              <motion.ul variants={container}>
+                <motion.li variants={item}>
+                  <a
+                    href={socials[0]}
+                    target="_blank"
+                    aria-label="Github"
+                    rel="noopener"
+                  >
+                    <Github />
+                  </a>
+                </motion.li>
+                <motion.li variants={item}>
+                  <a
+                    href={socials[1]}
+                    target="_blank"
+                    aria-label="Linkedin"
+                    rel="noopener"
+                  >
+                    <Linkedin />
+                  </a>
+                </motion.li>
+                <motion.li variants={item}>
+                  <a
+                    href={socials[2]}
+                    target="_blank"
+                    aria-label="Facebook"
+                    rel="noopener"
+                  >
+                    <Facebook />
+                  </a>
+                </motion.li>
+              </motion.ul>
+            </nav>
+          </StyledPhoneNav>
+        )}
       </AnimatePresence>
     </>
   )

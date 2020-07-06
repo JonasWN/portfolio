@@ -205,14 +205,14 @@ let easing = [0.77, 0, 0.175, 1]
 const variants = {
   enter: {
     translateX: 0,
-    transition: { ease: easing, duration: 0.6 },
+    transition: { ease: easing, duration: 0.8 },
   },
   initial: {
     translateX: "100%",
   },
   exit: {
     translateX: "-100%",
-    transition: { ease: easing, duration: 0.6 },
+    transition: { ease: easing, duration: 0.8, delay: 0.6 },
   },
 }
 export const StyledPhoneNav = styled(motion.div).attrs(() => ({
@@ -231,5 +231,34 @@ export const StyledPhoneNav = styled(motion.div).attrs(() => ({
 
   .phone-menu {
     display: block;
+  }
+
+  nav {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    color: ${props => props.theme.color.font.textDark};
+
+    ul:first-child {
+      position: absolute;
+      top: 35%;
+      left: 15%;
+      transform: translate(-50%, -50%);
+      font-size: 2.2rem;
+    }
+
+    ul:last-child {
+      display: flex;
+      width: 40%;
+      justify-content: space-between;
+      position: absolute;
+      bottom: 5%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+
+      svg {
+        width: 25px;
+      }
+    }
   }
 `

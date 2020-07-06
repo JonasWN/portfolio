@@ -2,11 +2,61 @@ import { keyframes } from "styled-components"
 
 export const easing = [0.16, 0.2, 0.3, 1]
 
+export const phoneNav = {
+  container: {
+    enter: {
+      opacity: 1,
+      translateY: 0,
+      transition: {
+        staggerChildren: 0.2,
+        delayChildren: 0.7,
+      },
+    },
+    enterDelayed: {
+      opacity: 1,
+      translateY: 0,
+      transition: {
+        staggerChildren: 0.1,
+        delayChildren: 1.4,
+      },
+    },
+    exit: {
+      transition: {
+        opacty: 0,
+        staggerChildren: 0.2,
+      },
+    },
+    initial: { opacity: 0 },
+  },
+  item: {
+    initial: {
+      opacity: 0,
+      translateY: -20,
+    },
+    enter: {
+      opacity: 1,
+      translateY: 0,
+      transition: {
+        ease: easing,
+        duration: 0.4,
+      },
+    },
+    exit: {
+      opacity: 0,
+      translateY: -20,
+      transition: {
+        ease: easing,
+        duration: 0.4,
+      },
+    },
+  },
+}
+
 export const stackVariantStack = {
   containerStack: {
     enter: {
       opacity: 1,
-      translateY: 0,
+      translateX: 0,
       transition: {
         staggerChildren: 0.1,
         delayChildren: 0.3,
@@ -14,7 +64,7 @@ export const stackVariantStack = {
     },
     enterDelayed: {
       opacity: 1,
-      translateY: 0,
+      translateX: 0,
       transition: {
         staggerChildren: 0.1,
         delayChildren: 1.4,
@@ -125,6 +175,13 @@ export const stackVariants = {
         delayChildren: 1.4,
       },
     },
+    exit: {
+      opacity: 0,
+      transition: {
+        staggerChildren: 0.2,
+        duration: 0.4,
+      },
+    },
     initial: { opacity: 0 },
     enterSlide: {
       opacity: 1,
@@ -143,6 +200,10 @@ export const stackVariants = {
     enter: {
       opacity: 1,
       translateY: 0,
+    },
+    exit: {
+      opacity: 0,
+      translateY: 40,
     },
     initialSlide: {
       opacity: 0,
@@ -165,6 +226,12 @@ export const stackVariantsX = {
         delayChildren: 1.3,
       },
     },
+    exit: {
+      transition: {
+        staggerChildren: 0.2,
+        delayChildren: 0.2,
+      },
+    },
     initial: { opacity: 0 },
   },
   item: {
@@ -175,6 +242,14 @@ export const stackVariantsX = {
     enter: {
       opacity: 1,
       translateX: 0,
+    },
+    exit: {
+      opacity: 0,
+      translateX: -20,
+      transition: {
+        ease: easing,
+        duration: 0.4,
+      },
     },
   },
 }

@@ -4,7 +4,7 @@ import { StyledSocials } from "./style"
 import { stackVariantsX } from "../../styles/animations"
 import { motion } from "framer-motion"
 
-const socials = [
+export const socials = [
   "https://github.com/JonasWN",
   "https://www.linkedin.com/in/jonas-w-nielsen/",
   "https://www.facebook.com/jonas.Wessman.Nielsen",
@@ -31,7 +31,7 @@ const Socials = () => {
         <a
           href={socials[1]}
           target="_blank"
-          aria-label="Facebook"
+          aria-label="Linkedin"
           rel="noopener"
         >
           <span></span>
@@ -45,7 +45,7 @@ const Socials = () => {
         <a
           href={socials[2]}
           target="_blank"
-          aria-label="Linkedin"
+          aria-label="Facebook"
           rel="noopener"
         >
           <span></span>
