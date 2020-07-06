@@ -129,34 +129,35 @@ export const StyledProject = styled<any>(motion.section)`
 
   article {
     display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     align-items: flex-end;
     max-width: 75%;
-    height: 40%;
+    height: 50%;
     position: relative;
 
-    :before {
-      content: "";
-      position: absolute;
-      top: 0%;
-      left: 0;
-      width: 30%;
-      height: 1px;
-      background: #ffb68c;
-      z-index: 20;
-    }
+    div {
+      height: 15px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
 
-    :after {
-      content: "";
-      position: absolute;
-      top: 5%;
-      left: 0;
-      width: 15%;
-      height: 1px;
-      background: #ffb68c;
-      z-index: 20;
+      div:first-child {
+        width: 30%;
+        height: 0.5px;
+        background: #ffb68c;
+        z-index: 20;
+      }
+      div:nth-child(2) {
+        width: 15%;
+        height: 0.5px;
+        background: #ffb68c;
+        z-index: 20;
 
-      @media ${device.mobile} {
-        top: -5%;
+        @media ${device.mobile} {
+          top: -5%;
+        }
       }
     }
 

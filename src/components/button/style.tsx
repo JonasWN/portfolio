@@ -1,5 +1,4 @@
 import styled from "styled-components"
-import { device } from "../../styles/layout-styles"
 
 export const StyledButton = styled.button`
   position: absolute;
@@ -11,10 +10,6 @@ export const StyledButton = styled.button`
   box-shadow: 0rem 0rem 1rem 0rem rgba(0, 0, 0, 0.2);
   transition: all 0.3s ease-out;
 
-  &:hover a {
-    color: ${props => props.theme.color.font.textDark};
-  }
-
   &:hover :after {
     transform: translateX(0);
     transition: transform 0.35s ease-out;
@@ -24,8 +19,7 @@ export const StyledButton = styled.button`
     content: "";
     content: "";
     transition: transform 0.35s ease-out;
-    background: #c9d9e8;
-    background: ${props => props.theme.color.background.containerLight};
+    background: #ffb68c;
     position: left;
     position: absolute;
     left: -7%;

@@ -77,7 +77,7 @@ const Project: React.FC<Tprops> = ({ enter, curtain, setCurtain }) => {
               initial="initial"
               exit="exit"
               transition={{
-                duration: 0.2,
+                duration: 0.3,
                 ease: easing,
                 delay: 0.1,
               }}
@@ -100,6 +100,10 @@ const Project: React.FC<Tprops> = ({ enter, curtain, setCurtain }) => {
         </motion.ul>
       </nav>
       <article>
+        <div>
+          <div />
+          <div />
+        </div>
         <AnimatePresence exitBeforeEnter>
           <motion.p
             animate="enter"
@@ -121,7 +125,7 @@ const Project: React.FC<Tprops> = ({ enter, curtain, setCurtain }) => {
         className="gallery-swiper"
         drag={"x"}
         dragConstraints={{ left: 0, right: 0 }}
-        onDragEnd={handleSwipe}
+        onDragStart={handleSwipe}
       />
     </StyledProject>
   )
