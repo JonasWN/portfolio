@@ -126,6 +126,7 @@ const Project: React.FC<Tprops> = ({ enter, curtain, setCurtain }) => {
         drag={"x"}
         dragConstraints={{ left: 0, right: 0 }}
         onDragStart={handleSwipe}
+        onScroll={() => console.log("hey")}
       />
     </StyledProject>
   )

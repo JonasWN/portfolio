@@ -59,7 +59,7 @@ export const StyledProject = styled<any>(motion.section)`
       margin-top: 3%;
 
       div {
-        height: 1px;
+        height: 0.5px;
         width: 90px;
         background: #ffb68c;
       }
@@ -101,7 +101,7 @@ export const StyledProject = styled<any>(motion.section)`
       li {
         position: relative;
         z-index: 50;
-        height: 1px;
+        height: 0.5px;
         width: 20px;
         background: ${props => props.theme.color.background.containerLight};
         opacity: 0.5;
@@ -144,13 +144,13 @@ export const StyledProject = styled<any>(motion.section)`
       justify-content: space-around;
 
       div:first-child {
-        width: 30%;
+        width: 10%;
         height: 0.5px;
         background: #ffb68c;
         z-index: 20;
       }
       div:nth-child(2) {
-        width: 15%;
+        width: 30%;
         height: 0.5px;
         background: #ffb68c;
         z-index: 20;

@@ -71,6 +71,7 @@ const Stack: React.FC<Tprops> = ({ enter, curtain }) => {
             loading={"eager"}
             alt="project-cover"
             fadeIn={false}
+            imgStyle={{ filter: "contrast(1.2)" }}
           />
           <motion.div
             className="curtain"

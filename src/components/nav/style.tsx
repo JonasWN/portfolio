@@ -243,7 +243,6 @@ export const StyledPhoneNav = styled(motion.div).attrs(() => ({
       position: absolute;
       top: 35%;
       left: 15%;
-      transform: translate(-50%, -50%);
       font-size: 2.2rem;
     }
 
@@ -252,7 +251,7 @@ export const StyledPhoneNav = styled(motion.div).attrs(() => ({
       width: 40%;
       justify-content: space-between;
       position: absolute;
-      bottom: 5%;
+      bottom: 10%;
       left: 50%;
       transform: translate(-50%, -50%);
 
