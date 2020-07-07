@@ -12,12 +12,13 @@ export const StyledScrollBar = styled<any>(motion.div)`
   transform: translate(-0, -50%);
 
   @media ${device.mobile} {
-    display: none !important;
+    display: none;
   }
 
   div {
     background: ${props => props.theme.color.background.containerDark};
     width: 1px;
     opacity: 0.5;
+    transition: height 0.6s ease-out;
   }
 `

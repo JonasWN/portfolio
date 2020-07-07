@@ -113,7 +113,7 @@ const Project: React.FC<Tprops> = ({ enter, curtain, setCurtain }) => {
             key={slideIndex}
             transition={{
               delay: 0.2,
-              duration: 0.2,
+              duration: 0.3,
               ease: easing,
             }}
           >
