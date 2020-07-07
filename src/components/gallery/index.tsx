@@ -2,14 +2,10 @@ import React, { useEffect, useState } from "react"
 import Stack from "../stack"
 import Button from "../button"
 import Project from "../project"
-import { useRecoilValue, useRecoilState } from "recoil"
+import { useRecoilValue } from "recoil"
 import { StyledGallery, StyledContainer } from "./style"
 import { useInView } from "react-intersection-observer"
-import {
-  projectState,
-  projectListState,
-  projectIndexState,
-} from "../../recoil/atoms"
+import { projectState } from "../../recoil/atoms"
 
 const IO = {
   triggerOnce: true,

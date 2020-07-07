@@ -20,7 +20,7 @@ export const StyledProject = styled<any>(motion.section)`
   width: 40%;
 
   background: ${props => props.theme.color.background.containerDark};
-  color: ${props => props.theme.color.font.textLight};
+  color: #e0e8f7;
   box-shadow: ${props => props.theme.shadow.card};
   font-family: Orbitron;
   padding: 5%;
@@ -103,7 +103,7 @@ export const StyledProject = styled<any>(motion.section)`
         z-index: 50;
         height: 0.5px;
         width: 20px;
-        background: ${props => props.theme.color.background.containerLight};
+        background: #e0e8f7;
         opacity: 0.5;
         transition: width 0.4s ease-in-out, background 0.4s ease-in-out;
 
@@ -180,7 +180,7 @@ export const StyledProject = styled<any>(motion.section)`
       font-family: oswald;
       font-size: 1.1rem;
       font-weight: 100;
-      line-height: 1.5rem;
+      line-height: 2rem;
       letter-spacing: 0.1em;
 
       @media ${device.mobile} {

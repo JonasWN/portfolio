@@ -39,7 +39,7 @@ export const projectListState = atom({
     {
       title: "Blog-Components",
       description:
-        "En skole opgave der gik ud på at tænke modulært i form af komponenter. jeg brugte Gatsby.jS, Typescript og derovre Contentful some et Headless-CMS.",
+        "En skole opgave der gik ud på at tænke modulært i form af komponenter. jeg brugte Gatsby.jS, Typescript og derudover Contentful some et Headless-CMS.",
       date: "25-5-2020",
       link: "https://ui-components-jwn.netlify.app/",
       stack: ["Gatsby.JS", "Typescript", "Contentful"],
