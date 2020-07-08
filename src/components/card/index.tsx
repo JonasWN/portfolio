@@ -1,4 +1,5 @@
 import React from "react"
+import { StyledCard } from "./style"
 //@ts-ignore
 import Tech from "../../static/images/cards/tech.svg"
 //@ts-ignore
@@ -13,13 +14,13 @@ type Tprops = {
 
 const Card: React.FC<Tprops> = ({ title, description }) => {
   return (
-    <article>
+    <StyledCard>
       <h4>{title}</h4>
       {title === "Teknologi" && <Tech />}
       {title === "Design" && <Design />}
       {title === "Udvikling" && <Udvikling />}
       <p>{description}</p>
-    </article>
+    </StyledCard>
   )
 }
 

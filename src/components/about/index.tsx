@@ -1,6 +1,7 @@
 import React from "react"
 import TextBox from "../textBox"
 import Card from "../card"
+import { StyledAbout } from "./style"
 
 type Tcard = {
   title: string
@@ -9,17 +10,19 @@ type Tcard = {
 
 const About = () => {
   return (
-    <section>
+    <StyledAbout>
       <h2>Hvem jeg er</h2>
       <TextBox />
-      {cardTemplate.map((card: Tcard) => (
-        <Card
-          key={card.title}
-          title={card.title}
-          description={card.description}
-        />
-      ))}
-    </section>
+      <ul>
+        {cardTemplate.map((card: Tcard) => (
+          <Card
+            key={card.title}
+            title={card.title}
+            description={card.description}
+          />
+        ))}
+      </ul>
+    </StyledAbout>
   )
 }
 
