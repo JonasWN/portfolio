@@ -101,7 +101,7 @@ export const StyledProject = styled<any>(motion.section)`
       li {
         position: relative;
         z-index: 50;
-        height: 0.5px;
+        height: 1px;
         width: 20px;
         background: #e0e8f7;
         opacity: 0.5;
@@ -145,13 +145,13 @@ export const StyledProject = styled<any>(motion.section)`
 
       div:first-child {
         width: 10%;
-        height: 0.5px;
+        height: 1px;
         background: #ffb68c;
         z-index: 20;
       }
       div:nth-child(2) {
         width: 30%;
-        height: 0.5px;
+        height: 1px;
         background: #ffb68c;
         z-index: 20;
 
