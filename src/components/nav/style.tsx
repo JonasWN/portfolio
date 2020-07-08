@@ -2,7 +2,7 @@ import styled, { keyframes } from "styled-components"
 import { device } from "../../styles/layout-styles"
 import { motion } from "framer-motion"
 
-const aHover = keyframes`
+export const aHover = keyframes`
   from {
     transform: scaleX(0);
     transform-origin: 0%;

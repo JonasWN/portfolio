@@ -1,5 +1,5 @@
 import React from "react"
-import { Github, Facebook, Linkedin } from "@styled-icons/boxicons-logos"
+import { Github, Codepen, Linkedin } from "@styled-icons/boxicons-logos"
 import { StyledSocials } from "./style"
 import { stackVariantsX } from "../../styles/animations"
 import { motion } from "framer-motion"
@@ -7,7 +7,7 @@ import { motion } from "framer-motion"
 export const socials = [
   "https://github.com/JonasWN",
   "https://www.linkedin.com/in/jonas-w-nielsen/",
-  "https://www.facebook.com/jonas.Wessman.Nielsen",
+  "https://codepen.io/dashboard/",
 ]
 
 const Socials = () => {
@@ -45,14 +45,14 @@ const Socials = () => {
         <a
           href={socials[2]}
           target="_blank"
-          aria-label="Facebook"
+          aria-label="Codepen"
           rel="noopener"
         >
           <span></span>
           <span></span>
           <span></span>
           <span></span>
-          <Facebook style={width} />
+          <Codepen style={width} />
         </a>
       </motion.li>
     </StyledSocials>

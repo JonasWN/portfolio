@@ -2,8 +2,7 @@ import styled from "styled-components"
 import { device } from "../../styles/layout-styles"
 
 export const StyledAbout = styled.section`
-  margin: 50vh 0;
-  height: 100vh;
+  margin: 50vh 0 15vh 0;
   display: flex;
   flex-direction: column;
   justify-content: space-between;

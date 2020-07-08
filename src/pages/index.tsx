@@ -6,6 +6,7 @@ import Hero from "../components/hero"
 import ScrollBar from "../components/scrollBar"
 import Gallery from "../components/gallery"
 import About from "../components/about"
+import Footer from "../components/footer"
 
 const IndexPage = () => (
   <Layout>
@@ -14,6 +15,7 @@ const IndexPage = () => (
     <Hero />
     <Gallery />
     <About />
+    <Footer />
     <ScrollBar />
   </Layout>
 )
