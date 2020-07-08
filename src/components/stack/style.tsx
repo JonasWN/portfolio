@@ -42,6 +42,7 @@ export const StyledStack = styled<any>(motion.section).attrs({
 
     h2,
     h3 {
+      color: #254063;
       font-size: ${props => props.theme.fontSize.md};
       font-family: orbitron;
       font-weight: 100;
@@ -120,6 +121,7 @@ export const StyledStack = styled<any>(motion.section).attrs({
           text-align: right;
           font-size: min(max(0.6rem, 1vw), 0.8rem);
           letter-spacing: 0.2rem;
+          color: #254063;
           width: fit-content;
           margin-left: auto;
 

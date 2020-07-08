@@ -64,7 +64,7 @@ export const StyledSocials = styled(motion.ul)`
       position: absolute;
       transition: transform 0.5s;
       background: ${props => props.theme.color.background.containerDark};
-      opacity: 1;
+      opacity: 0.8;
 
       :nth-child(1) {
         top: 0;

@@ -20,7 +20,7 @@ export const StyledProject = styled<any>(motion.section)`
   width: 40%;
 
   background: ${props => props.theme.color.background.containerDark};
-  color: #e0e8f7;
+  color: #d2def5;
   box-shadow: ${props => props.theme.shadow.card};
   font-family: Orbitron;
   padding: 5%;
@@ -163,7 +163,7 @@ export const StyledProject = styled<any>(motion.section)`
 
     @media ${device.mobile} {
       max-width: 100%;
-      height: 55%;
+      height: 70%;
 
       h3 {
         color: red;
@@ -177,16 +177,15 @@ export const StyledProject = styled<any>(motion.section)`
     }
 
     p {
-      font-family: oswald;
-      font-size: 1.1rem;
+      font-family: orbitron;
+      font-size: 0.7rem;
       font-weight: 100;
       line-height: 2rem;
-      letter-spacing: 0.1em;
+      letter-spacing: 0.2em;
 
       @media ${device.mobile} {
         letter-spacing: 0.1rem;
         line-height: 1.2rem;
-        font-size: 0.8rem;
       }
     }
   }

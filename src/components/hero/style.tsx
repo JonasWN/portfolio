@@ -65,7 +65,7 @@ export const StyledCard = styled.article`
     top: 0;
     right: 0;
     width: 15%;
-    border-top: 1px solid #333;
+    border-top: 1px solid #254063;
     transform: scaleX(0);
     animation: ${FillLeft} 0.3s ease-in-out forwards;
     animation-delay: 2.2s;
@@ -75,7 +75,7 @@ export const StyledCard = styled.article`
     top: 0;
     right: 0;
     height: 15%;
-    border-right: 1px solid #333;
+    border-right: 1px solid #254063;
     transform: scale(0);
     animation: ${FillUp} 0.3s ease-in-out forwards;
     animation-delay: 2s;
@@ -85,7 +85,7 @@ export const StyledCard = styled.article`
     bottom: 0;
     left: 0;
     height: 15%;
-    border-left: 1px solid #333;
+    border-left: 1px solid #254063;
     transform: scale(0);
     animation: ${FillDown} 0.3s ease-in-out forwards;
     animation-delay: 1.6s;
@@ -95,7 +95,7 @@ export const StyledCard = styled.article`
     bottom: 0;
     left: 0;
     width: 15%;
-    border-bottom: 1px solid #333;
+    border-bottom: 1px solid #254063;
     transform: scale(0);
     animation: ${FillRight} 0.3s ease-in-out forwards;
     animation-delay: 1.8s;
@@ -185,15 +185,15 @@ export const StyledCard = styled.article`
     font-size: 1.3rem;
     font-size: min(max(0.9rem, 2vw), 1.3rem);
     font-family: orbitron;
-    font-weight: 100;
-    color: #19254cd6;
     text-shadow: ${props => props.theme.shadow.text};
+    font-weight: 100;
+    color: #19254c;
     max-width: 90%;
     letter-spacing: 0.2rem;
     line-height: 2.5rem;
 
     @media ${device.tablet} {
-      line-height: 1.5rem;
+      line-height: 2rem;
     }
 
     span :first-child {

@@ -68,6 +68,7 @@ export const StyledNav = styled<any>(motion.nav)`
         font-weight: 300;
         text-transform: uppercase;
         position: relative;
+        color: #254063;
 
         &:hover :after {
           cursor: pointer;
@@ -134,7 +135,7 @@ export const StyledPhone = styled.div`
   }
   .line {
     fill: none;
-    stroke: #494970;
+    stroke: #254063;
     stroke-width: 4.5px;
     stroke-linecap: round;
     stroke-linejoin: round;

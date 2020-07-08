@@ -1,4 +1,5 @@
 import styled from "styled-components"
+import { device } from "../../styles/layout-styles"
 
 export const StyledCard = styled.li`
   height: 400px;
@@ -18,6 +19,10 @@ export const StyledCard = styled.li`
     color: #254063;
     font-family: orbitron;
     font-weight: 100;
+
+    @media ${device.mobile} {
+      left: 0;
+    }
   }
   p {
     color: #254063;
