@@ -5,7 +5,7 @@ export const projectState = atom({
   default: {
     title: "Newsfeed",
     description:
-      "En NewYorkTimes newsfeed webapplication, som var mit første projekt hvor jeg brugte Typescript. Udfordring var at hente xml data fra NewYorkTimes, for så at konventere det til json",
+      "En NewYorkTimes newsfeed webapplication, som var mit forste projekt hvor jeg brugte Typescript. Udfordring var at hente xml data fra NewYorkTimes, for så at konventere det til json",
     date: "30-4-2020",
     link: "https://news-feed-app.netlify.app/",
     stack: ["React.JS", "Typescript", "Tailwind CSS"],
@@ -23,7 +23,7 @@ export const projectListState = atom({
     {
       title: "Newsfeed",
       description:
-        "En NewYorkTimes newsfeed webapplication, som var mit første projekt hvor jeg brugte Typescript. Udfordring var at hente xml data fra NewYorkTimes, for så at konventere det til json",
+        "En NewYorkTimes newsfeed webapplication, som var mit forste projekt hvor jeg brugte Typescript. Udfordring var at hente xml data fra NewYorkTimes, for så at konventere det til json",
       date: "30-4-2020",
       link: "https://news-feed-app.netlify.app/",
       stack: ["React.JS", "Typescript", "Tailwind CSS"],
@@ -47,7 +47,7 @@ export const projectListState = atom({
     {
       title: "Tasks",
       description:
-        "Mit første React.JS projekt, som gav mig en bredt indblik i hvordan React.js rent faktisk fungere som et javascript-framework. React-Spring blev også brugt meget i forbindelse med projektet.",
+        "Mit forste React.JS projekt, som gav mig en bredt indblik i hvordan React.js rent faktisk fungere som et javascript-framework. React-Spring blev også brugt meget i forbindelse med projektet.",
       date: "25-2-2020",
       link: "https://task-jwn.netlify.app/",
       stack: ["React.JS", "React-Spring", "SCSS"],
