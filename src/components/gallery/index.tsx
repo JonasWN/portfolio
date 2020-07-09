@@ -28,7 +28,7 @@ const Gallery = () => {
       <Project enter={enter} setCurtain={setCurtain} curtain={curtain} />
       <Stack enter={enter} curtain={curtain} />
       <StyledContainer enter={enter}>
-        <Button link={data.link} />
+        <Button link={data.link} title="Explore" aria={`${data.title} site`} />
       </StyledContainer>
     </StyledGallery>
   )

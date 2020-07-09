@@ -11,10 +11,6 @@ export const StyledScrollBar = styled<any>(motion.div)`
   top: 50%;
   transform: translate(-0, -50%);
 
-  @media ${device.mobile} {
-    display: none;
-  }
-
   div {
     background: #072142c7;
     width: 1px;

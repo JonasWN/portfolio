@@ -1,10 +1,9 @@
 import styled from "styled-components"
 
 export const StyledButton = styled.button`
-  position: absolute;
-  right: 5%;
-  bottom: 5%;
-  z-index: 4;
+  position: relative;
+  width: 170px;
+  height: 50px;
   overflow: hidden;
   z-index: 1;
   box-shadow: 0rem 0rem 1rem 0rem rgba(0, 0, 0, 0.2);

@@ -78,6 +78,12 @@ export const StyledContainer = styled<any>(motion.div)`
   animation: ${FadeIn} 1.6s;
   animation-play-state: ${props => (props.enter ? "running" : "paused")};
 
+  button {
+    position: absolute;
+    right: 5%;
+    bottom: 5%;
+  }
+
   @media ${device.mobile} {
     width: 90%;
     bottom: 5%;
