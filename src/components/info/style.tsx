@@ -6,17 +6,25 @@ export const StyledInfo = styled.section`
   width: 70vw;
   margin: 0 auto;
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
 
   @media ${device.tablet} {
-    flex-direction: column;
     width: 85vw;
   }
 
   h3 {
-    color: #254063;
+    color: #072142;
     font-weight: 600;
-    font-size: 1.4rem;
+    font-size: 2.4rem;
+    font-family: orbitron;
+    margin-bottom: 15px;
+  }
+
+  h4 {
+    color: #254063;
+    font-weight: 100;
+    font-size: 1.2rem;
     font-family: orbitron;
     letter-spacing: 0.1rem;
     width: 50%;
@@ -28,16 +36,19 @@ export const StyledInfo = styled.section`
   }
 
   div {
-    align-self: flex-end;
-    width: 400px;
+    display: flex;
+    justify-content: space-between;
 
-    @media ${device.mobile} {
-      width: 170px;
-      align-self: center;
+    @media ${device.tablet} {
+      flex-direction: column;
+    }
+
+    div {
+      align-self: flex-end;
     }
 
     button:first-child {
-      margin: 10vh 10px 10px 0;
+      margin-right: 10px;
     }
   }
 `
