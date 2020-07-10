@@ -100,10 +100,7 @@ const Project: React.FC<Tprops> = ({ enter, curtain, setCurtain }) => {
         </motion.ul>
       </nav>
       <article>
-        <div>
-          <div />
-          <div />
-        </div>
+        <h3>Info</h3>
         <AnimatePresence exitBeforeEnter>
           <motion.p
             animate="enter"

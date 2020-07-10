@@ -47,7 +47,7 @@ export const projectListState = atom({
     {
       title: "Tasks",
       description:
-        "Endnu en Todo-List, men det var mit forste React.JS projekt, som gav mig en bredt indblik i hvordan React.js rent faktisk fungere som et javascript-framework. React-Spring blev også brugt meget i forbindelse med projektet.",
+        "Endnu en Todo-List, men det var mit forste React.JS projekt, som gav mig en grundlæggende indblik i hvordan React.js rent faktisk fungere som et javascript-framework.",
       date: "25-2-2020",
       link: "https://task-jwn.netlify.app/",
       stack: ["React.JS", "React-Spring", "SCSS"],

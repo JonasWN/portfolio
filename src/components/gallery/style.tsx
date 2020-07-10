@@ -23,7 +23,7 @@ export const StyledGallery = styled<any>(motion.main)`
   &:before {
     content: "";
     opacity: 1 !important;
-    background: #b68c70;
+    background: ${props => props.theme.color.background.containerDark};
     transform: scaleX(0);
     z-index: 2;
     height: 85%;
@@ -45,7 +45,7 @@ export const StyledGallery = styled<any>(motion.main)`
   &:after {
     content: "";
     opacity: 1 !important;
-    background: #336;
+    background: #1e1e58;
     height: 65%;
     width: 70%;
     transform: scaleX(0);
@@ -73,7 +73,8 @@ export const StyledContainer = styled<any>(motion.div)`
   height: 65%;
   width: 70%;
   background: ${props => props.theme.color.background.containerLight};
-  box-shadow: ${props => props.theme.shadow.card};
+  /* box-shadow: ${props => props.theme.shadow.card}; */
+  border: 1px solid #72767a6e;
   animation: ${FadeIn} 1.6s;
   animation-play-state: ${props => (props.enter ? "running" : "paused")};
 

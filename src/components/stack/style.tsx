@@ -32,6 +32,11 @@ export const StyledStack = styled<any>(motion.section).attrs({
     justify-content: space-between;
     height: 25%;
 
+    @media ${device.tablet} {
+    width: max-content;
+    align-self: flex-end;
+     }
+
     @media ${device.mobile} {
       position: absolute;
       bottom: -7.5%;
@@ -72,8 +77,8 @@ export const StyledStack = styled<any>(motion.section).attrs({
     figure {
       width: 90%;
       max-width: 400px;
-      box-shadow: ${props => props.theme.shadow.card};
-      border: 1px solid #d0d0d0;
+      /* box-shadow: ${props => props.theme.shadow.card}; */
+      border: 1px solid #72767a6e;
       position: relative;
       -webkit-filter: contrast(120%) saturate(125%);
       filter: contrast(120%) saturate(125%);
@@ -81,7 +86,7 @@ export const StyledStack = styled<any>(motion.section).attrs({
       .curtain {
         content: "";
         opacity: 1 !important;
-        background: #336;
+        background: #1e2b46;
         transform: scaleX(0);
         z-index: 2;
         height: 102%;
@@ -99,6 +104,12 @@ export const StyledStack = styled<any>(motion.section).attrs({
       flex-direction: column;
       justify-content: center;
       width: 50%;
+
+      @media ${device.tablet} {
+      position: absolute;
+      right: 10%;
+      bottom: 35%;
+     }
 
       h4 {
         position: absolute;

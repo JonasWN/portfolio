@@ -18,12 +18,16 @@ export const StyledProject = styled<any>(motion.section)`
   z-index: 2;
   height: 85%;
   width: 40%;
-
-  background: ${props => props.theme.color.background.containerDark};
-  color: #d2def5;
-  box-shadow: ${props => props.theme.shadow.card};
+  border: 1px solid #72767a6e;
+  background: ${props => props.theme.color.background.site};
+  /* color: #d2def5; */
+  /* box-shadow: ${props => props.theme.shadow.card}; */
   font-family: Orbitron;
   padding: 5%;
+
+  @media ${device.tablet} {
+   width: 60%;
+  }
 
   @media ${device.mobile} {
     width: 73vw;
@@ -49,19 +53,29 @@ export const StyledProject = styled<any>(motion.section)`
       position: relative;
       letter-spacing: 0.5rem;
       font-weight: 100;
-      font-size: ${props => props.theme.fontSize.sm};
+      color: #072142;
+      font-size: 1.5rem;
       text-transform: uppercase;
+
+      @media ${device.mobile} {
+        font-size: 1.2rem;
+      }
     }
     section {
       display: flex;
       align-items: center;
       justify-content: space-between;
       margin-top: 3%;
+      color: #254063;
 
       div {
         height: 0.5px;
-        width: 90px;
-        background: #ffb68c;
+        width: 130px;
+        background: #FE6935;
+
+        @media ${device.mobile} {
+        width: 110px;
+      }
       }
 
       p {
@@ -103,7 +117,7 @@ export const StyledProject = styled<any>(motion.section)`
         z-index: 50;
         height: 1px;
         width: 20px;
-        background: #e0e8f7;
+        background: #254063;
         opacity: 0.5;
         transition: width 0.4s ease-in-out, background 0.4s ease-in-out;
 
@@ -116,12 +130,8 @@ export const StyledProject = styled<any>(motion.section)`
         }
 
         :nth-child(${props => props.current}) {
-          background: #ffb68c;
+          background: #FE6935;
           width: 30px;
-        }
-
-        @media ${device.mobile} {
-          background: ${props => props.theme.color.background.containerDark};
         }
       }
     }
@@ -164,26 +174,36 @@ export const StyledProject = styled<any>(motion.section)`
     @media ${device.mobile} {
       max-width: 100%;
       height: 70%;
-
-      h3 {
-        color: red;
-      }
     }
+
     h3 {
-      color: ${props => props.theme.color.accent.beige};
+      color: #254063;
+      font-family: orbitron;
       font-weight: 100;
+      align-self: flex-start;
+      font-size: 1.3rem;
       text-transform: uppercase;
-      margin-bottom: 5%;
+
+      @media ${device.mobile} {
+        font-size: 1rem;
+    
+      }
     }
 
     p {
-      font-family: orbitron;
-      font-size: 0.7rem;
+      color: #254063;
+      font-size: 0.9rem;
       font-weight: 100;
-      line-height: 2rem;
-      letter-spacing: 0.2em;
+      line-height: 2;
+      letter-spacing: 0.1rem;
+      font-size: min(max(0.7rem, 1vw), 0.9rem);
+
+      @media ${device.tablet} {
+       font-size: 0.8rem;
+      }
 
       @media ${device.mobile} {
+        font-size: 0.7rem;
         letter-spacing: 0.1rem;
         line-height: 1.2rem;
       }
