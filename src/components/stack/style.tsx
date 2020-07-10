@@ -47,7 +47,6 @@ export const StyledStack = styled<any>(motion.section).attrs({
       font-family: orbitron;
       font-weight: 100;
       letter-spacing: 0.2rem;
-      text-shadow: ${props => props.theme.shadow.text};
       opacity: 0;
       animation: ${TextAppearY} 0.4s easing;
       animation-play-state: ${props => (props.enter ? "running" : "paused")};

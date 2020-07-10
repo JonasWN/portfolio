@@ -24,18 +24,17 @@ export const StyledInfo = styled.section`
   h4 {
     color: #254063;
     font-weight: 100;
-    font-size: 1.2rem;
+    font-size: 1rem;
     font-family: orbitron;
     letter-spacing: 0.1rem;
     width: 50%;
 
     @media ${device.mobile} {
-      font-size: 1.2rem;
       width: 85vw;
     }
   }
 
-  div {
+  article {
     display: flex;
     justify-content: space-between;
 
@@ -45,10 +44,23 @@ export const StyledInfo = styled.section`
 
     div {
       align-self: flex-end;
+      display: flex;
+      justify-content: space-between;
+
+      @media ${device.tablet} {
+        justify-content: inherit;
+        display: block;
+        align-self: inherit;
+        margin-top: 20px;
+      }
     }
 
     button:first-child {
       margin-right: 10px;
+
+      @media ${device.mobile} {
+        margin-bottom: 10px;
+      }
     }
   }
 `

@@ -11,6 +11,7 @@ type Tcard = {
 const About = () => {
   return (
     <StyledAbout>
+      <h2>Hvem er jeg</h2>
       <TextBox />
       <ul>
         {cardTemplate.map((card: Tcard) => (
@@ -29,7 +30,7 @@ const cardTemplate = [
   {
     title: "Teknologi",
     description:
-      "jeg har altid været  facineret af teknologi og hvor hurtigt det kan udvikle sig og være med til at skabe  muligheder i verden.",
+      "jeg har altid været facineret af teknologi og hvor hurtigt det kan udvikle sig og være med til at skabe muligheder i verden.",
   },
   {
     title: "Design",

@@ -2,7 +2,7 @@ import styled from "styled-components"
 import { device } from "../../styles/layout-styles"
 
 export const StyledAbout = styled.section`
-  margin: 50vh 0 15vh 0;
+  margin: 30vh 0 15vh 0;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -13,7 +13,13 @@ export const StyledAbout = styled.section`
     font-weight: 500;
     letter-spacing: 0.2rem;
     font-size: 1.9rem;
-    margin: 0 0 40vh 10vw;
+    margin: 0 0 15vh 10vw;
+
+    @media ${device.mobile} {
+      width: 85vw;
+      align-self: center;
+      margin: 0 0 5vh 0;
+    }
   }
 
   ul {

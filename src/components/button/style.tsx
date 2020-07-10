@@ -8,6 +8,14 @@ export const StyledButton = styled.button`
   z-index: 1;
   box-shadow: 0rem 0rem 1rem 0rem rgba(0, 0, 0, 0.2);
   transition: all 0.3s ease-out;
+  background: ${props => props.theme.color.background.containerDark};
+  color: ${props => props.theme.color.font.textLight};
+  font-size: ${props => props.theme.fontSize.xs};
+  letter-spacing: 0.2rem;
+  font-weight: 100;
+  text-transform: uppercase;
+  border: none;
+  padding: 0;
 
   &:hover :after {
     transform: translateX(0);
@@ -39,17 +47,6 @@ export const StyledButton = styled.button`
     width: 100%;
     height: 100%;
   }
-
-  width: 170px;
-  height: 50px;
-  background: ${props => props.theme.color.background.containerDark};
-  color: ${props => props.theme.color.font.textLight};
-  font-size: ${props => props.theme.fontSize.xs};
-  letter-spacing: 0.2rem;
-  font-weight: 100;
-  text-transform: uppercase;
-  border: none;
-  padding: 0;
 
   a {
     display: flex;

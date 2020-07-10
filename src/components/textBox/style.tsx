@@ -8,6 +8,11 @@ export const StyledTextBox = styled.article`
   margin-bottom: 30vh;
   margin-left: 30%;
 
+  @media ${device.tablet} {
+    margin-left: 0;
+    width: 70vw;
+  }
+
   @media ${device.mobile} {
     width: 85vw;
     margin-left: inherit;
@@ -25,9 +30,9 @@ export const StyledTextBox = styled.article`
       content: "";
       position: absolute;
       top: 50%;
-      left: 20%;
+      right: -5%;
       height: 1px;
-      width: 85%;
+      width: 75%;
       background: #72767a6e;
 
       @media ${device.mobile} {
@@ -38,7 +43,7 @@ export const StyledTextBox = styled.article`
     :after {
       content: "";
       position: absolute;
-      top: -80%;
+      top: -200%;
       right: -5%;
       height: 40vh;
       width: 1px;

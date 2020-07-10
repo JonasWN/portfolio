@@ -12,7 +12,6 @@ export const StyledGallery = styled<any>(motion.main)`
 
   @media ${device.desktop} {
     width: 90vw;
-    margin: 50vh 0vw;
   }
 
   @media ${device.mobile} {
