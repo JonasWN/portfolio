@@ -10,7 +10,7 @@ import Footer from "../components/footer"
 import Info from "../components/info"
 
 const IndexPage = () => (
-  <Layout>
+  <>
     <SEO title=" " />
     <Nav />
     <Hero />
@@ -19,7 +19,7 @@ const IndexPage = () => (
     <Info />
     <Footer />
     <ScrollBar />
-  </Layout>
+  </>
 )
 
 export default IndexPage

@@ -27,7 +27,7 @@ const CvPage = () => {
   `)
 
   return (
-    <Layout>
+    <>
       <SEO title="CV |" />
       <Nav />
       <StyledCv>
@@ -43,7 +43,7 @@ const CvPage = () => {
         </section>
       </StyledCv>
       <Footer />
-    </Layout>
+    </>
   )
 }
 
