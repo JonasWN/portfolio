@@ -7,7 +7,6 @@ export const StyledFooter = styled.footer`
   justify-content: space-between;
   align-items: center;
   width: 95%;
-  margin: 15vh auto 2vh auto;
   color: #254063;
   font-size: 0.9rem;
   font-family: orbitron;
@@ -16,6 +15,7 @@ export const StyledFooter = styled.footer`
   @media ${device.mobile} {
     flex-direction: column-reverse;
     height: 8vh;
+    margin: 10vh auto 2vh auto;
   }
 
   p {

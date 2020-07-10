@@ -28,8 +28,6 @@ const Stack: React.FC<Tprops> = ({ enter, curtain }) => {
       ) {
         edges {
           node {
-            id
-            name
             sharp: childImageSharp {
               fluid(maxWidth: 400, maxHeight: 200, quality: 80) {
                 ...GatsbyImageSharpFluid_withWebp_noBase64

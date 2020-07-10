@@ -1,19 +1,21 @@
 import React, { useState } from "react"
-import { Link } from "gatsby"
-import { StyledNav, StyledPhoneNav } from "./style"
-import { useScrollPosition } from "../../hooks/useScrollPosition"
-//@ts-ignore
-import Logo from "../../static/images/Logo.svg"
 import Phone from "./phone"
 import { socials } from "../socials"
+import { Link, withPrefix } from "gatsby"
+//@ts-ignore
+import Logo from "../../static/images/Logo.svg"
+import { ArrowLeft } from "@styled-icons/feather"
+import { StyledNav, StyledPhoneNav } from "./style"
 import { AnimatePresence, motion } from "framer-motion"
-import { stackVariantsX, phoneNav, TextVariants } from "../../styles/animations"
+import { useScrollPosition } from "../../hooks/useScrollPosition"
 import { Github, Facebook, Linkedin } from "@styled-icons/boxicons-logos"
+import { stackVariantsX, phoneNav, TextVariants } from "../../styles/animations"
 
 const Nav = () => {
   const [sticky, setSticky] = useState<boolean>(true)
   const [overlay, setOverlay] = useState<boolean>(false)
   const { container, item } = stackVariantsX
+  const isHomepage = location.pathname === withPrefix("/")
 
   const handleOverlay = (event: boolean) => {
     setOverlay(event)
@@ -42,7 +44,7 @@ const Nav = () => {
             variants={TextVariants}
           >
             <Link to="/" aria-label="home-page">
-              <Logo />
+              {isHomepage ? <Logo /> : <ArrowLeft />}
             </Link>
           </motion.li>
           <motion.li variants={item}>+ Projects </motion.li>

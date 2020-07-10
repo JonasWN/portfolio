@@ -60,6 +60,10 @@ export const StyledNav = styled<any>(motion.nav)`
         font-family: Orbitron;
         text-shadow: ${props => props.theme.shadow.text};
         margin-right: auto;
+
+        svg {
+          width: 30px;
+        }
       }
       :not(:first-child) {
         font-size: ${props => props.theme.fontSize.sm};

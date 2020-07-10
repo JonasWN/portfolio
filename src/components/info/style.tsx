@@ -4,7 +4,7 @@ import { device } from "../../styles/layout-styles"
 export const StyledInfo = styled.section`
   position: relative;
   width: 70vw;
-  margin: 0 auto;
+  margin: 0 auto 15vh auto;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
