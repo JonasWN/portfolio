@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import Phone from "./phone"
 import { socials } from "../socials"
 import { Link, withPrefix } from "gatsby"
@@ -14,8 +14,8 @@ import { stackVariantsX, phoneNav, TextVariants } from "../../styles/animations"
 const Nav = () => {
   const [sticky, setSticky] = useState<boolean>(true)
   const [overlay, setOverlay] = useState<boolean>(false)
+  const [home, setHome] = useState<boolean>(true)
   const { container, item } = stackVariantsX
-  const isHomepage = location.pathname === withPrefix("/")
 
   const handleOverlay = (event: boolean) => {
     setOverlay(event)
@@ -28,6 +28,12 @@ const Nav = () => {
     },
     [sticky]
   )
+
+  useEffect(() => {
+    const isHomepage = location.pathname === withPrefix("/")
+    setHome(isHomepage)
+  }, [])
+
   return (
     <>
       <StyledNav
@@ -44,7 +50,7 @@ const Nav = () => {
             variants={TextVariants}
           >
             <Link to="/" aria-label="home-page">
-              {isHomepage ? <Logo /> : <ArrowLeft />}
+              {home ? <Logo /> : <ArrowLeft />}
             </Link>
           </motion.li>
           <motion.li variants={item}>+ Projects </motion.li>
