@@ -15,8 +15,10 @@ export const device = {
   desktopL: `(max-width: ${sizes.xl})`,
 }
 
-export const flex = {}
-
 export const Container = styled<any>(motion.div)`
+  display: flex;
+  min-height: 100vh;
+  justify-content: space-between;
+  flex-direction: column;
   padding: 2%;
 `
