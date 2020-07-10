@@ -5,7 +5,7 @@ import { socials } from "../socials/index"
 const Footer = () => {
   return (
     <StyledFooter>
-      <p>&copy; {new Date().getFullYear()} - ALL Rights Reserved</p>
+      <p>&copy; {new Date().getFullYear()} - all rights reserved</p>
       <ul>
         <li>
           <a

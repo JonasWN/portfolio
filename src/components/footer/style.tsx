@@ -7,16 +7,19 @@ export const StyledFooter = styled.footer`
   justify-content: space-between;
   align-items: center;
   width: 95%;
-  margin: 10vh auto 0 auto;
+  margin: 15vh auto 2vh auto;
   color: #254063;
   font-size: 0.9rem;
   font-family: orbitron;
   font-weight: 100;
-  margin-bottom: 2vh;
 
   @media ${device.mobile} {
     flex-direction: column-reverse;
-    height: 10vh;
+    height: 8vh;
+  }
+
+  p {
+    text-transform: uppercase;
   }
 
   ul {
