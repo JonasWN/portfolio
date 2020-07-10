@@ -21,7 +21,8 @@ export const StyledCard = styled.li`
     font-weight: 100;
 
     @media ${device.mobile} {
-      left: 0;
+      left: 50%;
+      transform: translate(-50%, 0);
     }
   }
   p {
@@ -29,5 +30,9 @@ export const StyledCard = styled.li`
     font-family: orbitron;
     line-height: 1.8rem;
     font-size: 0.9rem;
+
+    @media ${device.mobile} {
+      text-align: center;
+    }
   }
 `

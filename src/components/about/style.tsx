@@ -16,9 +16,7 @@ export const StyledAbout = styled.section`
     margin: 0 0 15vh 10vw;
 
     @media ${device.mobile} {
-      width: 85vw;
-      align-self: center;
-      margin: 0 0 5vh 0;
+      display: none;
     }
   }
 

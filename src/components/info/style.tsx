@@ -19,6 +19,11 @@ export const StyledInfo = styled.section`
     font-size: 2.4rem;
     font-family: orbitron;
     margin-bottom: 15px;
+
+    @media ${device.mobile} {
+      text-align: center;
+      margin-bottom: 30px;
+    }
   }
 
   h4 {
@@ -31,6 +36,8 @@ export const StyledInfo = styled.section`
 
     @media ${device.mobile} {
       width: 85vw;
+      text-align: center;
+      margin-bottom: 20px;
     }
   }
 
@@ -49,7 +56,6 @@ export const StyledInfo = styled.section`
 
       @media ${device.tablet} {
         justify-content: inherit;
-        display: block;
         align-self: inherit;
         margin-top: 20px;
       }
