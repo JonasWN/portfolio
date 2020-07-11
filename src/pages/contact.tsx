@@ -5,6 +5,7 @@ import Nav from "../components/nav"
 import styled from "styled-components"
 import Footer from "../components/footer"
 import Button from "../components/button"
+import Form from "../components/form"
 import { device } from "../styles/layout-styles"
 
 const ContactPage = () => {
@@ -13,18 +14,41 @@ const ContactPage = () => {
       <SEO title="Contact |" />
       <Nav />
       <StyledContact>
-        <h1>Kontakt</h1>
-        <form action="">
-          <input type="name" />
-          <input type="email" />
-          <textarea name="message" id="" cols={30} rows={30}></textarea>
-        </form>
+        <Form></Form>
       </StyledContact>
       <Footer />
     </>
   )
 }
 
-const StyledContact = styled.main``
+const StyledContact = styled.main`
+  display: flex;
+  margin: 0 auto;
+  width: 85vw;
+  height: 70vh;
+  max-width: 500px;
+  position: relative;
+
+  @media ${device.mobile} {
+    margin-top: 90px;
+  }
+
+  article {
+    width: 30%;
+    h1 {
+      color: #072142;
+      font-weight: 600;
+      font-size: 2.4rem;
+      font-family: orbitron;
+    }
+
+    h2 {
+      font-size: 1.6rem;
+      color: #254063;
+      font-family: orbitron;
+      font-weight: 100;
+    }
+  }
+`
 
 export default ContactPage

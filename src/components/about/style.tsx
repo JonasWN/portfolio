@@ -9,10 +9,9 @@ export const StyledAbout = styled.section`
 
   h2 {
     color: #072142;
+    font-weight: 600;
+    font-size: 2.4rem;
     font-family: orbitron;
-    font-weight: 500;
-    letter-spacing: 0.2rem;
-    font-size: 1.9rem;
     margin: 0 0 15vh 10vw;
 
     @media ${device.mobile} {

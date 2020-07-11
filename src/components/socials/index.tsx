@@ -7,7 +7,7 @@ import { motion } from "framer-motion"
 export const socials = [
   "https://github.com/JonasWN",
   "https://www.linkedin.com/in/jonas-w-nielsen/",
-  "https://codepen.io/dashboard/",
+  "https://codepen.io/Jonas_Nielsen",
 ]
 
 const Socials = () => {
