@@ -7,6 +7,7 @@ export const StyledFooter = styled.footer`
   justify-content: space-between;
   align-items: center;
   width: 95%;
+  margin: 0 auto;
   color: #254063;
   font-size: 0.9rem;
   font-family: orbitron;

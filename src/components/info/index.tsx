@@ -12,7 +12,7 @@ const Info = () => {
           nogle sporgsmål må du endelige bare kontakte mig.
         </h4>
         <div>
-          <Button link="/kontakt" title="Kontakt" aria="Kontakt side" />
+          <Button link="/contact" title="Kontakt" aria="Kontakt side" />
           <Button link="/cv" title="CV" aria="CV side" />
         </div>
       </article>
