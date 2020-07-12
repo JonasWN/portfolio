@@ -1,12 +1,14 @@
-import React, { useRef, useEffect, useState } from "react"
+import React, { useRef, useState } from "react"
+import { useForm } from "react-hook-form"
 import { StyledForm } from "./style"
-//@ts-ignore
-import FormIcon from "../../static/images/Form.svg"
 import { useCycle, motion } from "framer-motion"
+import Button from "../button"
 
 const Form = () => {
+  const { handleSubmit, register, errors } = useForm()
+  const onSubmit = (values: any) => {}
   const [length, setLength] = useState(0)
-  const inputRef = useRef<HTMLInputElement>(null)
+  const inputRef = useRef<HTMLFormElement>(null)
   const [x, cycleX] = useCycle(-5, -10, -15)
 
   const handleChange = (charLength: number): void => {
@@ -15,32 +17,48 @@ const Form = () => {
   }
 
   return (
-    <StyledForm>
+    <StyledForm onSubmit={handleSubmit(onSubmit)}>
       <ul>
         <h1>Kontakt</h1>
         <li>
-          <label htmlFor="name">Name</label>
+          <label htmlFor="name">Navn</label>
           <input
-            type="name"
-            ref={inputRef}
+            name="Navn"
             onChange={(e: any) => handleChange(e.target.value.length)}
+            ref={register({
+              validate: value => value !== "admin" || "Nice try!",
+              required: " ",
+            })}
           />
+          {errors.username && errors.username.message}
         </li>
         <li>
           <label htmlFor="email">E-Mail</label>
           <input
-            type="email"
+            name="email"
+            ref={register({
+              required: " ",
+              pattern: {
+                value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                message: "E-Mail virker ikke optimal",
+              },
+            })}
             onChange={(e: any) => handleChange(e.target.value.length)}
           />
+          {errors.email && errors.email.message}
         </li>
         <li>
           <label htmlFor="message">Sig hej!</label>
           <textarea
             name="message"
+            ref={register({
+              required: " ",
+            })}
             onChange={(e: any) => handleChange(e.target.value.length)}
           ></textarea>
         </li>
       </ul>
+      <Button title="Submit" type="submit" link="submit" />
       <svg
         width="432"
         height="480"

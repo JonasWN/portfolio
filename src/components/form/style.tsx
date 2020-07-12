@@ -88,6 +88,14 @@ export const StyledForm = styled.form`
     }
   }
 
+  button {
+    position: absolute;
+    bottom: -70px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    color: #fff;
+  }
+
   svg {
     position: absolute;
     top: -20px;

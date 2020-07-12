@@ -26,7 +26,7 @@ const Card = () => {
               initial="initialY"
               transition={{ delay: 1.5, ease: "easeOut" }}
             >
-              <span>Front End</span> Developer From Copenhagen <br /> Who Likes
+              <span>Front End</span> Udvikler fra Kobenhavn <br /> Som er fan af
               <span> UX</span>
             </motion.h2>
             <Scroll />

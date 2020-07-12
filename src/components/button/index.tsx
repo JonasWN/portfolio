@@ -1,18 +1,25 @@
 import React from "react"
 import { Link } from "gatsby"
 import { StyledButton } from "./style"
+import { Type } from "tsparticles/dist/Plugins/PolygonMask/Enums"
 
 type Iprops = {
   title: string
   link: string
   aria?: string
   download?: boolean
+  submit?: string
+  type?: string
 }
 
-const Button: React.FC<Iprops> = ({ link, title, aria, download }) => {
+const Button: React.FC<Iprops> = ({ link, title, aria, download, type }) => {
   const internal = /^\/(?!\/)/.test(link)
 
-  if (internal && !download)
+  if (type) {
+    return <StyledButton>{title}</StyledButton>
+  }
+
+  if (internal && !download && !type)
     return (
       <StyledButton>
         <Link to={link} aria-label={aria}>
