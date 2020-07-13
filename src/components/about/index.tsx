@@ -1,18 +1,42 @@
-import React from "react"
+import React, { useState, useEffect } from "react"
 import TextBox from "../textBox"
 import Card from "../card"
 import { StyledAbout } from "./style"
+import { useInView } from "react-intersection-observer"
+import { motion } from "framer-motion"
+import { easing } from "../../styles/animations"
 
 type Tcard = {
   title: string
   description: string
 }
 
+const IO = {
+  triggerOnce: true,
+  rootMargin: "-450px",
+  threshold: 0,
+}
+
 const About = () => {
+  const [enter, setEnter] = useState<boolean>(false)
+  const [AboutRef, inView] = useInView(IO)
+
+  useEffect(() => {
+    if (inView) setEnter(true)
+  }, [enter, inView])
+
   return (
-    <StyledAbout>
-      <h2>Hvem er jeg</h2>
-      <TextBox />
+    <StyledAbout ref={AboutRef}>
+      {enter && (
+        <motion.h2
+          initial={{ opacity: 0, translateX: "-80px" }}
+          animate={{ opacity: 1, translateX: "0px" }}
+          transition={{ duration: 0.6, ease: easing }}
+        >
+          Hvem er jeg
+        </motion.h2>
+      )}
+      <TextBox enter={enter} />
       <ul>
         {cardTemplate.map((card: Tcard) => (
           <Card

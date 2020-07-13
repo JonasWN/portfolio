@@ -19,13 +19,13 @@ const Hero = () => {
       <Card />
       <Face className="face" />
       <Socials />
-      {pageWidth > phoneWidth &&
-      <Particles
-      params={particleParam}
-      style={particleStyle}
-      canvasClassName="particle"
-    />
-    }
+      {pageWidth > phoneWidth && (
+        <Particles
+          params={particleParam}
+          style={particleStyle}
+          canvasClassName="particle"
+        />
+      )}
     </StyledHero>
   )
 }
