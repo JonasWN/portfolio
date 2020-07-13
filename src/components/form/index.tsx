@@ -58,7 +58,7 @@ const Form = () => {
           ></textarea>
         </li>
       </ul>
-      <Button title="Submit" type="submit" link="submit" />
+      {/* <Button title="Submit" type="submit" link="submit" /> */}
       <svg
         width="432"
         height="480"

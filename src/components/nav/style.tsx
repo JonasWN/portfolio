@@ -53,8 +53,7 @@ export const StyledNav = styled<any>(motion.nav)`
     color: ${props => props.theme.color.font.textDark};
     display: flex;
     align-items: center;
-    li,
-    a {
+    li {
       &:first-child {
         font-size: ${props => props.theme.fontSize.md};
         font-family: Orbitron;
@@ -65,7 +64,7 @@ export const StyledNav = styled<any>(motion.nav)`
           width: 30px;
         }
       }
-      :not(:first-child) {
+      :not(:first-child) a {
         font-size: ${props => props.theme.fontSize.sm};
         text-shadow: ${props => props.theme.shadow.text};
         margin-left: 15px;

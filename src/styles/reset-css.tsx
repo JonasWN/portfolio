@@ -10,6 +10,7 @@ const GlobalStyle = createGlobalStyle<{ theme: ThemeType }>`
   -webkit-tap-highlight-color: transparent;
   -webkit-overflow-scrolling: touch;
   touch-action: manipulation;
+  scroll-behavior: smooth;
 }
 
 ul,
@@ -43,6 +44,7 @@ body {
 
   ::-webkit-scrollbar { width: 0 !important };
   -ms-overflow-style: none;
+
 }
  
 ::-webkit-scrollbar {

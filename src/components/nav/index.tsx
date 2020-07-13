@@ -17,6 +17,14 @@ const Nav = () => {
   const [home, setHome] = useState<boolean>(true)
   const { container, item } = stackVariantsX
 
+  const handleClick = (event: boolean) => {
+    handleOverlay(!overlay)
+
+    overlay
+      ? (document.body.style.overflow = "initial")
+      : (document.body.style.overflow = "hidden")
+  }
+
   const handleOverlay = (event: boolean) => {
     setOverlay(event)
   }
@@ -49,24 +57,60 @@ const Nav = () => {
             transition={{ duration: 0.6, delay: 1.9 }}
             variants={TextVariants}
           >
-            <Link to="/" aria-label="home-page">
+            <Link to="/" aria-label="Home Page">
               {home ? <Logo /> : <ArrowLeft />}
             </Link>
           </motion.li>
-          <motion.li variants={item}>+ Projects </motion.li>
-          <motion.li variants={item}>About</motion.li>
-          <motion.li variants={item}>Contact</motion.li>
+          <motion.li variants={item}>
+            <Link to="#projekter" aria-label="Projekter">
+              + Projekter
+            </Link>
+          </motion.li>
+          <motion.li variants={item}>
+            <Link to="/cv" aria-label="Cv Page">
+              Cv
+            </Link>
+          </motion.li>
+          <motion.li variants={item}>
+            <Link to="/kontakt" aria-label="Kontakt Page">
+              Kontakt
+            </Link>
+          </motion.li>
         </motion.ul>
-        <Phone handleOverlay={handleOverlay} overlay={overlay} />
+        <Phone handleOverlay={handleClick} overlay={overlay} />
       </StyledNav>
       <AnimatePresence exitBeforeEnter>
         {overlay && (
           <StyledPhoneNav>
             <nav>
               <motion.ul variants={phoneNav.container}>
-                <motion.li variants={phoneNav.item}>Projects</motion.li>
-                <motion.li variants={phoneNav.item}>About</motion.li>
-                <motion.li variants={phoneNav.item}>Contact</motion.li>
+                <motion.li variants={phoneNav.item}>
+                  <Link
+                    to="#projekter"
+                    aria-label="Projekter"
+                    onClick={() => handleClick(false)}
+                  >
+                    Projekter
+                  </Link>
+                </motion.li>
+                <motion.li variants={phoneNav.item}>
+                  <Link
+                    to="/cv"
+                    aria-label="Cv Page"
+                    onClick={() => handleClick(false)}
+                  >
+                    Cv
+                  </Link>
+                </motion.li>
+                <motion.li variants={phoneNav.item}>
+                  <Link
+                    to="/kontakt"
+                    aria-label="Kontakt Page"
+                    onClick={() => handleClick(false)}
+                  >
+                    Kontakt
+                  </Link>
+                </motion.li>
               </motion.ul>
               <motion.ul variants={container}>
                 <motion.li variants={item}>

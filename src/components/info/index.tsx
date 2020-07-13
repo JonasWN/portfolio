@@ -44,7 +44,7 @@ const Info = () => {
               animate={{ opacity: 1, translateY: "0px" }}
               transition={{ duration: 0.6, ease: easing, delay: 0.6 }}
             >
-              <Button link="/contact" title="Kontakt" aria="Kontakt side" />
+              <Button link="/kontakt" title="Kontakt" aria="Kontakt side" />
               <Button link="/cv" title="CV" aria="CV side" />
             </motion.div>
           </article>

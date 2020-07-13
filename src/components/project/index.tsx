@@ -63,9 +63,14 @@ const Project: React.FC<Tprops> = ({ enter, curtain, setCurtain }) => {
   }
 
   return (
-    <StyledProject enter={enter} animate={animation} current={slideIndex + 1}>
+    <StyledProject
+      enter={enter}
+      animate={animation}
+      current={slideIndex + 1}
+      id="projekter"
+    >
       <header>
-        <h2>Project</h2>
+        <h2>Projekt</h2>
         <section>
           <div />
           <p>0</p>

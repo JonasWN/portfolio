@@ -7,19 +7,6 @@ type Iprops = {
 }
 
 const Phone: React.FC<Iprops> = props => {
-  const [active, setActive] = useState<boolean>(false)
-  const [overflow, setOverflow] = useState<boolean>(false)
-
-  const handleClick = () => {
-    setActive(!active)
-    setOverflow(!overflow)
-    props.handleOverlay(!props.overlay)
-
-    overflow
-      ? (document.body.style.overflow = "initial")
-      : (document.body.style.overflow = "hidden")
-  }
-
   return (
     <StyledPhone className="menu">
       <svg>
@@ -43,8 +30,8 @@ const Phone: React.FC<Iprops> = props => {
       </svg>
       <div className="plates">
         <div
-          className={active ? "plate plate2 active" : "plate plate2"}
-          onClick={() => handleClick()}
+          className={props.overlay ? "plate plate2 active" : "plate plate2"}
+          onClick={() => props.handleOverlay(!props.overlay)}
         >
           <svg
             className="burger"
