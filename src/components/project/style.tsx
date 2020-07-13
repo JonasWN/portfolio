@@ -20,13 +20,11 @@ export const StyledProject = styled<any>(motion.section)`
   width: 40%;
   border: 1px solid #72767a6e;
   background: ${props => props.theme.color.background.site};
-  /* color: #d2def5; */
-  /* box-shadow: ${props => props.theme.shadow.card}; */
   font-family: Orbitron;
   padding: 5%;
 
   @media ${device.tablet} {
-   width: 60%;
+    width: 60%;
   }
 
   @media ${device.mobile} {
@@ -36,11 +34,12 @@ export const StyledProject = styled<any>(motion.section)`
   }
 
   .gallery-swiper {
+    display: ${props => (props.enter ? "block" : "none")};
     position: absolute;
     top: 25%;
     left: 0;
     width: 100%;
-    height: 50%;
+    height: 25%;
   }
 
   header {
@@ -71,11 +70,11 @@ export const StyledProject = styled<any>(motion.section)`
       div {
         height: 0.5px;
         width: 130px;
-        background: #FE6935;
+        background: #fe6935;
 
         @media ${device.mobile} {
-        width: 110px;
-      }
+          width: 110px;
+        }
       }
 
       p {
@@ -130,7 +129,7 @@ export const StyledProject = styled<any>(motion.section)`
         }
 
         :nth-child(${props => props.current}) {
-          background: #FE6935;
+          background: #fe6935;
           width: 30px;
         }
       }
@@ -186,7 +185,6 @@ export const StyledProject = styled<any>(motion.section)`
 
       @media ${device.mobile} {
         font-size: 1rem;
-    
       }
     }
 
@@ -199,7 +197,7 @@ export const StyledProject = styled<any>(motion.section)`
       font-size: min(max(0.7rem, 1vw), 0.9rem);
 
       @media ${device.tablet} {
-       font-size: 0.8rem;
+        font-size: 0.8rem;
       }
 
       @media ${device.mobile} {

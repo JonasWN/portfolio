@@ -108,7 +108,11 @@ export const StyledNav = styled<any>(motion.nav)`
   }
 `
 
-export const StyledPhone = styled.div`
+export const StyledPhone = styled(motion.div).attrs(() => ({
+  initial: { opacity: 0 },
+  animate: { opacity: 1 },
+  transition: { ease: easing, duration: 0.8, delay: 1.2 },
+}))`
   display: none;
 
   @media ${device.mobile} {
