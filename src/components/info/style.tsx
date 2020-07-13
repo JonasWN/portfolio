@@ -7,10 +7,11 @@ export const StyledInfo = styled.section`
   margin: 0 auto 15vh auto;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-evenly;
 
   @media ${device.tablet} {
     width: 85vw;
+    height: 50vh;
   }
 
   h3 {

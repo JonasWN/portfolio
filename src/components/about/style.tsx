@@ -2,12 +2,16 @@ import styled from "styled-components"
 import { device } from "../../styles/layout-styles"
 
 export const StyledAbout = styled.section`
-  margin: 30vh auto 15vh auto;
+  margin: 20vh auto 15vh auto;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   width: 80%;
   justify-content: space-between;
+
+  @media ${device.tablet} {
+    width: 85vw;
+  }
 
   h2 {
     color: #072142;
@@ -31,7 +35,8 @@ export const StyledAbout = styled.section`
     margin-bottom: 20vh;
 
     @media ${device.mobile} {
-      grid-template-columns: repeat(auto-fit, minmax(min(200px, 100%), 80vw));
+      grid-template-columns: repeat(auto-fit, minmax(min(200px, 100%), 85vw));
+      margin-right: 0;
     }
   }
 `

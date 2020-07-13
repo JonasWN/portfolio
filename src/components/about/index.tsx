@@ -36,7 +36,7 @@ const About = () => {
           Hvem er jeg
         </motion.h2>
       )}
-      <TextBox enter={enter} />
+      <TextBox />
       <ul>
         {cardTemplate.map((card: Tcard) => (
           <Card

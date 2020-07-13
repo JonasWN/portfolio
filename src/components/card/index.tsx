@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react"
+import React, { useState, useEffect } from "react"
 import { StyledCard } from "./style"
 import { useInView } from "react-intersection-observer"
 import { motion } from "framer-motion"
@@ -11,8 +11,8 @@ type Tprops = {
 
 const IO = {
   triggerOnce: true,
-  rootMargin: "-300px",
-  threshold: 0,
+  rootMargin: "-30px",
+  threshold: 1,
 }
 
 const Card: React.FC<Tprops> = ({ title, description }) => {
@@ -30,7 +30,7 @@ const Card: React.FC<Tprops> = ({ title, description }) => {
           <motion.h4
             initial={{ opacity: 0, translateX: "-40px" }}
             animate={{ opacity: 1, translateX: "0px" }}
-            transition={{ duration: 0.6, ease: easing }}
+            transition={{ duration: 0.6, ease: easing, delay: 0.3 }}
           >
             {title}
           </motion.h4>
@@ -191,7 +191,7 @@ const Card: React.FC<Tprops> = ({ title, description }) => {
           <path
             className="card-border"
             d="M271.5 37.7151V368.215L0.5 367.715V1.21509L234.5 0.715088L271.5 37.7151Z"
-            stroke="#72767A"
+            stroke="#73767978"
           />
         </svg>
       </StyledCard>

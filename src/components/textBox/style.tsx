@@ -5,8 +5,8 @@ export const StyledTextBox = styled.article`
   width: 40vw;
   align-self: center;
   font-family: orbitron;
-  margin-bottom: 30vh;
   margin-left: 30%;
+  height: 500px;
 
   @media ${device.tablet} {
     margin-left: 0;
@@ -16,6 +16,8 @@ export const StyledTextBox = styled.article`
   @media ${device.mobile} {
     width: 85vw;
     margin-left: inherit;
+    height: 70vh;
+    margin-bottom: 50px;
   }
 
   h3 {

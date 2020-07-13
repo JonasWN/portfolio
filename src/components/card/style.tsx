@@ -59,7 +59,7 @@ export const StyledCard = styled<any>(motion.li)`
 
     @media ${device.mobile} {
       left: 50%;
-      transform: translate(-50%, 0);
+      transform: translate(-50%, 0) !important;
     }
   }
   p {
