@@ -12,7 +12,7 @@ import {
   FillLeft,
 } from "../../styles/animations"
 
-export const StyledHero = styled.section`
+export const StyledHero = styled.header`
   display: flex;
   justify-content: space-evenly;
   align-items: center;

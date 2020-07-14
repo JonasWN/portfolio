@@ -86,7 +86,7 @@ const Nav = () => {
               <motion.ul variants={phoneNav.container}>
                 <motion.li variants={phoneNav.item}>
                   <Link
-                    to="#projekter"
+                    to="/#projekter"
                     aria-label="Projekter"
                     onClick={() => handleClick(false)}
                   >

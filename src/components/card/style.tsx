@@ -20,14 +20,14 @@ export const StyledCard = styled<any>(motion.li)`
     width: 100%;
   }
 
-  .pathTest {
+  .svg-path {
     stroke-dasharray: 2047.8309326171875;
     stroke-dashoffset: 2047.8309326171875;
     animation: dash 8s linear forwards;
     animation-play-state: ${props => (props.enter ? "running" : "paused")};
   }
 
-  .pathTest2 {
+  .svg-path-2 {
     stroke-dasharray: 2209.302001953125;
     stroke-dashoffset: 2209.302001953125;
     animation: dash 8s linear forwards;
@@ -39,7 +39,7 @@ export const StyledCard = styled<any>(motion.li)`
     stroke-dashoffset: 1254.32666015625;
     animation: dash 2.5s cubic-bezier(0.42, 0, 0, 1) forwards;
     animation-play-state: ${props => (props.enter ? "running" : "paused")};
-    animation-delay: 2s;
+    animation-delay: 1.3s;
   }
 
   @keyframes dash {
