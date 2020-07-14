@@ -1,9 +1,8 @@
-import React, { useRef, useState } from "react"
+import React, { useState } from "react"
 import { useForm } from "react-hook-form"
 import { StyledForm } from "./style"
-import Button from "../button"
+
 import { useCycle, motion } from "framer-motion"
-import { ArrowRight } from "@styled-icons/feather"
 
 type Tform = {
   name: string
