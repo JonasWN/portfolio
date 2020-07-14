@@ -34,6 +34,8 @@ const Form = () => {
         console.error(error)
       })
 
+    console.log(process.env.MAIL_ID)
+
     setSubmitted(true)
   }
 
