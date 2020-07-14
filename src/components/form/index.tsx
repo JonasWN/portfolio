@@ -6,7 +6,25 @@ import Button from "../button"
 
 const Form = () => {
   const { handleSubmit, register, errors } = useForm()
-  const onSubmit = (values: any) => {}
+  const onSubmit = (values: any) => {
+    //@ts-ignore
+    fetch(process.env.MAIL_ID, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: JSON.stringify({
+        name: `${values.name}`,
+        email: `${values.email}`,
+        message: `${values.message}`,
+      }),
+    })
+      .then(function (response) {})
+      .catch(function (error) {
+        console.error(error)
+      })
+  }
   const [length, setLength] = useState(0)
   const inputRef = useRef<HTMLFormElement>(null)
   const [x, cycleX] = useCycle(-5, -10, -15)
@@ -23,7 +41,8 @@ const Form = () => {
         <li>
           <label htmlFor="name">Navn</label>
           <input
-            name="Navn"
+            maxLength={32}
+            name="name"
             onChange={(e: any) => handleChange(e.target.value.length)}
             ref={register({
               validate: value => value !== "admin" || "Nice try!",
@@ -36,6 +55,7 @@ const Form = () => {
           <label htmlFor="email">E-Mail</label>
           <input
             name="email"
+            maxLength={32}
             ref={register({
               required: " ",
               pattern: {
@@ -55,10 +75,18 @@ const Form = () => {
               required: " ",
             })}
             onChange={(e: any) => handleChange(e.target.value.length)}
+            maxLength={255}
           ></textarea>
         </li>
       </ul>
-      {/* <Button title="Submit" type="submit" link="submit" /> */}
+      <input
+        type="checkbox"
+        name="_honeypot"
+        style={{ display: "none" }}
+        tabIndex={1}
+        autoComplete="off"
+      />
+      <Button title="Submit" type="submit" link="submit" />
       <svg
         width="432"
         height="480"
