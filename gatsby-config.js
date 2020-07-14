@@ -7,9 +7,11 @@ module.exports = {
     title: `Jonas Nielsen | Portfolio`,
     description: `Jonas Nielsen - Front-End-Developer portfolio 2020`,
     author: `@JonasWn`,
+    siteUrl: `https://www.jonas-nielsen.digital`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-sitemap`,
     `gatsby-plugin-offline`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,

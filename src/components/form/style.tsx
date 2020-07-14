@@ -9,6 +9,7 @@ export const StyledForm = styled.form`
 
   @media ${device.mobile} {
     padding: 10%;
+    height: 60vh;
   }
 
   h1 {
@@ -93,7 +94,21 @@ export const StyledForm = styled.form`
     bottom: -70px;
     left: 50%;
     transform: translate(-50%, 0);
-    color: #fff;
+    background: none;
+    border: none;
+    font-size: 1.8rem;
+    color: #254063;
+    font-family: orbitron;
+    font-weight: 100;
+    outline: none;
+
+    :hover {
+      cursor: pointer;
+    }
+
+    @media ${device.mobile} {
+      bottom: -30px;
+    }
   }
 
   svg {

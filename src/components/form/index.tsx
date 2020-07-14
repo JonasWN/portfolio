@@ -1,12 +1,22 @@
 import React, { useRef, useState } from "react"
 import { useForm } from "react-hook-form"
 import { StyledForm } from "./style"
-import { useCycle, motion } from "framer-motion"
 import Button from "../button"
+import { useCycle, motion } from "framer-motion"
+import { ArrowRight } from "@styled-icons/feather"
+
+type Tform = {
+  name: string
+  email: string
+  message: string
+}
 
 const Form = () => {
   const { handleSubmit, register, errors } = useForm()
-  const onSubmit = (values: any) => {
+  const [submitted, setSubmitted] = useState<boolean>(false)
+  const [x, cycleX] = useCycle(-5, -10, -15)
+
+  const onSubmit = (values: Tform) => {
     //@ts-ignore
     fetch(process.env.MAIL_ID, {
       method: "POST",
@@ -24,13 +34,11 @@ const Form = () => {
       .catch(function (error) {
         console.error(error)
       })
+
+    setSubmitted(true)
   }
-  const [length, setLength] = useState(0)
-  const inputRef = useRef<HTMLFormElement>(null)
-  const [x, cycleX] = useCycle(-5, -10, -15)
 
   const handleChange = (charLength: number): void => {
-    setLength(charLength)
     cycleX()
   }
 
@@ -86,7 +94,7 @@ const Form = () => {
         tabIndex={1}
         autoComplete="off"
       />
-      <Button title="Submit" type="submit" link="submit" />
+      {!submitted && <button type="submit">Send</button>}
       <svg
         width="432"
         height="480"
