@@ -2,17 +2,27 @@ import styled from "styled-components"
 import { device } from "../../styles/layout-styles"
 
 export const StyledForm = styled.form`
+  position: relative;
   border: 1px solid #72767a6e;
   padding: 10% 5% 5% 5%;
   width: 100%;
   border-radius: 5px;
+  width: 55%;
+
+  @media ${device.tablet} {
+    width: 100%;
+    max-width: 500px;
+    height: 600px;
+    margin-bottom: 10vh;
+  }
 
   @media ${device.mobile} {
     padding: 10%;
-    height: 60vh;
+    height: 70vh;
+    margin-top: 10vh;
   }
 
-  h1 {
+  h2 {
     color: #072142;
     font-weight: 600;
     font-size: 2.4rem;
@@ -105,16 +115,25 @@ export const StyledForm = styled.form`
     :hover {
       cursor: pointer;
     }
+  }
 
-    @media ${device.mobile} {
-      bottom: -30px;
-    }
+  p {
+    position: absolute;
+    bottom: -70px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    font-size: 1.2rem;
+    width: 100%;
+    text-align: center;
+    color: #254063;
+    font-family: orbitron;
+    font-weight: 100;
   }
 
   svg {
     position: absolute;
     top: -20px;
-    right: 0;
+    right: 0px;
     width: 150px;
     height: 170px;
 

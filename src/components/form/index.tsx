@@ -15,7 +15,7 @@ const Form = () => {
   const [submitted, setSubmitted] = useState<boolean>(false)
   const [x, cycleX] = useCycle(-5, -10, -15)
 
-  const onSubmit = (values: Tform) => {
+  const onSubmit = (data: Tform, e: any) => {
     //@ts-ignore
     fetch(process.env.GATSBY_MAIL_ID, {
       method: "POST",
@@ -24,9 +24,9 @@ const Form = () => {
         Accept: "application/json",
       },
       body: JSON.stringify({
-        name: `${values.name}`,
-        email: `${values.email}`,
-        message: `${values.message}`,
+        name: `${data.name}`,
+        email: `${data.email}`,
+        message: `${data.message}`,
       }),
     })
       .then(function (response) {})
@@ -35,6 +35,7 @@ const Form = () => {
       })
 
     setSubmitted(true)
+    e.target.reset()
   }
 
   const handleChange = (charLength: number): void => {
@@ -44,7 +45,7 @@ const Form = () => {
   return (
     <StyledForm onSubmit={handleSubmit(onSubmit)}>
       <ul>
-        <h1>Kontakt</h1>
+        <h2>Kontakt</h2>
         <li>
           <label htmlFor="name">Navn</label>
           <input
@@ -94,6 +95,11 @@ const Form = () => {
         autoComplete="off"
       />
       {!submitted && <button type="submit">Send</button>}
+      {submitted && (
+        <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
+          Mange tak! - vender tilbage hurtigts muligt
+        </motion.p>
+      )}
       <svg
         width="432"
         height="480"
