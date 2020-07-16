@@ -3,12 +3,12 @@ import { atom } from "recoil"
 export const projectState = atom({
   key: "projectState",
   default: {
-    title: "Newsfeed",
+    title: "IplayMusic",
     description:
-      "En NewYorkTimes newsfeed webapplication, som var mit forste projekt hvor jeg brugte Typescript. Udfordring var at hente xml data fra NewYorkTimes, for så at konventere det til json",
-    date: "30-4-2020",
-    link: "https://news-feed-app.netlify.app/",
-    stack: ["React.JS", "Typescript", "Tailwind CSS"],
+      "IplayMusic er en music player webapplication som henter data fra Spotify´s API. Det blev til en rigtig fin song preview player da jeg ikke har premium. Desuden jeg lærte en masse om at optimere REST-API kalds ",
+    date: "13-1-2020",
+    link: "https://iplaymusic-jwn.netlify.app/",
+    stack: ["EJS", "Gulp", "SCSS"],
   },
 })
 
@@ -20,14 +20,6 @@ export const projectIndexState = atom({
 export const projectListState = atom({
   key: "projectListState",
   default: [
-    {
-      title: "Newsfeed",
-      description:
-        "En NewYorkTimes newsfeed webapplication, som var mit forste projekt hvor jeg brugte Typescript. Udfordring var at hente xml data fra NewYorkTimes, for så at konventere det til json",
-      date: "30-4-2020",
-      link: "https://news-feed-app.netlify.app/",
-      stack: ["React.JS", "Typescript", "Tailwind CSS"],
-    },
     {
       title: "IplayMusic",
       description:
@@ -43,6 +35,14 @@ export const projectListState = atom({
       date: "25-5-2020",
       link: "https://ui-components-jwn.netlify.app/",
       stack: ["Gatsby.JS", "Typescript", "Contentful"],
+    },
+    {
+      title: "Newsfeed - Phone",
+      description:
+        "En NewYorkTimes newsfeed webapplication, som var mit forste projekt hvor jeg brugte Typescript. Udfordring var at hente xml data fra NewYorkTimes, for så at konventere det til json",
+      date: "30-4-2020",
+      link: "https://news-feed-app.netlify.app/",
+      stack: ["React.JS", "Typescript", "Tailwind CSS"],
     },
     {
       title: "Tasks",
