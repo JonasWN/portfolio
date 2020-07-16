@@ -9,11 +9,7 @@ const Scroll = () => {
 
   return (
     <motion.div style={{ opacity: top }} className="scroll">
-      <StyledScroll
-        animate={{ opacity: 0.5 }}
-        initial={{ opacity: 0 }}
-        transition={{ delay: 1.9, duration: 0.6 }}
-      />
+      <StyledScroll />
     </motion.div>
   )
 }

@@ -18,13 +18,6 @@ export const StyledHero = styled.header`
   align-items: center;
   height: 90vh;
 
-  .particle {
-    opacity: 0;
-    animation: ${FadeInSlow} 1s ease-in-out;
-    animation-delay: 1.7s;
-    animation-fill-mode: forwards;
-  }
-
   @media ${device.mobile} {
     align-items: inherit;
     margin-top: 10%;
@@ -34,10 +27,6 @@ export const StyledHero = styled.header`
   .face {
     min-height: 80vh;
     width: 35vw;
-    opacity: 0;
-    animation: ${FadeInSlow} 1s ease-in-out;
-    animation-fill-mode: forwards;
-    animation-delay: 1.2s;
 
     @media ${device.tablet} {
       position: absolute;
@@ -101,21 +90,6 @@ export const StyledCard = styled.article`
     animation-delay: 1.8s;
   }
 
-  &:after {
-    content: "";
-    opacity: 1 !important;
-    background: #111833;
-    transform: scale(0);
-    width: 100%;
-    height: 100%;
-    animation: ${ScaleRight} 1.6s cubic-bezier(0.77, 0, 0.175, 1);
-    animation-delay: 0.2s;
-    position: absolute;
-    z-index: 5;
-    right: 0;
-    bottom: 0;
-  }
-
   @media ${device.tablet} {
     width: 60vw;
   }
@@ -130,9 +104,6 @@ export const StyledCard = styled.article`
     display: flex;
     align-items: flex-end;
     border-radius: 4px;
-    opacity: 0;
-    animation: ${FadeIn} 1.4s;
-    animation-fill-mode: forwards;
     width: 100%;
     height: 100%;
   }

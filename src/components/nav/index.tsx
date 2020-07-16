@@ -9,13 +9,17 @@ import { StyledNav, StyledPhoneNav } from "./style"
 import { AnimatePresence, motion } from "framer-motion"
 import { useScrollPosition } from "../../hooks/useScrollPosition"
 import { Github, Facebook, Linkedin } from "@styled-icons/boxicons-logos"
-import { stackVariantsX, phoneNav, TextVariants } from "../../styles/animations"
+import {
+  stackVariantsNav,
+  phoneNav,
+  TextVariants,
+} from "../../styles/animations"
 
 const Nav = () => {
   const [sticky, setSticky] = useState<boolean>(true)
   const [overlay, setOverlay] = useState<boolean>(false)
   const [home, setHome] = useState<boolean>(true)
-  const { container, item } = stackVariantsX
+  const { container, item } = stackVariantsNav
 
   const handleClick = (event: boolean) => {
     handleOverlay(!overlay)
@@ -54,7 +58,7 @@ const Nav = () => {
           <motion.li
             animate="enterY"
             initial="initialY"
-            transition={{ duration: 0.6, delay: 1.9 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
             variants={TextVariants}
           >
             <Link to="/" aria-label="Home Page">

@@ -258,6 +258,44 @@ export const stackVariantsX = {
   },
 }
 
+export const stackVariantsNav = {
+  container: {
+    enter: {
+      opacity: 1,
+      translateX: 0,
+      transition: {
+        staggerChildren: 0.2,
+        delayChildren: 0.6,
+      },
+    },
+    exit: {
+      transition: {
+        staggerChildren: 0.2,
+        delayChildren: 0.2,
+      },
+    },
+    initial: { opacity: 0 },
+  },
+  item: {
+    initial: {
+      opacity: 0,
+      translateX: 20,
+    },
+    enter: {
+      opacity: 1,
+      translateX: 0,
+    },
+    exit: {
+      opacity: 0,
+      translateX: -20,
+      transition: {
+        ease: easing,
+        duration: 0.4,
+      },
+    },
+  },
+}
+
 export const wheel = keyframes`
 from {
    transform: scaleY(0) translateY(0);
