@@ -22,15 +22,14 @@ const Nav = () => {
   const { container, item } = stackVariantsNav
 
   const handleClick = (event: boolean) => {
-    handleOverlay(!overlay)
-
+    setOverlay(event)
     overlay
       ? (document.body.style.overflow = "initial")
       : (document.body.style.overflow = "hidden")
   }
 
-  const handleOverlay = (event: boolean) => {
-    setOverlay(event)
+  const phoneHome = () => {
+    document.body.style.overflow = "initial"
   }
 
   useScrollPosition(
@@ -60,6 +59,7 @@ const Nav = () => {
             initial="initialY"
             transition={{ duration: 0.6, delay: 0.2 }}
             variants={TextVariants}
+            onClick={() => phoneHome()}
           >
             <Link to="/" aria-label="Home Page">
               {home ? <Logo /> : <ArrowLeft />}
