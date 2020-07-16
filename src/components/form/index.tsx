@@ -17,7 +17,7 @@ const Form = () => {
 
   const onSubmit = (values: Tform) => {
     //@ts-ignore
-    fetch(process.env.MAIL_ID, {
+    fetch(process.env.GATSBY_MAIL_ID, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -33,8 +33,6 @@ const Form = () => {
       .catch(function (error) {
         console.error(error)
       })
-
-    console.log(process.env.MAIL_ID)
 
     setSubmitted(true)
   }
