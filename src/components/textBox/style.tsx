@@ -17,7 +17,7 @@ export const StyledTextBox = styled.article`
     width: 85vw;
     margin-left: inherit;
     height: 70vh;
-    margin-bottom: 50px;
+    margin-bottom: 30vh;
   }
 
   h3 {

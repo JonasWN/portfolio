@@ -1,4 +1,4 @@
-import React, { useEffect } from "react"
+import React, { useEffect, useState } from "react"
 import { StyledProject } from "./style"
 import { useAnimation, motion, AnimatePresence } from "framer-motion"
 import { stackVariants, slideY, easing, slideX } from "../../styles/animations"
@@ -11,7 +11,6 @@ import {
 
 type Tprops = {
   enter: boolean
-  curtain: number
   setCurtain: React.Dispatch<React.SetStateAction<number>>
 }
 
@@ -23,9 +22,10 @@ type Tproject = {
   stack: string[]
 }
 
-const Project: React.FC<Tprops> = ({ enter, curtain, setCurtain }) => {
+const Project: React.FC<Tprops> = ({ enter, setCurtain }) => {
   const projectList = useRecoilValue(projectListState)
   const [slideIndex, setSlideIndex] = useRecoilState(projectIndexState)
+  const [swiped, setSwiped] = useState<boolean>(false)
   const [data, setData] = useRecoilState(projectState)
   const { container, item } = stackVariants
   const animation = useAnimation()
@@ -60,6 +60,8 @@ const Project: React.FC<Tprops> = ({ enter, curtain, setCurtain }) => {
     info.offset.x > 0
       ? handleSlide(slideIndex - 1)
       : handleSlide(slideIndex + 1)
+
+    setSwiped(true)
   }
 
   return (
@@ -68,6 +70,7 @@ const Project: React.FC<Tprops> = ({ enter, curtain, setCurtain }) => {
       animate={animation}
       current={slideIndex + 1}
       id="projekter"
+      swiped={swiped}
     >
       <header>
         <h2>Projekt</h2>
@@ -105,7 +108,6 @@ const Project: React.FC<Tprops> = ({ enter, curtain, setCurtain }) => {
         </motion.ul>
       </nav>
       <article>
-        <h3>Swipe </h3>
         <AnimatePresence exitBeforeEnter>
           <motion.p
             animate="enter"
@@ -128,8 +130,7 @@ const Project: React.FC<Tprops> = ({ enter, curtain, setCurtain }) => {
         drag={"x"}
         dragConstraints={{ left: 0, right: 0 }}
         onDragStart={handleSwipe}
-        onScroll={() => console.log("hey")}
-      />
+      ></motion.div>
     </StyledProject>
   )
 }

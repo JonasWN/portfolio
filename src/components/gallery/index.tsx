@@ -25,7 +25,7 @@ const Gallery = () => {
 
   return (
     <StyledGallery ref={GalleryRef} enter={enter}>
-      <Project enter={enter} setCurtain={setCurtain} curtain={curtain} />
+      <Project enter={enter} setCurtain={setCurtain} />
       <Stack enter={enter} curtain={curtain} />
       <StyledContainer enter={enter}>
         <Button link={data.link} title="Explore" aria={`${data.title} site`} />

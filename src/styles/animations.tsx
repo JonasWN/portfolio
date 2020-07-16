@@ -270,7 +270,18 @@ from {
    transform: scaleY(0) translateY(60px);
  }
 `
-
+export const wheelX = keyframes`
+from {
+   transform: scaleX(0) translateX(0);
+ }
+ 50% {
+   transform: scaleX(1) translateX(15px);
+ }
+ to {
+   opacity: 0;
+   transform: scaleX(0) translateX(30px);
+ }
+`
 export const ScaleRight = keyframes`
   from {
     transform: scaleX(0);

@@ -1,6 +1,6 @@
 import styled from "styled-components"
 import { motion } from "framer-motion"
-import { FadeIn } from "../../styles/animations"
+import { FadeIn, wheelX } from "../../styles/animations"
 import { device } from "../../styles/layout-styles"
 
 export const StyledProject = styled<any>(motion.section)`
@@ -50,7 +50,7 @@ export const StyledProject = styled<any>(motion.section)`
 
     h2 {
       position: relative;
-      letter-spacing: 0.5rem;
+      letter-spacing: 0.3rem;
       font-weight: 100;
       color: #072142;
       font-size: 1.5rem;
@@ -58,6 +58,7 @@ export const StyledProject = styled<any>(motion.section)`
 
       @media ${device.mobile} {
         font-size: 1.2rem;
+        letter-spacing: 0.5rem;
       }
     }
     section {
@@ -69,8 +70,33 @@ export const StyledProject = styled<any>(motion.section)`
 
       div {
         height: 0.5px;
-        width: 130px;
+        width: 110px;
+        position: relative;
         background: #fe6935;
+
+        :before {
+          content: "Swipe";
+          font-weight: 100;
+          position: absolute;
+          bottom: -50px;
+          left: 0;
+          color: #254063;
+          font-family: orbitron;
+          font-size: 0.9rem;
+          display: ${props => (props.swiped ? "none" : "initial")};
+        }
+
+        :after {
+          content: ">";
+          font-weight: 100;
+          position: absolute;
+          bottom: -50px;
+          left: 55px;
+          color: #254063;
+          font-family: orbitron;
+          animation: ${wheelX} 1.6s infinite ease-in-out;
+          display: ${props => (props.swiped ? "none" : "initial")};
+        }
 
         @media ${device.mobile} {
           width: 110px;
@@ -139,7 +165,7 @@ export const StyledProject = styled<any>(motion.section)`
   article {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: flex-end;
     max-width: 75%;
     height: 50%;
@@ -182,9 +208,12 @@ export const StyledProject = styled<any>(motion.section)`
       align-self: flex-start;
       font-size: 1.3rem;
       text-transform: uppercase;
+      position: absolute;
+      top: -40%;
+      left: 0;
 
       @media ${device.mobile} {
-        font-size: 1rem;
+        display: none;
       }
     }
 
