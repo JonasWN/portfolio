@@ -17,7 +17,6 @@ module.exports = {
     `gatsby-plugin-sharp`,
     `gatsby-plugin-typescript`,
     `gatsby-plugin-styled-components`,
-    "gatsby-plugin-preload-link-crossorigin",
     {
       resolve: `gatsby-source-filesystem`,
       options: {
