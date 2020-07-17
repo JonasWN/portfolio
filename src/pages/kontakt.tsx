@@ -48,6 +48,7 @@ const StyledContact = styled.header`
     display: flex;
     flex-direction: column;
     width: 40%;
+    margin-right: 40px;
 
     @media ${device.tablet} {
       width: 100%;

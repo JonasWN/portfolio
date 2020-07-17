@@ -230,7 +230,6 @@ export const StyledProject = styled<any>(motion.section)`
       }
 
       @media ${device.mobile} {
-        font-size: 0.7rem;
         letter-spacing: 0.1rem;
         line-height: 1.2rem;
       }
