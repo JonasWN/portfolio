@@ -38,7 +38,7 @@ export const StyledFooter = styled.footer`
         left: -0.2rem;
         width: calc(100% + 0.4rem);
         transform: scale(0);
-        height: 0.2px;
+        height: 1px;
         background: #000;
         transition: all 2s;
         background: linear-gradient(0deg, #ee0979 0, #ff6a00);

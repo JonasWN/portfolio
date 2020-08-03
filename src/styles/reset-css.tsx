@@ -11,6 +11,10 @@ const GlobalStyle = createGlobalStyle<{ theme: ThemeType }>`
   -webkit-overflow-scrolling: touch;
   touch-action: manipulation;
   scroll-behavior: smooth;
+  -webkit-user-select: none; /* Safari */        
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE10+/Edge */
+  user-select: none; /* Standard */
 }
 
 ul,

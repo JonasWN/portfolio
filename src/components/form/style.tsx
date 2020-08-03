@@ -8,6 +8,7 @@ export const StyledForm = styled.form`
   width: 100%;
   border-radius: 5px;
   width: 55%;
+  min-height: 400px;
 
   @media ${device.tablet} {
     width: 100%;
